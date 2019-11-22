@@ -1,0 +1,70 @@
+---
+title: A Modern Development Workflow using Netlify + CodeSandbox
+slug: a-modern-development-workflow-using-netlify-codesandbox
+image: ./images/1.png
+icon: ./images/tools.png
+tags: ["Tools"]
+articleID: 1
+articleDate: 2019-07-15
+downloadLink: https://github.com/laurosilvacom/laurosilvacom-old
+---
+
+I want to teach you how a **setup a modern, productive, and fun** development workflow.It can be overwhelming setting up the perfect development workflow. Sometimes you just want to jump right into the code.
+
+So, here's my approach.
+
+### Code Editor
+
+Having a light, simple code editor is ideal, but in this case, having an **in-browser code** editor is better. That's why we will be setting up **[CodeSandbox](https://codesandbox.io)**.
+
+With CodeSandbox you don't have to set up a development environment, install dependencies, or worry about tooling.
+
+You just jump right into the code. For now, sing up for a CodeSandbox account.
+
+## Setup
+
+We're also going to need a place to host our web application, and **[Netlify](https://netlify.com)** is the perfect place to host it.
+
+Start by signing up for a Netlify account, if you don't already have one. Now, Netlify can connect to any Git repository hosted at GitHub, GitLab, or Bitbucket and auto-publish every time you push a commit.
+
+In this case, we are going to use Github to host our repository and link it to our Netlify account. Let's sign up for a **[Github](https://github.com)** account if you don't already have one.
+
+# The Workflow
+
+Now that we have our CodeSandbox, Netlify, Github accounts it's time to set up our workflow.
+
+### CodeSandbox
+
+Open CodeSandbox and select a public template. In this case, we are going to select the **Gatsby template**.Now that we have our Gatsby template opened, we need to fork it. This will create a copy to our CodeSandbox account.
+
+### Github
+
+We will also proceed to connect our Github account.
+
+Once we've connected our account we need to export our template to our account.You can see now, inside of Github we have the repository of our Gatsby template.
+
+### Netlify
+
+We will take this repository and deploy it to Netlify, by clicking on _Select a new site from Git_.
+
+We proceed to **connect our Github account to Netlify**. This will give us access to our repositories.
+
+We select our repository and click deploy with the default settings. It takes a couple of seconds, but once deployed you will see your site live.
+
+You can also set up a domain name directly using Netlify. Feel free to check out other cool features that Netlify provides. For now, let's stick to our development workflow.
+
+### Automatic Deployment
+
+Netlify automatically starts a new deployment process every time we push a new chance to our Github repository. So let's do that from CodeSandbox!
+
+Let's fork once again our CodeSandbox. And let's make some changes to our code and let's select the Deployment icon. Let's commit our changes by adding a subject and a message and clicking the commit or pull request button. Now automatically the changes will be pushed from CodeSandbox to Github. And from Github to Netlify.
+
+Congratulations! 🎉
+
+You've just set up a productive, simple, and fun development workflow. All without install dependencies, or worrying about setting having the correct local development environment.
+
+## Summary
+
+We learn how to set up a modern, productive and fun development workflow. Making it easier for us to focus on coding and learning from the start.I hope you found this tutorial useful. Until next time.
+
+Stay awesome! 😁
