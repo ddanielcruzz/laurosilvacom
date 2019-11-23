@@ -50,7 +50,7 @@ const CardContent = styled.div`
 `
 
 const ArticleTitle = styled.h1`
-  font-size: 30px;
+  font-size: 22px;
   margin: 0;
   line-height: 1.01em;
   color: var(--foreground);

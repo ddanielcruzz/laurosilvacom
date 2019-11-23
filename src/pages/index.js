@@ -8,6 +8,7 @@ import Card from '../components/card'
 import Grid from '../components/grid'
 import HeroLanding from '../components/herolanding'
 import Button from '../components/button'
+import Image from '../components/image'
 
 const IndexPage = ({ data }) => {
   const { edges: articles } = data.allMdx
@@ -19,11 +20,10 @@ const IndexPage = ({ data }) => {
       />
 
       <HeroLanding>
-        <h1>I'm Lauro. Software engineer and technical writer.</h1>
-        <p>
-          I make things from scratch and break down complex concepts into
-          simple, digestible tutorials.
-        </p>
+        <h1>Software Engineer & Technical Writer</h1>
+        <p>I make things from scratch, contribute to open source, and write.</p>
+
+        <Image></Image>
 
         <Button buttonLink="/" buttonText="Join the Newsletter" />
       </HeroLanding>

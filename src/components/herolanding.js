@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 `
 
 const WrapperGroup = styled.div`
-  margin: 0 auto;
+  margin: auto;
   max-width: 820px;
   padding: 130px 20px;
   h1 {
@@ -24,12 +24,10 @@ const WrapperGroup = styled.div`
     font-weight: 800;
   }
   p {
-    margin: 0;
     line-height: 1.5em;
     text-transform: none;
     color: var(--accents-5);
     margin-top: 20px;
-    max-width: 600px;
     font-size: 20px;
     font-weight: 400;
   }

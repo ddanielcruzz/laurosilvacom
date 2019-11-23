@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import logo from '../images/logo.svg'
 import './header.css'
 
+import ThemeContext from '../context/ThemeContext'
+
 class Header extends React.Component {
   constructor(props) {
     super(props)
@@ -29,21 +31,35 @@ class Header extends React.Component {
 
   render() {
     return (
-      <HeaderWrapper
-        className={this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'}
-      >
-        <HeaderGroup>
-          <LogoWrapper>
-            <Link to="/">
-              <Image src={logo} />
-            </Link>
-          </LogoWrapper>
-          <LinksWrapper>
-            <Link to="/">Me</Link>
-            <Link to="/">Contact</Link>
-          </LinksWrapper>
-        </HeaderGroup>
-      </HeaderWrapper>
+      <ThemeContext.Consumer>
+        {theme => (
+          <HeaderWrapper
+            className={
+              this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
+            }
+          >
+            <HeaderGroup>
+              <LogoWrapper>
+                <Link to="/">
+                  <Image src={logo} />
+                </Link>
+              </LogoWrapper>
+              <LinksWrapper>
+                <span
+                  role="presentation"
+                  className="dark-switcher"
+                  onClick={theme.toggleDark}
+                >
+                  {theme.dark ? <span>☀</span> : <span>☾</span>}
+                </span>
+
+                <Link to="/">Me</Link>
+                <Link to="/">Contact</Link>
+              </LinksWrapper>
+            </HeaderGroup>
+          </HeaderWrapper>
+        )}
+      </ThemeContext.Consumer>
     )
   }
 }

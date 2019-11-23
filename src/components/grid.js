@@ -11,5 +11,4 @@ const GridWrapper = styled.div`
   max-width: 820px;
   margin: 0 auto;
   padding: 20px;
-  justify-items: center;
 `
