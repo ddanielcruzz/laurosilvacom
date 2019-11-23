@@ -51,50 +51,36 @@ class Header extends React.Component {
 export default Header
 
 const Image = styled.img`
-  height: 25px;
-  @media (max-width: 780px) {
-    height: 20px;
-  }
+  height: 30px;
 `
 
-const HeaderWrapper = styled.div``
+const HeaderWrapper = styled.div`
+  background: var(--background);
+  border-bottom: 1px solid var(--accents-2);
+`
 
 const HeaderGroup = styled.div`
   margin: auto;
-  max-width: 1220px;
+  max-width: 820px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 `
 
 const LogoWrapper = styled.div`
-  font-weight: bold;
   font-size: 30px;
-  a {
-    color: white;
-  }
-  a:hover {
-    color: white;
-  }
 `
 
 const LinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
   margin: 0;
-  letter-spacing: 1px;
   font-size: 16px;
-  font-weight: bold;
   align-items: center;
-  padding: 0 20px;
   a {
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  a:hover {
-    color: white;
+    padding-left: 40px;
+    color: var(--accents-5);
   }
   span {
     font-size: 20px;

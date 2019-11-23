@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Card from '../components/card'
@@ -23,8 +25,12 @@ const IndexPage = ({ data }) => {
           simple, digestible tutorials.
         </p>
 
-        <Button buttonLink="/" buttonText="💌 Join the Newsletter" />
+        <Button buttonLink="/" buttonText="Join the Newsletter" />
       </HeroLanding>
+
+      <TitleWrapper>
+        <h1>Latest Articles</h1>
+      </TitleWrapper>
 
       <Grid>
         {articles.map(({ node: article }) => (
@@ -41,6 +47,22 @@ const IndexPage = ({ data }) => {
   )
 }
 
+const TitleWrapper = styled.div`
+  max-width: 820px;
+  margin: auto;
+  padding: 20px;
+  h1 {
+    font-size: 40px;
+    margin: 0;
+    line-height: 1.01em;
+    font-weight: 800;
+  }
+  @media (max-width: 780px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+`
 export const pageQuery = graphql`
   query blogIndex {
     allMdx(sort: { fields: frontmatter___articleID, order: DESC }) {

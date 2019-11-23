@@ -1,12 +1,9 @@
 .Header {
   position: fixed;
   width: 100%;
-  padding: 10px;
+  padding: 20px 0;
   z-index: 100;
 }
 .HeaderScrolled {
-  background-color: #1b2022;
-  box-shadow: 0 0 10px #101517;
-
-  padding: 10px;
+  box-shadow: var(--shadow-small);
 }

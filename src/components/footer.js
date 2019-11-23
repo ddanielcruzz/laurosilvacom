@@ -7,7 +7,12 @@ const Footer = () => (
   <FooterWrapper>
     <FooterGroup>
       <FooterMain>
-        <FooterAbout></FooterAbout>
+        <FooterAbout>
+          <TwitterFollowButton
+            options={{ size: 'large' }}
+            screenName="laurosilvacom"
+          />
+        </FooterAbout>
         <FooterContent>
           <FooterLearn>
             <LearnTitle>Learn</LearnTitle>
@@ -21,13 +26,8 @@ const Footer = () => (
         </FooterContent>
       </FooterMain>
       <FooterCopyRight>
-        <TwitterFollowButton
-          options={{ size: 'large' }}
-          screenName="laurosilvacom"
-        />
-
         <CopyRight>
-          Copyright © 2019 Rubydock, LLC. All rights reserved.
+          Copyright © 2019 Lauro Silva, LLC. All rights reserved.
         </CopyRight>
       </FooterCopyRight>
     </FooterGroup>
@@ -39,6 +39,7 @@ export default Footer
 const FooterWrapper = styled.div`
   margin-top: 150px;
   position: relative;
+  border-top: 1px solid var(--accents-2);
 `
 
 const LearnTitle = styled.h1`
@@ -47,7 +48,7 @@ const LearnTitle = styled.h1`
   letter-spacing: 2px;
   font-size: 16px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 800;
 `
 
 const CompanyTitle = styled.h1`
@@ -56,7 +57,7 @@ const CompanyTitle = styled.h1`
   letter-spacing: 2px;
   font-size: 16px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 800;
 `
 
 const FooterMain = styled.div`
@@ -83,7 +84,7 @@ const FooterAbout = styled.div`
 
 const FooterGroup = styled.div`
   margin: auto;
-  max-width: 1220px;
+  max-width: 820px;
   padding-top: 100px;
   padding: 20px;
   padding-top: 50px;
@@ -96,44 +97,33 @@ const FooterContent = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
-
   a {
     padding-bottom: 20px;
-    color: #929ea3;
+    color: var(--accents-5);
   }
 `
 
 const FooterLearn = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  color: #929ea3;
   margin: 0 50px;
 `
 
 const FooterCompany = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  color: #929ea3;
   margin: 0 50px;
 `
 
 const FooterCopyRight = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 100px;
   padding-bottom: 20px;
   padding-top: 20px;
-  border-top: 2px solid #9aaebe0f;
-  @media (max-width: 780px) {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+  text-align: center;
 `
 
 const CopyRight = styled.div`
-  color: #929ea359;
-  font-size: 16px;
+  font-size: 12px;
+  color: var(--accents-5);
   margin-top: 20px;
 `

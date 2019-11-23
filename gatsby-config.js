@@ -18,17 +18,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `700`],
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-no-sourcemaps',
     },
     {
@@ -83,8 +72,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `src/images/lauro.jpg`,
       },

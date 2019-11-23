@@ -10,7 +10,6 @@ import ArticleRelated from '../components/article/related'
 import Button from '../components/button'
 import Card from '../components/card'
 import Grid from '../components/grid'
-import Hero from '../components/hero'
 import SEO from '../components/seo'
 
 const _ = require('lodash')
@@ -22,36 +21,30 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
       description={article.excerpt}
       image={article.frontmatter.image.sharp.fluid}
     />
-
-    <Hero>
-      <HeroWrapper>
-        <ArticleHeader
-          title={article.frontmatter.title}
-          icon={article.frontmatter.icon.sharp.fluid}
-          time={article.frontmatter.articleDate}
-          tag={article.frontmatter.tags.map((tag, i) => (
-            <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-              {tag}
-            </Link>
-          ))}
-        />
-      </HeroWrapper>
-    </Hero>
-
+    <ArticleHeader
+      title={article.frontmatter.title}
+      icon={article.frontmatter.icon.sharp.fluid}
+      time={article.frontmatter.articleDate}
+      tag={article.frontmatter.tags.map((tag, i) => (
+        <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
+          {tag}
+        </Link>
+      ))}
+    />
     <MainWrapper>
       <ContentWrapper>
         <Button
           buttonLink={article.frontmatter.downloadLink}
-          buttonText="💾 Download Assets + Code"
+          buttonText="Download Assets + Code"
         />
-
         <ArticleContent article={article.body} />
       </ContentWrapper>
     </MainWrapper>
+
     <ArticleRelated
       tag={article.frontmatter.tags.map((tag, i) => (
         <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-          <ArticleRelatedText>{tag} Tags</ArticleRelatedText>
+          <ArticleRelatedText>{tag}</ArticleRelatedText>
         </Link>
       ))}
     />
@@ -74,27 +67,20 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
 
 export default ArticleTemplate
 
-const HeroWrapper = styled.div``
-
 const MainWrapper = styled.div`
   margin: auto;
-  max-width: 1220px;
   padding: 20px;
 `
 
 const ContentWrapper = styled.div`
-  max-width: 780px;
+  max-width: 820px;
   margin-top: 40px;
   margin: 0 auto;
 `
 
 const ArticleRelatedText = styled.div`
-  color: white;
   font-size: 35px;
   margin-bottom: 35px;
-  :hover {
-    color: white;
-  }
 `
 
 export const query = graphql`

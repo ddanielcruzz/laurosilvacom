@@ -17,11 +17,8 @@ const Tags = ({ pageContext, data }) => {
 
       <MainWrapper>
         <HeroContent>
-          <Title>
-            Articles tagged as <span>{`${tag}`}</span>
-          </Title>
+          <h1>{`${tag}`}</h1>
         </HeroContent>
-        <hr></hr>
 
         <Grid>
           {articles.map(({ node: article }) => (
@@ -45,15 +42,6 @@ const Tags = ({ pageContext, data }) => {
 export default Tags
 
 const MainWrapper = styled.div``
-
-const Title = styled.h1`
-  margin-bottom: 5px;
-  font-size: 24px;
-  span {
-    text-decoration: underline;
-    color: #0d7bc9;
-  }
-`
 
 export const pageQuery = graphql`
   query($tag: String) {
