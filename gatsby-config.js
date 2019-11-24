@@ -42,18 +42,7 @@ module.exports = {
               withWebp: true,
             },
           },
-          {
-            resolve: 'gatsby-remark-vscode',
-            options: {
-              colorTheme: 'Codesandbox',
-              extensions: [
-                {
-                  identifier: 'ngryman.codesandbox-theme',
-                  version: '1.1.3',
-                },
-              ],
-            },
-          },
+          'gatsby-remark-prismjs',
           { resolve: 'gatsby-remark-smartypants' },
         ],
         plugins: [{ resolve: 'gatsby-remark-images' }],
@@ -86,7 +75,7 @@ module.exports = {
         background_color: `#000`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/lauro.jpg`,
+        icon: `src/images/icon.png`,
       },
     },
   ],

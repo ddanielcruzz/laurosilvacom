@@ -17,23 +17,78 @@ Arrays are very useful as they store multiple values in a single variable, which
 
 To demonstrate how array can be useful, consider assigning the five oceans of the world to their own variables.
 
-```js
+<div class="filename">src/server/index.js</div>
+
+```javascript
 // Assign the five oceans to five variables
 const ocean1 = "Pacific"
 const ocean2 = "Atlantic"
 const ocean3 = "Indian"
 const ocean4 = "Arctic"
 const ocean5 = "Antarctic"
+const ocean3 = "Indian"
+const ocean4 = "Arctic"
+const ocean5 = "Antarctic"
+const ocean3 = "Indian"
+const ocean4 = "Arctic"
+const ocean5 = "Antarctic"
+```
+
+```jsx{numberLines: true}
+class FlavorForm extends React.Component { // highlight-line
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    // highlight-next-line
+    this.setState({value: event.target.value});
+  }
+
+  // highlight-start
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+  // highlight-end
+
+  render() {
+    return (
+      { /* highlight-range{1,4-9,12} */ }
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
 ```
 
 This method is very verbose, and can quickly become difficult to maintain and keep track of. Using arrays, we can simplify our data.
 
-```js
-// Assign the five oceans
-let oceans = ["Pacific", "Atlantic", "Indian", "Arctic", "Antarctic"]
+```bash{promptUser: laurosilvacom}{promptHost: localhost}
+npm install react
 ```
 
+I can highlight `css±.some-class { background-color: red }` with CSS syntax.
+
 Instead of creating five separate variables, we now have one variable that contains all five elements. We used square brackets (`[]`) to create an array.
+
+```js
+alert("click to copy 💾")
+```
 
 Accessing a specific item is as easy as appending the index to the variable.
 
@@ -53,6 +108,8 @@ In this article, we will learn how to create arrays, how they are indexed, how t
 There are two ways to create an array in JavaScript. The array literal, which uses square brackets, and the array constructor, which uses the `new` keyword.
 
 Let's demonstrate how to create an array of shark species using the array constructor, which is initialized with `new Array()`.
+
+<div class="filename">src/server/index.js</div>
 
 ```js
 // Initialize array of shark species with array constructor

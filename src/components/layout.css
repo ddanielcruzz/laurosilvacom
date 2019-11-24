@@ -64,7 +64,7 @@ a:hover {
 }
 
 hr {
-  border-color: #10151700;
+  border-color: var(--accents-2);
   padding: 20px;
 }
 
@@ -75,14 +75,14 @@ p {
 h1 {
   line-height: 1.5;
   font-size: 3rem;
-  letter-spacing: -0.066875rem;
+  letter-spacing: -0.029375rem;
   font-weight: 700;
 }
 
 h2 {
   line-height: 1.5;
   font-size: 2.25rem;
-  letter-spacing: -0.049375rem;
+  letter-spacing: -0.029375rem;
   font-weight: 600;
 }
 
@@ -145,8 +145,8 @@ li {
 
 blockquote {
   color: rgba(0, 0, 0, 0.7);
-  border: 2px solid #fed356;
-  background: #fff8e4;
+  border: 1px solid var(--success-dark);
+  background: var(--accents-1);
   border-radius: 4px;
   font-weight: 500;
   margin: 1.5rem 0;
@@ -171,19 +171,6 @@ blockquote code {
   background: rgb(24, 106, 165);
 }
 
-code {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 20px;
-  background: var(--foreground);
-  color: var(--background);
-  padding: 2px 2px;
-  border-radius: 2px;
-}
-pre code {
-  background: none;
-}
-
 @keyframes HeroAnimation {
   0% {
     opacity: 0;
@@ -202,6 +189,149 @@ pre code {
   background: var(--selection); /* Gecko Browsers */
 }
 
+code[class*="language-"]::selection,
+code[class*="language-"] span::selection {
+  background: var(--selection);
+}
+
+.gatsby-highlight-code-line {
+  background-color: var(--accents-6);
+  display: block;
+  margin-right: -1em;
+  margin-left: -1.6em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid var(--success);
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: var(--foreground);
+  border-radius: 4px;
+  margin: 2.5em 0;
+  padding: 20px;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: #eaeaea;
+  color: black;
+}
+
+code[class*="language-"] {
+  background: black;
+  color: white;
+  box-shadow: none;
+}
+
+.line-numbers .line-numbers-rows {
+  left: -10px !important;
+}
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.3em;
+  overflow: initial;
+}
+
+.command-line-prompt > span:before {
+  color: var(--background);
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 1px 10px;
+  border-radius: 2px;
+  box-shadow: none;
+  white-space: normal;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}
+
+.line-numbers .line-numbers-rows {
+  border-right: 0px solid red;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 25px;
+}
+
+table {
+  font-family: var(--font-mono);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+tr {
+  background: var(--accents-1);
+}
+
+th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 0.75rem !important;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+}
+td {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 0.75rem !important;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+}
+
+.filename {
+  background: #000;
+  padding: 0.5rem 1rem 0.75rem;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 700;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin-bottom: -3.4rem;
+  font-family: var(--font-mono);
+}
 /* Dark mode styles */
 .dark-switcher {
   color: var(--success);
