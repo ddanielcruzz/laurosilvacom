@@ -17,28 +17,9 @@ const WrapperGroup = styled.div`
   margin: auto;
   max-width: 820px;
   padding: 130px 20px;
-  h1 {
-    font-size: 40px;
-    margin: 0 0 20px;
-    line-height: 1.01em;
-    font-weight: 800;
-  }
-  p {
-    line-height: 1.5em;
-    text-transform: none;
-    color: var(--accents-5);
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 400;
-  }
-  @media (max-width: 780px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
-  @media (max-width: 780px) {
-    p {
-      font-size: 20px;
-    }
+
+  h2 {
+    line-height: 1;
+    margin: 10px 0;
   }
 `

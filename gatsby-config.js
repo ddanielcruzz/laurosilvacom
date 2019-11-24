@@ -71,10 +71,6 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `IBM Plex Sans`,
-            variants: [`400`, `600`, `800`],
-          },
-          {
             family: `IBM Plex Mono`,
             variants: [`400`, `600`],
           },

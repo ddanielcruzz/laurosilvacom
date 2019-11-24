@@ -16,14 +16,7 @@ const Article = styled.div`
   img {
     border-radius: 4px;
   }
-  h1 {
-    font-size: 35px;
-    margin: 4rem 0 1rem;
-  }
-  h2,
-  h3 {
-    margin: 4rem 0 1rem;
-  }
+
   .gatsby-resp-image-wrapper a {
     border-bottom: 0px solid #1b89da;
   }

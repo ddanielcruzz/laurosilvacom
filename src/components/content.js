@@ -21,12 +21,4 @@ const Article = styled.div`
   img {
     border-radius: 4px;
   }
-  h1 {
-    font-size: 35px;
-    margin: 4rem 0 1rem;
-  }
-  h2,
-  h3 {
-    margin: 4rem 0 1rem;
-  }
 `

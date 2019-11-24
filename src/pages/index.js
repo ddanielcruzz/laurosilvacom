@@ -12,6 +12,7 @@ import Image from '../components/image'
 
 const IndexPage = ({ data }) => {
   const { edges: articles } = data.allMdx
+
   return (
     <Layout>
       <SEO
@@ -20,16 +21,14 @@ const IndexPage = ({ data }) => {
       />
 
       <HeroLanding>
-        <h1>Software Engineer & Technical Writer</h1>
+        <h2>Software Engineer & Technical Writer</h2>
         <p>I make things from scratch, contribute to open source, and write.</p>
-
-        <Image></Image>
-
+        <Image />
         <Button buttonLink="/" buttonText="Join the Newsletter" />
       </HeroLanding>
 
       <TitleWrapper>
-        <h1>Latest Articles</h1>
+        <h2>Latest Articles</h2>
       </TitleWrapper>
 
       <Grid>
@@ -51,17 +50,6 @@ const TitleWrapper = styled.div`
   max-width: 820px;
   margin: auto;
   padding: 20px;
-  h1 {
-    font-size: 40px;
-    margin: 0;
-    line-height: 1.01em;
-    font-weight: 800;
-  }
-  @media (max-width: 780px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
 `
 export const pageQuery = graphql`
   query blogIndex {

@@ -16,6 +16,6 @@ const RelatedWrapper = styled.div`
     transform: scale(1.02, 1.03);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px;
   }
-  font-size: 16px;
+  font-size: 1rem;
   color: #000;
 `

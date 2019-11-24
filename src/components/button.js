@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   margin-bottom: 30px;
   margin-top: 30px;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 1rem;
   white-space: nowrap;
   display: inline-block;
   cursor: pointer;

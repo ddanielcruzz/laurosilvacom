@@ -40,19 +40,13 @@ const Icon = styled.div`
     width: 80px;
   }
 `
-const Title = styled.h1`
-  margin: 0;
-  font-weight: bold;
-  font-size: 40px;
+const Title = styled.h2`
   margin: 0 0 10px;
   line-height: 1.01em;
-  @media (max-width: 780px) {
-    font-size: 35px;
-  }
 `
 const Tag = styled.p`
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--accents-4);
   span {
     padding-right: 10px;

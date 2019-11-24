@@ -21,7 +21,8 @@ const Footer = () => (
           <FooterCompany>
             <CompanyTitle>Company</CompanyTitle>
             <Link to="/">Contact</Link>
-            <Link to="/terms">Legal</Link>
+            <Link to="/terms">Terms of Service</Link>
+            <Link to="/privacy">Privacy Policy</Link>
           </FooterCompany>
         </FooterContent>
       </FooterMain>
@@ -46,18 +47,20 @@ const LearnTitle = styled.h1`
   margin: 0;
   padding-bottom: 20px;
   letter-spacing: 2px;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 800;
+  font-size: 1rem;
+  font-size: 14px;
+  color: var(--accents-6);
+  line-height: 20px;
 `
 
 const CompanyTitle = styled.h1`
   margin: 0;
   padding-bottom: 20px;
   letter-spacing: 2px;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 800;
+  font-size: 1rem;
+  font-size: 14px;
+  color: var(--accents-6);
+  line-height: 20px;
 `
 
 const FooterMain = styled.div`
@@ -76,7 +79,7 @@ const FooterMain = styled.div`
 const FooterAbout = styled.div`
   max-width: 400px;
   line-height: 2.5;
-  font-size: 16px;
+  font-size: 1rem;
   @media (max-width: 780px) {
     text-align: center;
   }
@@ -84,7 +87,7 @@ const FooterAbout = styled.div`
 
 const FooterGroup = styled.div`
   margin: auto;
-  max-width: 820px;
+  max-width: 1220px;
   padding-top: 100px;
   padding: 20px;
   padding-top: 50px;

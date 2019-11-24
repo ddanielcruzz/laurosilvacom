@@ -45,6 +45,8 @@ class Header extends React.Component {
                 </Link>
               </LogoWrapper>
               <LinksWrapper>
+                <Link to="/">Me</Link>
+                <Link to="/">Contact</Link>
                 <span
                   role="presentation"
                   className="dark-switcher"
@@ -52,9 +54,6 @@ class Header extends React.Component {
                 >
                   {theme.dark ? <span>☀</span> : <span>☾</span>}
                 </span>
-
-                <Link to="/">Me</Link>
-                <Link to="/">Contact</Link>
               </LinksWrapper>
             </HeaderGroup>
           </HeaderWrapper>
@@ -77,7 +76,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderGroup = styled.div`
   margin: auto;
-  max-width: 820px;
+  max-width: 1220px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,7 +91,7 @@ const LinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
   align-items: center;
   a {
     padding-left: 40px;
@@ -100,5 +99,8 @@ const LinksWrapper = styled.div`
   }
   span {
     font-size: 20px;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--foreground);
   }
 `
