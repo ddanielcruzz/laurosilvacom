@@ -12,7 +12,6 @@ export default Hero
 const Wrapper = styled.section`
   position: relative;
 `
-
 const WrapperGroup = styled.div`
   margin: auto;
   max-width: 820px;
