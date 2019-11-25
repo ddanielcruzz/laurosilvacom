@@ -195,13 +195,17 @@ code[class*="language-"] span::selection {
 }
 
 .gatsby-highlight-code-line {
-  background-color: var(--accents-6);
+  background: rgba(255, 255, 255, 0.07);
   display: block;
-  margin-right: -1em;
-  margin-left: -1.6em;
+  margin-right: 0em;
+  margin-left: -2.6em;
   padding-right: 1em;
-  padding-left: 0.75em;
+  padding-left: 2.3em;
   border-left: 0.25em solid var(--success);
+}
+
+.prism-code .number-line {
+  color: rgb(220, 217, 230);
 }
 
 /**
@@ -209,7 +213,7 @@ code[class*="language-"] span::selection {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: var(--foreground);
+  background: rgb(41, 44, 52);
   border-radius: 4px;
   margin: 2.5em 0;
   padding: 20px;
@@ -249,7 +253,7 @@ code[class*="language-"] {
 
 .gatsby-highlight pre[class*="language-"].line-numbers {
   padding: 0;
-  padding-left: 2.3em;
+  padding-left: 1.3em;
   overflow: initial;
 }
 
@@ -290,6 +294,7 @@ pre[class*="language-"] {
   font-family: var(--font-mono);
   font-size: 16px;
   line-height: 25px;
+  background: none;
 }
 
 table {
@@ -332,20 +337,19 @@ td {
   margin-bottom: -3.4rem;
   font-family: var(--font-mono);
 }
+
 /* Dark mode styles */
 .dark-switcher {
-  color: var(--success);
   margin-top: 5px;
   border: none;
   cursor: pointer;
 }
 
-.dark {
-  background-color: #2a2b2d;
-  color: #fff;
+.dark .dark-switcher span {
   transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
 }
 
-.light {
+.dark {
+  background: var(--foreground);
   transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
 }

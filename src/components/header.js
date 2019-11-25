@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../images/logo.svg'
+import logolight from '../images/logolight.svg'
 import './header.css'
 
 import ThemeContext from '../context/ThemeContext'
@@ -34,14 +35,19 @@ class Header extends React.Component {
       <ThemeContext.Consumer>
         {theme => (
           <HeaderWrapper
-            className={
-              this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
-            }
+            className={`
+              ${this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'}
+              ${theme.dark ? 'dark' : 'light'}
+              `}
           >
             <HeaderGroup>
               <LogoWrapper>
                 <Link to="/">
-                  <Image src={logo} />
+                  {theme.dark ? (
+                    <Image src={logolight} />
+                  ) : (
+                    <Image src={logo} />
+                  )}
                 </Link>
               </LogoWrapper>
               <LinksWrapper>
@@ -70,10 +76,14 @@ const Image = styled.img`
 `
 
 const HeaderWrapper = styled.div`
-  background: var(--background);
   border-bottom: 1px solid var(--accents-2);
+  transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  background: var(--background);
+  &.dark {
+    background: var(--foreground);
+    border-bottom: 1px solid var(--accents-7);
+  }
 `
-
 const HeaderGroup = styled.div`
   margin: auto;
   max-width: 1220px;
@@ -102,5 +112,6 @@ const LinksWrapper = styled.div`
     margin: 0;
     padding-left: 20px;
     color: var(--foreground);
+    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   }
 `

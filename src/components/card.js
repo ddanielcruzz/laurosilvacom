@@ -2,17 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 
+import ThemeContext from '../context/ThemeContext'
+
 const Card = props => (
-  <CardWrapper>
-    <CardContent>
-      <ArticleIcon>
-        <Image fluid={props.articleIcon} />
-      </ArticleIcon>
-      <ArticleText>
-        <ArticleTitle>{props.articleTitle}</ArticleTitle>
-      </ArticleText>
-    </CardContent>
-  </CardWrapper>
+  <ThemeContext.Consumer>
+    {theme => (
+      <CardWrapper className={theme.dark ? 'dark' : 'light'}>
+        <CardContent>
+          <ArticleIcon>
+            <Image fluid={props.articleIcon} />
+          </ArticleIcon>
+          <ArticleText>
+            <ArticleTitle className={theme.dark ? 'dark' : 'light'}>
+              {props.articleTitle}
+            </ArticleTitle>
+          </ArticleText>
+        </CardContent>
+      </CardWrapper>
+    )}
+  </ThemeContext.Consumer>
 )
 
 export default Card
@@ -35,6 +43,13 @@ const CardWrapper = styled.div`
     transform: var(--transform-small);
     box-shadow: var(--shadow-small);
   }
+  &.dark {
+    border: 1px solid var(--accents-7);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    :hover {
+      border: 1px solid var(--accents-2);
+    }
+  }
 `
 
 const ArticleIcon = styled.div`
@@ -56,5 +71,8 @@ const ArticleTitle = styled.h1`
   color: var(--foreground);
   @media (max-width: 780px) {
     font-size: 20px;
+  }
+  &.dark {
+    color: var(--accents-1);
   }
 `
