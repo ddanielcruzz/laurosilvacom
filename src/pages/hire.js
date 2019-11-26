@@ -4,11 +4,11 @@ import SEO from '../components/seo'
 import HeroContent from '../components/herocontent'
 import Content from '../components/content'
 
-const Contact = () => (
+const Hire = () => (
   <Layout>
-    <SEO title="Contact" keywords={[`contact`, `Contact`]} />
+    <SEO title="Hire Me" keywords={[`Hire Me`]} />
     <HeroContent>
-      <h2>Contact</h2>
+      <h2>Let's make something brilliant!</h2>
     </HeroContent>
 
     <Content>
@@ -23,4 +23,4 @@ const Contact = () => (
   </Layout>
 )
 
-export default Contact
+export default Hire

@@ -23,7 +23,7 @@ const Footer = () => (
           </FooterLearn>
           <FooterCompany>
             <CompanyTitle>Company</CompanyTitle>
-            <Link to="/contact">Contact</Link>
+            <Link to="/hire">Hire Me</Link>
             <Link to="/terms">Terms of Service</Link>
             <Link to="/privacy">Privacy Policy</Link>
           </FooterCompany>
