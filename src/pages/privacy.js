@@ -6,10 +6,7 @@ import Content from '../components/content'
 
 const Privacy = () => (
   <Layout>
-    <SEO
-      title="Terms of Use & Privacy Policy"
-      keywords={[`privacy`, `policy`]}
-    />
+    <SEO title="Privacy Policy" keywords={[`privacy`, `policy`]} />
     <HeroContent>
       <h2>Privacy Policy</h2>
     </HeroContent>

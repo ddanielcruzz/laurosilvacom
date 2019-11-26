@@ -15,12 +15,15 @@ const Footer = () => (
         </FooterAbout>
         <FooterContent>
           <FooterLearn>
-            <LearnTitle>Learn</LearnTitle>
-            <Link to="/">Articles</Link>
+            <LearnTitle>Me</LearnTitle>
+            <Link to="/about">About</Link>
+            <Link to="/">Writing</Link>
+            <Link to="/speaking">Speaking</Link>
+            <Link to="/newsletter">Newsletter</Link>
           </FooterLearn>
           <FooterCompany>
             <CompanyTitle>Company</CompanyTitle>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
             <Link to="/terms">Terms of Service</Link>
             <Link to="/privacy">Privacy Policy</Link>
           </FooterCompany>
@@ -110,12 +113,18 @@ const FooterLearn = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   margin: 0 50px;
+  @media (max-width: 720px) {
+    margin-bottom: 50px;
+  }
 `
 
 const FooterCompany = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   margin: 0 50px;
+  @media (max-width: 720px) {
+    margin-bottom: 50px;
+  }
 `
 
 const FooterCopyRight = styled.div`

@@ -51,8 +51,8 @@ class Header extends React.Component {
                 </Link>
               </LogoWrapper>
               <LinksWrapper>
-                <Link to="/">Me</Link>
-                <Link to="/">Contact</Link>
+                <Link to="/about">About</Link>
+                <Link to="/newsletter">Newsletter</Link>
                 <span
                   role="presentation"
                   className="dark-switcher"
@@ -73,6 +73,9 @@ export default Header
 
 const Image = styled.img`
   height: 30px;
+  @media (max-width: 480px) {
+    height: 20px;
+  }
 `
 
 const HeaderWrapper = styled.div`
@@ -113,5 +116,8 @@ const LinksWrapper = styled.div`
     padding-left: 20px;
     color: var(--foreground);
     transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    @media (max-width: 480px) {
+      padding-right: 20px;
+    }
   }
 `
