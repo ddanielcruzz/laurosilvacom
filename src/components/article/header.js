@@ -23,7 +23,7 @@ const HeaderMain = styled.div`
   margin: auto;
   display: grid;
   grid-template-columns: 100px 1fr;
-  max-width: 820px;
+  max-width: 780px;
   padding: 140px 20px 0;
   grid-gap: 30px;
   @media (max-width: 780px) {

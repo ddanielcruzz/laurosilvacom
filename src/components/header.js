@@ -1,8 +1,11 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import { FiSun, FiMoon } from 'react-icons/fi'
+
 import logo from '../images/logo.svg'
 import logolight from '../images/logolight.svg'
+
 import './header.css'
 
 import ThemeContext from '../context/ThemeContext'
@@ -58,7 +61,7 @@ class Header extends React.Component {
                   className="dark-switcher"
                   onClick={theme.toggleDark}
                 >
-                  {theme.dark ? <span>☀</span> : <span>☾</span>}
+                  {theme.dark ? <FiSun stroke="white" /> : <FiMoon />}
                 </span>
               </LinksWrapper>
             </HeaderGroup>
@@ -80,7 +83,6 @@ const Image = styled.img`
 
 const HeaderWrapper = styled.div`
   border-bottom: 1px solid var(--accents-2);
-  transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   background: var(--background);
   &.dark {
     background: var(--foreground);
@@ -108,16 +110,18 @@ const LinksWrapper = styled.div`
   align-items: center;
   a {
     padding-left: 40px;
-    color: var(--accents-5);
+    color: var(--accents-4);
   }
   span {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
-    padding-left: 20px;
-    color: var(--foreground);
-    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    padding-left: 40px;
+    margin-bottom: -5px;
     @media (max-width: 480px) {
       padding-right: 20px;
     }
+  }
+  svg {
+    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   }
 `

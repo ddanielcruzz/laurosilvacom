@@ -1,10 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import ThemeContext from '../context/ThemeContext'
 
 const Hero = ({ children }) => (
-  <Wrapper>
-    <WrapperGroup>{children}</WrapperGroup>
-  </Wrapper>
+  <ThemeContext.Consumer>
+    {theme => (
+      <Wrapper>
+        <WrapperGroup className={`${theme.dark ? 'dark' : 'light'}`}>
+          {children}
+        </WrapperGroup>
+      </Wrapper>
+    )}
+  </ThemeContext.Consumer>
 )
 
 export default Hero
@@ -15,16 +22,12 @@ const Wrapper = styled.section`
 
 const WrapperGroup = styled.div`
   margin: 0 auto;
-  max-width: 820px;
+  max-width: 780px;
   padding: 100px 20px 0;
-  p {
-    margin: 0;
-    line-height: 1.5em;
-    text-transform: none;
-    color: var(--accents-5);
-    margin-top: 20px;
-    max-width: 600px;
-    font-size: 20px;
-    font-weight: 400;
+  h2 {
+    color: var(--foreground);
+  }
+  &.dark h2 {
+    color: var(--background);
   }
 `

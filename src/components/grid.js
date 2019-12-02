@@ -8,7 +8,7 @@ export default Grid
 const GridWrapper = styled.div`
   align-items: end;
   display: grid;
-  max-width: 820px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 20px;
 `

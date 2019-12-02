@@ -114,25 +114,19 @@ h6 {
 }
 
 p {
-  color: var(--accents-8);
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-ol {
-  color: var(--accents-8);
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 ul {
   list-style-type: none;
   margin-left: 16pt;
-  color: var(--accents-8);
 }
 li {
   font-size: 1rem;
   line-height: 1.625em;
   margin-bottom: 10px;
-  color: var(--accents-8);
 }
 .filename {
   padding: 0.5rem 1rem 0.75rem;
@@ -344,12 +338,10 @@ td {
   border: none;
   cursor: pointer;
 }
-
-.dark .dark-switcher span {
-  transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+.light {
+  background: var(--background);
 }
 
 .dark {
   background: var(--foreground);
-  transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
 }

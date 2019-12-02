@@ -47,7 +47,7 @@ const IndexPage = ({ data }) => {
 }
 
 const TitleWrapper = styled.div`
-  max-width: 820px;
+  max-width: 780px;
   margin: auto;
   padding: 20px;
 `

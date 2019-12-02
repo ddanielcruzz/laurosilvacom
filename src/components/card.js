@@ -34,18 +34,15 @@ const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
-  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   border-radius: 4px;
   margin-bottom: 40px;
   padding: 20px;
   border: 1px solid var(--accents-2);
   :hover {
-    transform: var(--transform-small);
-    box-shadow: var(--shadow-small);
+    border: 1px solid var(--accents-8);
   }
   &.dark {
     border: 1px solid var(--accents-7);
-    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
     :hover {
       border: 1px solid var(--accents-2);
     }

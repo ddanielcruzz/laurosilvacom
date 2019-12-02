@@ -73,7 +73,7 @@ const MainWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  max-width: 820px;
+  max-width: 780px;
   margin-top: 40px;
   margin: 0 auto;
 `

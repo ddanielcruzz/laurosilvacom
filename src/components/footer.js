@@ -2,40 +2,53 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { TwitterFollowButton } from 'react-twitter-embed'
+import ThemeContext from '../context/ThemeContext'
 
 const Footer = () => (
-  <FooterWrapper>
-    <FooterGroup>
-      <FooterMain>
-        <FooterAbout>
-          <TwitterFollowButton
-            options={{ size: 'large' }}
-            screenName="laurosilvacom"
-          />
-        </FooterAbout>
-        <FooterContent>
-          <FooterLearn>
-            <LearnTitle>Me</LearnTitle>
-            <Link to="/about">About</Link>
-            <Link to="/">Writing</Link>
-            <Link to="/speaking">Speaking</Link>
-            <Link to="/newsletter">Newsletter</Link>
-          </FooterLearn>
-          <FooterCompany>
-            <CompanyTitle>Company</CompanyTitle>
-            <Link to="/hire">Hire Me</Link>
-            <Link to="/terms">Terms of Service</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-          </FooterCompany>
-        </FooterContent>
-      </FooterMain>
-      <FooterCopyRight>
-        <CopyRight>
-          Copyright © 2019 Lauro Silva, LLC. All rights reserved.
-        </CopyRight>
-      </FooterCopyRight>
-    </FooterGroup>
-  </FooterWrapper>
+  <ThemeContext.Consumer>
+    {theme => (
+      <FooterWrapper
+        className={`
+        ${theme.dark ? 'dark' : 'light'}
+      `}
+      >
+        <FooterGroup>
+          <FooterMain>
+            <FooterAbout>
+              <TwitterFollowButton
+                options={{ size: 'large' }}
+                screenName="laurosilvacom"
+              />
+            </FooterAbout>
+            <FooterContent>
+              <FooterLearn>
+                <LearnTitle className={`${theme.dark ? 'dark' : 'light'}`}>
+                  Me
+                </LearnTitle>
+                <Link to="/about">About</Link>
+                <Link to="/">Writing</Link>
+                <Link to="/speaking">Speaking</Link>
+                <Link to="/newsletter">Newsletter</Link>
+              </FooterLearn>
+              <FooterCompany>
+                <CompanyTitle className={`${theme.dark ? 'dark' : 'light'}`}>
+                  Company
+                </CompanyTitle>
+                <Link to="/hire">Hire Me</Link>
+                <Link to="/terms">Terms of Service</Link>
+                <Link to="/privacy">Privacy Policy</Link>
+              </FooterCompany>
+            </FooterContent>
+          </FooterMain>
+          <FooterCopyRight>
+            <CopyRight>
+              Copyright © 2019 Lauro Silva, LLC. All rights reserved.
+            </CopyRight>
+          </FooterCopyRight>
+        </FooterGroup>
+      </FooterWrapper>
+    )}
+  </ThemeContext.Consumer>
 )
 
 export default Footer
@@ -44,6 +57,9 @@ const FooterWrapper = styled.div`
   margin-top: 150px;
   position: relative;
   border-top: 1px solid var(--accents-2);
+  &.dark {
+    border-top: 1px solid var(--accents-7);
+  }
 `
 
 const LearnTitle = styled.h1`
@@ -54,6 +70,9 @@ const LearnTitle = styled.h1`
   font-size: 14px;
   color: var(--accents-6);
   line-height: 20px;
+  &.dark {
+    color: var(--accents-1);
+  }
 `
 
 const CompanyTitle = styled.h1`
@@ -64,6 +83,9 @@ const CompanyTitle = styled.h1`
   font-size: 14px;
   color: var(--accents-6);
   line-height: 20px;
+  &.dark {
+    color: var(--accents-1);
+  }
 `
 
 const FooterMain = styled.div`
@@ -105,7 +127,7 @@ const FooterContent = styled.div`
   }
   a {
     padding-bottom: 20px;
-    color: var(--accents-5);
+    color: var(--accents-4);
   }
 `
 
@@ -135,7 +157,7 @@ const FooterCopyRight = styled.div`
 `
 
 const CopyRight = styled.div`
-  font-size: 12px;
-  color: var(--accents-5);
+  font-size: 14px;
+  color: var(--accents-4);
   margin-top: 20px;
 `
