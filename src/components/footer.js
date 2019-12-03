@@ -112,7 +112,7 @@ const FooterAbout = styled.div`
 
 const FooterGroup = styled.div`
   margin: auto;
-  max-width: 1220px;
+  max-width: 2220px;
   padding-top: 100px;
   padding: 20px;
   padding-top: 50px;

@@ -22,7 +22,7 @@ const Wrapper = styled.section`
 
 const WrapperGroup = styled.div`
   margin: 0 auto;
-  max-width: 780px;
+  max-width: 680px;
   padding: 100px 20px 0;
   h2 {
     color: var(--foreground);

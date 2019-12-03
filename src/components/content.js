@@ -17,7 +17,7 @@ export default Content
 
 const ContentWrapper = styled.div`
   margin: auto;
-  max-width: 780px;
+  max-width: 680px;
   padding: 20px;
 `
 
@@ -28,17 +28,36 @@ const Article = styled.div`
   img {
     border-radius: 4px;
   }
-  p {
-    color: red;
-  }
   h1,
   h2,
   h3,
   h4,
   h5,
   h6,
+  strong {
+    color: var(--foreground);
+  }
+  p,
   ul,
   li {
-    color: red;
+    color: var(--accents-5);
+  }
+  &.dark {
+    p,
+    ul,
+    li {
+      color: var(--accents-4);
+    }
+  }
+  &.dark {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong {
+      color: var(--background);
+    }
   }
 `

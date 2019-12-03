@@ -38,21 +38,23 @@ class Header extends React.Component {
       <ThemeContext.Consumer>
         {theme => (
           <HeaderWrapper
-            className={`
-              ${this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'}
-              ${theme.dark ? 'dark' : 'light'}
-              `}
+            className={`${
+              this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
+            } ${theme.dark ? 'dark' : 'light'}`}
           >
             <HeaderGroup>
-              <LogoWrapper>
-                <Link to="/">
+              <Link to="/">
+                <LogoWrapper>
                   {theme.dark ? (
                     <Image src={logolight} />
                   ) : (
                     <Image src={logo} />
                   )}
-                </Link>
-              </LogoWrapper>
+                  <LogoTitle className={`${theme.dark ? 'dark' : 'light'}`}>
+                    Lauro Silva
+                  </LogoTitle>
+                </LogoWrapper>
+              </Link>
               <LinksWrapper>
                 <Link to="/about">About</Link>
                 <Link to="/newsletter">Newsletter</Link>
@@ -61,7 +63,14 @@ class Header extends React.Component {
                   className="dark-switcher"
                   onClick={theme.toggleDark}
                 >
-                  {theme.dark ? <FiSun stroke="white" /> : <FiMoon />}
+                  {theme.dark ? (
+                    <FiSun
+                      stroke="white"
+                      className={`${theme.dark ? 'dark' : 'light'}`}
+                    />
+                  ) : (
+                    <FiMoon />
+                  )}
                 </span>
               </LinksWrapper>
             </HeaderGroup>
@@ -74,11 +83,22 @@ class Header extends React.Component {
 
 export default Header
 
-const Image = styled.img`
-  height: 30px;
-  @media (max-width: 480px) {
-    height: 20px;
+const LogoTitle = styled.h2`
+  margin: 0;
+  line-height: 0;
+  color: black;
+  font-size: 24px;
+  font-weight: 800;
+  &.dark {
+    color: var(--background);
   }
+  @media (max-width: 480px) {
+    display: none;
+  }
+`
+
+const Image = styled.img`
+  height: 40px;
 `
 
 const HeaderWrapper = styled.div`
@@ -91,7 +111,7 @@ const HeaderWrapper = styled.div`
 `
 const HeaderGroup = styled.div`
   margin: auto;
-  max-width: 1220px;
+  max-width: 2220px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +120,11 @@ const HeaderGroup = styled.div`
 
 const LogoWrapper = styled.div`
   font-size: 30px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 10px;
 `
 
 const LinksWrapper = styled.div`
@@ -116,7 +141,7 @@ const LinksWrapper = styled.div`
     font-size: 18px;
     margin: 0;
     padding-left: 40px;
-    margin-bottom: -5px;
+    margin-bottom: -6px;
     @media (max-width: 480px) {
       padding-right: 20px;
     }
