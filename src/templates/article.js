@@ -3,6 +3,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
+import ThemeContext from '../context/ThemeContext'
 
 import ArticleHeader from '../components/article/header'
 import ArticleContent from '../components/article/content'
@@ -15,54 +16,65 @@ import SEO from '../components/seo'
 const _ = require('lodash')
 
 const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
-  <Layout>
-    <SEO
-      title={article.frontmatter.title}
-      description={article.excerpt}
-      image={article.frontmatter.image.sharp.fluid}
-    />
-    <ArticleHeader
-      title={article.frontmatter.title}
-      icon={article.frontmatter.icon.sharp.fluid}
-      time={article.frontmatter.articleDate}
-      tag={article.frontmatter.tags.map((tag, i) => (
-        <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-          {tag}
-        </Link>
-      ))}
-    />
-    <MainWrapper>
-      <ContentWrapper>
-        <Button
-          buttonLink={article.frontmatter.downloadLink}
-          buttonText="Download Assets + Code"
+  <ThemeContext.Consumer>
+    {theme => (
+      <Layout>
+        <SEO
+          title={article.frontmatter.title}
+          description={article.excerpt}
+          image={article.frontmatter.image.sharp.fluid}
         />
-        <ArticleContent article={article.body} />
-      </ContentWrapper>
-    </MainWrapper>
+        <ArticleHeader
+          title={article.frontmatter.title}
+          icon={article.frontmatter.icon.sharp.fluid}
+          time={article.frontmatter.articleDate}
+          tag={article.frontmatter.tags.map((tag, i) => (
+            <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
+              {tag}
+            </Link>
+          ))}
+        />
+        <MainWrapper>
+          <ContentWrapper>
+            <Button
+              buttonLink={article.frontmatter.downloadLink}
+              buttonText="Download Assets + Code"
+            />
+            <ArticleContent article={article.body} />
+          </ContentWrapper>
+        </MainWrapper>
 
-    <ArticleRelated
-      tag={article.frontmatter.tags.map((tag, i) => (
-        <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-          <ArticleRelatedText>{tag}</ArticleRelatedText>
-        </Link>
-      ))}
-    />
-    <Grid>
-      {relatedPosts.edges.map(node => (
-        <Link key={node.node.id} to={`/articles/${node.node.frontmatter.slug}`}>
-          <Card
-            articleNumber={node.node.frontmatter.articleID}
-            articleDate={node.node.frontmatter.articleDate}
-            articleIcon={node.node.frontmatter.icon.sharp.fluid}
-            articleTags={node.node.frontmatter.tags}
-            articleTitle={node.node.frontmatter.title}
-            articleImage={node.node.frontmatter.image.sharp.fluid.src}
-          />
-        </Link>
-      ))}
-    </Grid>
-  </Layout>
+        <ArticleRelated
+          tag={article.frontmatter.tags.map((tag, i) => (
+            <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
+              <ArticleRelatedText
+                className={`${theme.dark ? 'dark' : 'light'}`}
+              >
+                {tag}
+              </ArticleRelatedText>
+            </Link>
+          ))}
+        />
+        <Grid>
+          {relatedPosts.edges.map(node => (
+            <Link
+              key={node.node.id}
+              to={`/articles/${node.node.frontmatter.slug}`}
+            >
+              <Card
+                articleNumber={node.node.frontmatter.articleID}
+                articleDate={node.node.frontmatter.articleDate}
+                articleIcon={node.node.frontmatter.icon.sharp.fluid}
+                articleTags={node.node.frontmatter.tags}
+                articleTitle={node.node.frontmatter.title}
+                articleImage={node.node.frontmatter.image.sharp.fluid.src}
+              />
+            </Link>
+          ))}
+        </Grid>
+      </Layout>
+    )}
+  </ThemeContext.Consumer>
 )
 
 export default ArticleTemplate
@@ -81,6 +93,9 @@ const ContentWrapper = styled.div`
 const ArticleRelatedText = styled.div`
   font-size: 35px;
   margin-bottom: 35px;
+  &.dark {
+    color: var(--background);
+  }
 `
 
 export const query = graphql`

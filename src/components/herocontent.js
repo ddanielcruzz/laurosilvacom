@@ -27,6 +27,9 @@ const WrapperGroup = styled.div`
   h2 {
     color: var(--foreground);
   }
+  &.dark h1 {
+    color: var(--background);
+  }
   &.dark h2 {
     color: var(--background);
   }

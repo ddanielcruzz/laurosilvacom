@@ -98,7 +98,11 @@ const LogoTitle = styled.h2`
 `
 
 const Image = styled.img`
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   height: 40px;
+  @media (max-width: 480px) {
+    height: 30px;
+  }
 `
 
 const HeaderWrapper = styled.div`

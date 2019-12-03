@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+import ThemeContext from '../context/ThemeContext'
+
 import Layout from '../components/layout'
 import Card from '../components/card'
 import Grid from '../components/grid'
@@ -12,30 +14,37 @@ const Tags = ({ pageContext, data }) => {
   const { edges: articles } = data.allMdx
 
   return (
-    <Layout>
-      <SEO title={`Articles tagged as ${tag}`} />
+    <ThemeContext.Consumer>
+      {theme => (
+        <Layout>
+          <SEO title={`Articles tagged as ${tag}`} />
 
-      <MainWrapper>
-        <HeroContent>
-          <h1>{`${tag}`}</h1>
-        </HeroContent>
+          <MainWrapper>
+            <HeroContent className={`${theme.dark ? 'dark' : 'light'}`}>
+              <h1>{`${tag}`}</h1>
+            </HeroContent>
 
-        <Grid>
-          {articles.map(({ node: article }) => (
-            <Link key={article.id} to={`/articles/${article.frontmatter.slug}`}>
-              <Card
-                articleNumber={article.frontmatter.articleID}
-                articleDate={article.frontmatter.articleDate}
-                articleIcon={article.frontmatter.icon.sharp.fluid}
-                articleTags={article.frontmatter.tags}
-                articleTitle={article.frontmatter.title}
-                articleImage={article.frontmatter.image.sharp.fluid.src}
-              />
-            </Link>
-          ))}
-        </Grid>
-      </MainWrapper>
-    </Layout>
+            <Grid>
+              {articles.map(({ node: article }) => (
+                <Link
+                  key={article.id}
+                  to={`/articles/${article.frontmatter.slug}`}
+                >
+                  <Card
+                    articleNumber={article.frontmatter.articleID}
+                    articleDate={article.frontmatter.articleDate}
+                    articleIcon={article.frontmatter.icon.sharp.fluid}
+                    articleTags={article.frontmatter.tags}
+                    articleTitle={article.frontmatter.title}
+                    articleImage={article.frontmatter.image.sharp.fluid.src}
+                  />
+                </Link>
+              ))}
+            </Grid>
+          </MainWrapper>
+        </Layout>
+      )}
+    </ThemeContext.Consumer>
   )
 }
 

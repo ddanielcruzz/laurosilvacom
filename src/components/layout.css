@@ -127,12 +127,14 @@ ul {
   list-style-type: none;
   margin-left: 16pt;
   font-family: var(--font-sans);
+  font-size: 18px;
 }
 li {
   font-size: 1rem;
   line-height: 1.625em;
   margin-bottom: 10px;
   font-family: var(--font-sans);
+  font-size: 18px;
 }
 .filename {
   padding: 0.5rem 1rem 0.75rem;
@@ -144,15 +146,20 @@ li {
 }
 
 blockquote {
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--background);
   border: 1px solid var(--success-dark);
-  background: var(--accents-1);
+  background: var(--foreground);
   border-radius: 4px;
   font-weight: 500;
   margin: 1.5rem 0;
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
+  border: 1px solid var(--accents-7);
+}
+
+blockquote p {
+  color: var(--background) !important;
 }
 
 blockquote a:last-of-type {
@@ -206,7 +213,7 @@ code[class*="language-"] span::selection {
 }
 
 .gatsby-highlight-code-line {
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--accents-8);
   display: block;
   margin-right: 0em;
   margin-left: -2.6em;
@@ -224,11 +231,12 @@ code[class*="language-"] span::selection {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background: rgb(41, 44, 52);
+  background: var(--foreground);
   border-radius: 4px;
   margin: 2.5em 0;
   padding: 20px;
   overflow: auto;
+  border: 1px solid var(--accents-7);
 }
 
 :not(pre) > code[class*="language-"],
@@ -347,6 +355,7 @@ td {
   border-top-right-radius: 6px;
   margin-bottom: -3.4rem;
   font-family: var(--font-mono);
+  border: 1px solid var(--accents-7);
 }
 
 /* Dark mode styles */
