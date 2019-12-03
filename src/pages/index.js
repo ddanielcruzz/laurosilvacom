@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
       {theme => (
         <Layout>
           <SEO
-            title="Software Engineer & Technical Writer."
+            title="Software Engineer & Technical Writer"
             keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           />
 
