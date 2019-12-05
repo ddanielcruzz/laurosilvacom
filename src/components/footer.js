@@ -17,17 +17,17 @@ const Footer = () => (
           <FooterMain>
             <FooterAbout>
               <Button
-                buttonLink="https://laurosilva.com"
+                buttonLink="http://twitter.com/laurosilvacom"
                 buttonText="Twitter"
                 buttonIcon={<FiTwitter />}
               />
               <Button
-                buttonLink="https://laurosilva.com"
+                buttonLink="http://github.com/laurosilvacom"
                 buttonText="Github"
                 buttonIcon={<FiGithub />}
               />
               <Button
-                buttonLink="https://laurosilva.com"
+                buttonLink="https://laurosilva.com/rss.xml"
                 buttonText="RSS"
                 buttonIcon={<FiRss />}
               />
