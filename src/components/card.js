@@ -46,7 +46,7 @@ const CardWrapper = styled.div`
   &.dark {
     border: 1px solid var(--accents-7);
     :hover {
-      border: 1px solid var(--accents-2);
+      border: 1px solid var(--accents-4);
     }
     :active {
       border: 1px solid var(--success);
