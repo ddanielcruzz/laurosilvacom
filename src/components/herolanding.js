@@ -30,6 +30,9 @@ const WrapperGroup = styled.div`
   h2 {
     color: var(--foreground);
   }
+  p {
+    color: var(--accents-4);
+  }
   &.dark h2 {
     color: var(--background);
   }

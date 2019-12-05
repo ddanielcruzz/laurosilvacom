@@ -46,9 +46,9 @@ class Header extends React.Component {
               <Link to="/">
                 <LogoWrapper>
                   {theme.dark ? (
-                    <Image src={logolight} />
+                    <Image src={logolight} alt="Lauro Silva Logo" />
                   ) : (
-                    <Image src={logo} />
+                    <Image src={logo} alt="Lauro Silva Logo" />
                   )}
                   <LogoTitle className={`${theme.dark ? 'dark' : 'light'}`}>
                     Lauro Silva

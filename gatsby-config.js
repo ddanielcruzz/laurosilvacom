@@ -18,6 +18,77 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        // Links are relative to this directory
+        // excludeRegex: /excluded-link/,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed-mdx`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.edges.map(edge =>
+                Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.articleDate,
+                  url: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
+              ),
+            query: `
+              {
+                allMdx(
+                  sort: { order: DESC, fields: [frontmatter___articleID] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      frontmatter {
+                        slug
+                        title
+                        articleDate
+                        articleID
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: "Lauro Silva's RSS Feed",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            // match: '^/blog/',
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-153984172-1',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-no-sourcemaps',
     },
     {
@@ -52,10 +123,6 @@ module.exports = {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Source Sans Pro`,
-            variants: [`400`, `900`],
-          },
           {
             family: `IBM Plex Mono`,
             variants: [`400`, `600`],
