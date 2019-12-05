@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { FiMail } from 'react-icons/fi'
 import ThemeContext from '../context/ThemeContext'
 
 import Layout from '../components/layout'
@@ -25,11 +26,19 @@ const IndexPage = ({ data }) => {
 
           <HeroLanding>
             <h2>Software Engineer & Technical Writer</h2>
+            <br></br>
             <p>
-              I make things from scratch, contribute to open source, and write.
+              I make things from scratch, learn in
+              <Link to="/learn"> public</Link>, and write about web development
+              in an accessible and intuitive way.
             </p>
             <Image />
-            <Button buttonLink="/" buttonText="Join the Newsletter" />
+            <br></br>
+            <Button
+              buttonLink="https://laurosilva.com"
+              buttonText="Newsletter"
+              buttonIcon={<FiMail />}
+            />
           </HeroLanding>
 
           <TitleWrapper className={`${theme.dark ? 'dark' : 'light'}`}>

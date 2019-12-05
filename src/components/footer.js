@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { TwitterFollowButton } from 'react-twitter-embed'
+import { FiTwitter, FiGithub, FiRss } from 'react-icons/fi'
 import ThemeContext from '../context/ThemeContext'
+import Button from './button'
 
 const Footer = () => (
   <ThemeContext.Consumer>
@@ -15,9 +16,20 @@ const Footer = () => (
         <FooterGroup>
           <FooterMain>
             <FooterAbout>
-              <TwitterFollowButton
-                options={{ size: 'large' }}
-                screenName="laurosilvacom"
+              <Button
+                buttonLink="https://laurosilva.com"
+                buttonText="Twitter"
+                buttonIcon={<FiTwitter />}
+              />
+              <Button
+                buttonLink="https://laurosilva.com"
+                buttonText="Github"
+                buttonIcon={<FiGithub />}
+              />
+              <Button
+                buttonLink="https://laurosilva.com"
+                buttonText="RSS"
+                buttonIcon={<FiRss />}
               />
             </FooterAbout>
             <FooterContent>
@@ -102,7 +114,7 @@ const FooterMain = styled.div`
 `
 
 const FooterAbout = styled.div`
-  max-width: 400px;
+  max-width: 450px;
   line-height: 2.5;
   font-size: 1rem;
   @media (max-width: 780px) {

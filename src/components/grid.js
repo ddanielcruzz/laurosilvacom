@@ -11,4 +11,5 @@ const GridWrapper = styled.div`
   max-width: 680px;
   margin: 0 auto;
   padding: 20px;
+  grid-gap: 40px;
 `

@@ -2,22 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Button = props => (
-  <a href={props.buttonLink}>
-    <Wrapper>{props.buttonText}</Wrapper>
+  <a href={props.buttonLink} target="_blank" rel="noreferrer noopener">
+    <Wrapper>
+      {props.buttonText} <span>{props.buttonIcon}</span>
+    </Wrapper>
   </a>
 )
 
 export default Button
 
 const Wrapper = styled.div`
-  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
-  position: relative;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   line-height: 20px;
   font-size: 1rem;
   white-space: nowrap;
-  display: inline-block;
   cursor: pointer;
   text-decoration: none;
   background: var(--success);
@@ -26,9 +26,19 @@ const Wrapper = styled.div`
   border-radius: 4px;
   padding: 10px 20px;
   letter-spacing: 0.4px;
+  display: inline-block;
+  border: 1px solid var(--success);
   :hover {
-    transform: var(--transform-small);
-    background: var(--success-dark);
-    box-shadow: var(--shadow-small);
+    background: none;
+    color: var(--success);
+  }
+  :hover svg {
+    stroke: var(--success);
+  }
+  span {
+    position: relative;
+    left: 10px;
+    top: 3px;
+    margin-left: 20px;
   }
 `

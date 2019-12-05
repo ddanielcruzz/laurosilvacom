@@ -33,18 +33,23 @@ const ArticleText = styled.div`
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 10px;
   border-radius: 4px;
-  margin-bottom: 40px;
   padding: 20px;
+  grid-gap: 10px;
   border: 1px solid var(--accents-2);
   :hover {
-    border: 1px solid var(--accents-8);
+    border: 1px solid var(--foreground);
+  }
+  :active {
+    border: 1px solid var(--success);
   }
   &.dark {
     border: 1px solid var(--accents-7);
     :hover {
       border: 1px solid var(--accents-2);
+    }
+    :active {
+      border: 1px solid var(--success);
     }
   }
 `

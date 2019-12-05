@@ -125,10 +125,10 @@ const HeaderGroup = styled.div`
 const LogoWrapper = styled.div`
   font-size: 30px;
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 25px 1fr;
   align-items: center;
   justify-content: center;
-  grid-gap: 10px;
+  grid-gap: 20px;
 `
 
 const LinksWrapper = styled.div`
@@ -138,13 +138,13 @@ const LinksWrapper = styled.div`
   font-size: 1rem;
   align-items: center;
   a {
-    padding-left: 40px;
+    margin-left: 40px;
     color: var(--accents-4);
   }
   span {
     font-size: 18px;
     margin: 0;
-    padding-left: 40px;
+    margin-left: 40px;
     margin-bottom: -6px;
     @media (max-width: 480px) {
       padding-right: 20px;

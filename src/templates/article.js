@@ -2,6 +2,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
+import { FiDownload } from 'react-icons/fi'
 import Layout from '../components/layout'
 import ThemeContext from '../context/ThemeContext'
 
@@ -37,9 +38,12 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
         <MainWrapper>
           <ContentWrapper>
             <Button
-              buttonLink={article.frontmatter.downloadLink}
-              buttonText="Download Assets + Code"
+              buttonLink="https://laurosilva.com"
+              buttonText="Sample Code"
+              buttonIcon={<FiDownload />}
             />
+            <br />
+            <br />
             <ArticleContent article={article.body} />
           </ContentWrapper>
         </MainWrapper>

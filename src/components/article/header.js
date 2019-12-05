@@ -6,30 +6,36 @@ import ThemeContext from '../../context/ThemeContext'
 const Header = props => (
   <ThemeContext.Consumer>
     {theme => (
-      <HeaderMain>
-        <Icon>
-          <Image fluid={props.icon} />
-        </Icon>
-        <HeaderWrapper className={`${theme.dark ? 'dark' : 'light'}`}>
-          <Title>{props.title}</Title>
-          <Tag>
-            <span>{props.tag}</span>
-            <span>{props.time}</span>
-          </Tag>
-        </HeaderWrapper>
-      </HeaderMain>
+      <HeaderMainWrapper>
+        <HeaderMain>
+          <Icon>
+            <Image fluid={props.icon} />
+          </Icon>
+          <HeaderWrapper className={`${theme.dark ? 'dark' : 'light'}`}>
+            <Title>{props.title}</Title>
+            <Tag>
+              <span>{props.tag}</span>
+              <span>{props.time}</span>
+            </Tag>
+          </HeaderWrapper>
+        </HeaderMain>
+      </HeaderMainWrapper>
     )}
   </ThemeContext.Consumer>
 )
 
 export default Header
 
+const HeaderMainWrapper = styled.div`
+  padding: 20px;
+`
+
 const HeaderMain = styled.div`
   margin: auto;
   display: grid;
   grid-template-columns: 100px 1fr;
   max-width: 680px;
-  padding: 140px 20px 0;
+  padding: 140px 0px 0;
   grid-gap: 30px;
   @media (max-width: 780px) {
     grid-template-columns: 1fr;
@@ -48,6 +54,10 @@ const Icon = styled.div`
 const Title = styled.h2`
   margin: 0 0 10px;
   line-height: 1.01em;
+  font-size: 2rem;
+  @media (max-width: 480px) {
+    font-size: 1.7rem;
+  }
 `
 const Tag = styled.p`
   margin: 0;
