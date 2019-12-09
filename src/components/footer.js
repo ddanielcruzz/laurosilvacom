@@ -35,20 +35,17 @@ const Footer = () => (
             <FooterContent>
               <FooterLearn>
                 <LearnTitle className={`${theme.dark ? 'dark' : 'light'}`}>
-                  Me
+                  Learn
                 </LearnTitle>
-                <Link to="/about">About</Link>
-                <Link to="/">Writing</Link>
-                <Link to="/speaking">Speaking</Link>
+                <Link to="/writing">Writing</Link>
                 <Link to="/newsletter">Newsletter</Link>
               </FooterLearn>
               <FooterCompany>
                 <CompanyTitle className={`${theme.dark ? 'dark' : 'light'}`}>
-                  Company
+                  More
                 </CompanyTitle>
+                <Link to="/about">About</Link>
                 <Link to="/hire">Hire Me</Link>
-                <Link to="/terms">Terms of Service</Link>
-                <Link to="/privacy">Privacy Policy</Link>
               </FooterCompany>
             </FooterContent>
           </FooterMain>

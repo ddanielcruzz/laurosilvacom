@@ -2,14 +2,12 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
-import { FiDownload } from 'react-icons/fi'
 import Layout from '../components/layout'
 import ThemeContext from '../context/ThemeContext'
 
 import ArticleHeader from '../components/article/header'
 import ArticleContent from '../components/article/content'
 import ArticleRelated from '../components/article/related'
-import Button from '../components/button'
 import Card from '../components/card'
 import Grid from '../components/grid'
 import SEO from '../components/seo'
@@ -37,26 +35,20 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
         />
         <MainWrapper>
           <ContentWrapper>
-            <Button
-              buttonLink="https://laurosilva.com"
-              buttonText="Sample Code"
-              buttonIcon={<FiDownload />}
-            />
-            <br />
-            <br />
             <ArticleContent article={article.body} />
           </ContentWrapper>
         </MainWrapper>
 
         <ArticleRelated
           tag={article.frontmatter.tags.map((tag, i) => (
-            <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-              <ArticleRelatedText
-                className={`${theme.dark ? 'dark' : 'light'}`}
-              >
-                {tag}
-              </ArticleRelatedText>
-            </Link>
+            <ArticleRelatedText className={`${theme.dark ? 'dark' : 'light'}`}>
+              <h3>
+                <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
+                  {tag}
+                </Link>{' '}
+                Related Articles
+              </h3>
+            </ArticleRelatedText>
           ))}
         />
         <Grid>
@@ -95,9 +87,13 @@ const ContentWrapper = styled.div`
 `
 
 const ArticleRelatedText = styled.div`
-  font-size: 35px;
-  margin-bottom: 35px;
+  a {
+    color: var(--foreground);
+  }
   &.dark {
+    color: var(--background);
+  }
+  &.dark a {
     color: var(--background);
   }
 `
@@ -111,7 +107,6 @@ export const query = graphql`
         tags
         articleID
         articleDate(formatString: "MMMM DD, YYYY")
-        downloadLink
         image {
           sharp: childImageSharp {
             fluid {

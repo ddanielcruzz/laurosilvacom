@@ -42,15 +42,14 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) =>
-              allMdx.edges.map(edge =>
-                Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.articleDate,
-                  url: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
-                  guid: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                })
-              ),
+              allMdx.edges.map(edge => ({
+                ...edge.node.frontmatter,
+                description: edge.node.excerpt,
+                date: edge.node.frontmatter.articleDate,
+                url: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+              })),
             query: `
               {
                 allMdx(
@@ -126,6 +125,10 @@ module.exports = {
           {
             family: `IBM Plex Mono`,
             variants: [`400`, `600`],
+          },
+          {
+            family: `IBM Plex Sans`,
+            variants: [`400`, `500`, `600`, `700`],
           },
         ],
       },

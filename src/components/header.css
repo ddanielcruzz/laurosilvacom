@@ -4,9 +4,6 @@
   padding: 20px 0;
   z-index: 100;
 }
-.HeaderScrolled {
-  padding: 10px 0;
-}
 
 .HeaderScrolled h2 {
   display: none;

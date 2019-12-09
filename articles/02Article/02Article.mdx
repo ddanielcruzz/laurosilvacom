@@ -1,80 +1,102 @@
 ---
-title: Lorem Ipso Test lassataque in nihil Eumenides
-slug: lorem-ipso-test
-image: ./images/1.png
-icon: ./images/javascript.png
-tags: ["Javascript"]
+title: The git cherry-pick command
+slug: the-git-cherry-pick-command
+image: ./images/cover.png
+icon: ./images/git.png
+tags: ["Git"]
 articleID: 2
-articleDate: 2019-10-15
-downloadLink: https://github.com/laurosilvacom/laurosilvacom-old
+articleDate: 2019-12-10
 ---
 
-# Lorem markdownum adhuc
+Sometimes you don't want to merge two branches, but simply your desire is to apply the same changes in a commit on top to another branch. This situation is very common when working on bugs: you fix a bug in a branch, and then you want to apply the same fix on top of another branch.
 
-Lorem markdownum adhuc. Via spem tamen ipsum caelo, at mergit ne modico infregit
-templa et **mihi**; annis ulla saxa. Oblatae summa maior, doleas **virgo** alte
-monstri: nomina manetque.
+Git has a convenient way to do it; this is the git cherry-pick command.
 
-1. Videns resolvo fortissime prolesque nunc fessos illic
-2. Et lassataque in nihil Eumenides
-3. Nec ipse natus Perseu
-4. Degeneras ea mihi mea
+Let's play with it a little bit.
 
-Una feremus nec dividuae capillis
-[dixit](http://lunae-at.org/quoqueadmissa.html)! Desistunt deus interit animum
-inmane corpore spernit: nec **quoniam et felix**, tum **cum**. Pugnantem ipse
-caeca parari est, abiit, posuere a? Genitor eram supremis modo fortis: nostras
-Aeacidis questi quantum ille Nec, bis tendere nomine Hoc. Teque mutilatae erat
-suo favet Boote pectora referebat te haeserat minata.
+Assume you want to pick the blackberry from the berries branch, and then apply it into the master branch; this is the way:
 
-> Blandas demisit opto, in enim patenti [quid](http://conspicit-cupido.io/),
-> sibi fuerat servitque volucris construit omnis vestigia conspexit rerum.
-> Superantque ad lumina nobis vim placatoque iubet cum fontes adlevet, iter
-> alto, gener.
-
-## Inminet aegide
-
-<div class="filename">src/server/index.js</div>
-
-```jsx{numberLines: true}
-// Assign the five oceans to five variables
-const ocean1 = "Pacific"
-const ocean2 = "Atlantic"
-const ocean3 = "Indian"
-const ocean4 = "Arctic" // highlight-line
-const ocean5 = "Antarctic"
-const ocean3 = "Indian"
-const ocean4 = "Arctic"
-const ocean5 = "Antarctic"
-const ocean3 = "Indian"
-const ocean4 = "Arctic"
-const ocean5 = "Antarctic"
+```bash
+[1] ~/grocery (master)
+$ git cherry-pick ef6c382
+error: could not apply ef6c382... Add a blackberry
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
 ```
 
-Odorato non quidem, fors tulit, sed laboris fluviumque mixtos, concursibus abit
-verbaque dares. Virga est invenio tum. Cycladas caelo modo pressa mirae frontem
-pete **secura** accipit conbibit quis nodo, numero neque cinximus; mihi. Mulcet
-de iussa pronus dolentibus victum tendere quae. Non spernimur, ire movet,
-spectemur miseranda metu, sed summaque manus te sonum; **inferiora**.
+For the argument, you usually specify the hash of the commit you want to pick; in this case, as that commit is referenced even by the berries branch label, doing a git cherry-pick berries would have been the same.
 
-1. Regisque tellus hunc nefas
-2. Mixtaque sonus
-3. Numen educere excussit negare
-4. Pampineis ego exhalantur iuveni classem certamina
+Okay, the cherry pick raised a conflict, of course:
 
-Sit utque in haec superem nec quo non mihi et moenia pasci verba satus nymphas
-pendebat putaret frigidus me famulos. Unus terrae senex, in incepto devia
-letique ducum: Mycale sic aetas, voce. Visa carinae utinam factura amans
-despectus sororque pectora **deprenduntur causam**, quondam conspectos.
+```bash
+[2] ~/grocery (master|CHERRY-PICKING)
+$ git diff
+diff --cc shoppingList.txt
+index 862debc,b05b25f..0000000
+--- a/shoppingList.txt
++++ b/shoppingList.txt
+@@@ -1,5 -1,4 +1,9 @@@
+  banana
+  apple
+  orange
+++<<<<<<< HEAD
+ +peach
+- grape
+++grape
+++=======
++ blackberry
+++>>>>>>> ef6c382... Add a blackberry
+```
 
-Longa leti haeret ne eburnea, adapertaque quod novoque non sortes
-praecontrectatque viderat festisque voca: illa Psophidaque inquit **pavidum**.
-Patientia sumptaque debentia venerit terras. Nesseis enim liquebat annis,
-**spumantia nostra** super quam convivia nostra agrosque? Flores cuncta, et
-iaculum [quoque](http://oculis.net/huic-cognatas.html) Chromin tendentemque
-felicem de conatur terris. Utraque quaeris transit insibilat et placet est te
-ominibus semivir, posse sua infelix solutis lacertis gloria carmen.
+The fourth line of both the shoppingList.txt file versions has been modified with different fruits. Resolve the conflict and then add a commit:
 
-Dixerat ait iubent limbus nil, non et legendo genetrix figit nomina vestis
-elisi. Nec scire petens ubi avertitur coeamus, ferentes et pars primus. Veneris
-exposcere caput!
+```bash
+[3] ~/grocery (master|CHERRY-PICKING)
+$ vi shoppingList.txt
+```
+
+```bash
+[4] ~/grocery (master|CHERRY-PICKING)
+$ git add shoppingList.txt
+
+[5] ~/grocery (master|CHERRY-PICKING)
+$ git status
+On branch master
+You are currently cherry-picking commit ef6c382.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Changes to be committed:
+
+modified:   shoppingList.txt
+```
+
+Note the git status output: you always have some suggestions; in this case, to abort a cherry-pick and undo all you did, you can do a git cherry-pick --abort (you can do the same even while rebasing or merging).
+
+Now go on and commit:
+
+```bash
+[6] ~/grocery (master)
+$ git commit -m "Add a cherry-picked blackberry"
+On branch master
+nothing to commit, working tree clean
+
+[7] ~/grocery (master)
+$ git log --oneline --graph --decorate --all
+* 99dd471 (HEAD -> master) Add a cherry-picked blackberry
+* 6409527 Add a grape
+* 603b9d1 Add a peach
+| * a8c6219 (melons) Add a watermelon
+| * ef6c382 (berries) Add a blackberry
+|/
+* 0e8b5cf Add an orange
+* e4a5e7b Add an apple
+* a57d783 Add a banana to the shopping list
+```
+
+Okay, as you can see a new commit appeared, but there are no new paths in the graph. Unlike the merging feature, with cherry-picking you only pick changes made inside the specified commit, and no relationship will be stored between the cherry-picked commit and the new one created.
+
+If you want to track what was the commit you cherry-picked, you can append the -x option to the git cherry-pick command; then, while committing, don't append the message in the git commit command using the -m option, but type git commit and then press ENTER to allow Git to open the editor: it will suggest you a message that contains the hash of the cherry-picked commit.
+
+This is the only way to track a cherry pick, if you want.

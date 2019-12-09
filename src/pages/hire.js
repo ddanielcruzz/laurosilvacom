@@ -6,18 +6,23 @@ import Content from '../components/content'
 
 const Hire = () => (
   <Layout>
-    <SEO title="Hire Me" keywords={[`Hire Me`]} />
+    <SEO
+      title="Hire a Technical Writer"
+      keywords={[`Hire Me`, `Technical Writer`]}
+    />
     <HeroContent>
-      <h2>Let's make something brilliant!</h2>
+      <h2>Need a Writer?</h2>
     </HeroContent>
 
     <Content>
       <p>
-        Una feremus nec dividuae capillis dixit! Desistunt deus interit animum
-        inmane corpore spernit: nec quoniam et felix, tum cum. Pugnantem ipse
-        caeca parari est, abiit, posuere a? Genitor eram supremis modo fortis:
-        nostras Aeacidis questi quantum ille Nec, bis tendere nomine Hoc. Teque
-        mutilatae erat suo favet Boote pectora referebat te haeserat minata.
+        Looking for a writer for your blog or publication? Or a fresh voice of
+        someone with a very diverse background and experiences?
+      </p>
+      <p>
+        Please ping me at{' '}
+        <a href="mailto:hey@laurosilva.com">hey@laurosilva.com</a>! I am always
+        on the hunt for new potential partnerships!
       </p>
     </Content>
   </Layout>

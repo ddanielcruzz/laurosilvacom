@@ -21,7 +21,7 @@ const Tags = ({ pageContext, data }) => {
 
           <MainWrapper>
             <HeroContent className={`${theme.dark ? 'dark' : 'light'}`}>
-              <h1>{`${tag}`}</h1>
+              <h2>{`${tag}`}</h2>
             </HeroContent>
 
             <Grid>

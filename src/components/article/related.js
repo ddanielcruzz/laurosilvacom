@@ -11,15 +11,11 @@ export default Related
 
 const SidebarWrapper = styled.div`
   align-self: baseline;
+  padding: 20px;
 `
 
-const SidebarTitle = styled.h1`
-  margin: 0;
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  a {
-    color: #000;
-  }
+const SidebarTitle = styled.div`
+  max-width: 680px;
+  margin-top: 40px;
+  margin: 0 auto;
 `

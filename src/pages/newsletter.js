@@ -13,11 +13,23 @@ const Newsletter = () => (
 
     <Content>
       <p>
-        Una feremus nec dividuae capillis dixit! Desistunt deus interit animum
-        inmane corpore spernit: nec quoniam et felix, tum cum. Pugnantem ipse
-        caeca parari est, abiit, posuere a? Genitor eram supremis modo fortis:
-        nostras Aeacidis questi quantum ille Nec, bis tendere nomine Hoc. Teque
-        mutilatae erat suo favet Boote pectora referebat te haeserat minata.
+        Listen, I get it, newsletters are the worst. This one is different
+        though. It's normally pretty brief and reflects what I'm learning,
+        writing or what I'm working on.
+      </p>
+      <iframe
+        title="Lauro's Newsletter"
+        width="100%"
+        height="220"
+        src="https://laurosilvacom.substack.com/embed"
+        frameBorder="0"
+        scrolling="no"
+      />
+      <br />
+      <br />
+      <p>
+        I will not sell your email address to spammers. I will occasionally send
+        emails outside the regular cadence. No BS.
       </p>
     </Content>
   </Layout>

@@ -60,17 +60,14 @@ class Header extends React.Component {
                 <Link to="/newsletter">Newsletter</Link>
                 <span
                   role="presentation"
-                  className="dark-switcher"
                   onClick={theme.toggleDark}
+                  className={`${
+                    theme.dark
+                      ? ' dark-switcher herosvg'
+                      : ' dark-switcher herosvg'
+                  }`}
                 >
-                  {theme.dark ? (
-                    <FiSun
-                      stroke="white"
-                      className={`${theme.dark ? 'dark' : 'light'}`}
-                    />
-                  ) : (
-                    <FiMoon />
-                  )}
+                  {theme.dark ? <FiSun /> : <FiMoon />}
                 </span>
               </LinksWrapper>
             </HeaderGroup>
@@ -99,10 +96,7 @@ const LogoTitle = styled.h2`
 
 const Image = styled.img`
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
-  height: 40px;
-  @media (max-width: 480px) {
-    height: 30px;
-  }
+  height: 30px;
 `
 
 const HeaderWrapper = styled.div`
@@ -128,7 +122,7 @@ const LogoWrapper = styled.div`
   grid-template-columns: 25px 1fr;
   align-items: center;
   justify-content: center;
-  grid-gap: 20px;
+  grid-gap: 10px;
 `
 
 const LinksWrapper = styled.div`
@@ -146,11 +140,11 @@ const LinksWrapper = styled.div`
     margin: 0;
     margin-left: 40px;
     margin-bottom: -6px;
-    @media (max-width: 480px) {
-      padding-right: 20px;
-    }
   }
-  svg {
-    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  .herosvg svg {
+    stroke: var(--accents-4);
+  }
+  .herosvg:hover svg {
+    stroke: var(--success);
   }
 `
