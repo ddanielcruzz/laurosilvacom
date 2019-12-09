@@ -22,6 +22,7 @@ const Index = ({ data }) => {
           <SEO
             title="Software Engineer & Technical Writer"
             keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+            image={data.placeholderImage2.childImageSharp.fluid}
           />
 
           <HeroLanding>
@@ -101,6 +102,13 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    placeholderImage2: file(relativePath: { eq: "lauro.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
