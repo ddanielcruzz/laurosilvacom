@@ -20,7 +20,7 @@ const Index = ({ data }) => {
       {theme => (
         <Layout>
           <SEO
-            title="Software Engineer & Technical Writer"
+            title="Lauro Silva"
             keywords={[`blog`, `gatsby`, `javascript`, `react`]}
             image={data.placeholderImage2.childImageSharp.fluid}
           />
