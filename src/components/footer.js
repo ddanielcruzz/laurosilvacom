@@ -45,7 +45,7 @@ const Footer = () => (
                   More
                 </CompanyTitle>
                 <Link to="/about">About</Link>
-                <Link to="/hire">Hire Me</Link>
+                <Link to="https://setih.com">Hire Me</Link>
               </FooterCompany>
             </FooterContent>
           </FooterMain>

@@ -23,10 +23,10 @@ const About = () => (
         <a href="/writing/">write</a> about everything I know.
       </p>
       <AboutImage />
-      <h2>Company</h2>
+      <h2>Work</h2>
       <ul>
         <li>
-          <a href="/hire">Lauro Silva, LLC</a> - Looking for a writer for your
+          <a href="https://setih.com">Setih</a> - Looking for a writer for your
           developer-focused blog or publication? I can help with that!
         </li>
       </ul>
