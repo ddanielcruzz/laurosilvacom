@@ -30,8 +30,9 @@ const Index = ({ data }) => {
             <br />
             <p>
               I make things from scratch, learn in
-              <Link to="articles/learning-in-public/"> public</Link>, and write
-              about web development in an accessible and intuitive way.
+              <Link to="articles/learning-in-public/"> public</Link>, and{' '}
+              <Link to="articles/learning-in-public/"> write</Link> about web
+              development in an accessible and intuitive way.
             </p>
             <Image />
             <br />

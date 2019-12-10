@@ -60,4 +60,9 @@ const Article = styled.div`
       color: var(--background);
     }
   }
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-left: 20px;
+  }
 `

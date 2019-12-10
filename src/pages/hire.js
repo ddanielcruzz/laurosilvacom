@@ -16,8 +16,8 @@ const Hire = () => (
 
     <Content>
       <p>
-        Looking for a writer for your blog or publication? Or a fresh voice of
-        someone with a very diverse background and experiences?
+        Looking for a writer for your developer-focused blog or publication? Or
+        a fresh voice of someone with a very diverse background and experiences?
       </p>
       <p>
         Please ping me at{' '}
