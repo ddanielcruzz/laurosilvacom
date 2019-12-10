@@ -34,7 +34,7 @@ const Index = ({ data }) => {
               <Link to="articles/learning-in-public/"> write</Link> about web
               development in an accessible and intuitive way.
             </p>
-            <Image />
+            <Image fadeIn="false" loading="eager" critical="true" />
             <br />
             <Button
               buttonLink="https://laurosilvacom.substack.com/subscribe"

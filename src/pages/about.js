@@ -22,7 +22,7 @@ const About = () => (
         I learn in <a href="/articles/learning-in-public">public</a> and{' '}
         <a href="/writing/">write</a> about everything I know.
       </p>
-      <AboutImage />
+      <AboutImage fadeIn="false" loading="eager" critical="true" />
       <h2>Work</h2>
       <ul>
         <li>
