@@ -36,6 +36,7 @@ const Index = ({ data }) => {
             </p>
             <Image fadeIn="false" loading="eager" critical="true" />
             <br />
+
             <Button
               buttonLink="https://laurosilvacom.substack.com/subscribe"
               buttonText="Newsletter"
