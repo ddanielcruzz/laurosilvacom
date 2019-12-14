@@ -29,7 +29,7 @@ const Index = ({ data }) => {
             <h2>Independent Software Engineer</h2>
             <br />
             <p>
-            I learn in public, write and teach about modern JavaScript.
+            I learn in public, write and teach modern JavaScript.
             </p>
             <Image fadeIn="false" loading="eager" critical="true" />
             <br />
