@@ -40,33 +40,20 @@ class Header extends React.Component {
           <HeaderWrapper
             className={`${
               this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
-            } ${theme.dark ? 'dark' : 'light'}`}
+            }`}
           >
             <HeaderGroup>
               <Link to="/">
                 <LogoWrapper>
-                  {theme.dark ? (
-                    <Image src={logolight} alt="Lauro Silva Logo" />
-                  ) : (
-                    <Image src={logo} alt="Lauro Silva Logo" />
-                  )}
-                  <LogoTitle className={`${theme.dark ? 'dark' : 'light'}`}>
-                    Lauro Silva
-                  </LogoTitle>
+                  <Image src={logolight} alt="Lauro Silva Logo" />
+                  <LogoTitle>Lauro Silva</LogoTitle>
                 </LogoWrapper>
               </Link>
               <LinksWrapper>
-                <Link to="/about">About</Link>
+                <Link to="/writing">Articles</Link>
                 <Link to="/newsletter">Newsletter</Link>
-                <span
-                  role="presentation"
-                  onClick={theme.toggleDark}
-                  className={`${
-                    theme.dark
-                      ? ' dark-switcher herosvg'
-                      : ' dark-switcher herosvg'
-                  }`}
-                >
+                <Link to="/about">About</Link>
+                <span role="presentation" onClick={theme.toggleDark}>
                   {theme.dark ? <FiSun /> : <FiMoon />}
                 </span>
               </LinksWrapper>
@@ -86,10 +73,8 @@ const LogoTitle = styled.h2`
   color: black;
   font-size: 24px;
   font-weight: 800;
-  &.dark {
-    color: var(--background);
-  }
-  @media (max-width: 480px) {
+  color: var(--background);
+  @media (max-width: 580px) {
     display: none;
   }
 `
@@ -100,12 +85,7 @@ const Image = styled.img`
 `
 
 const HeaderWrapper = styled.div`
-  border-bottom: 1px solid var(--accents-2);
-  background: var(--background);
-  &.dark {
-    background: var(--foreground);
-    border-bottom: 1px solid var(--accents-7);
-  }
+  background: var(--success);
 `
 const HeaderGroup = styled.div`
   margin: auto;
@@ -132,19 +112,23 @@ const LinksWrapper = styled.div`
   font-size: 1rem;
   align-items: center;
   a {
-    margin-left: 40px;
-    color: var(--accents-4);
+    margin-left: 30px;
+    color: var(--accents-2);
+  }
+  a:hover {
+    color: var(--background);
   }
   span {
     font-size: 18px;
     margin: 0;
-    margin-left: 40px;
+    margin-left: 30px;
     margin-bottom: -6px;
   }
-  .herosvg svg {
-    stroke: var(--accents-4);
+
+  span svg {
+    stroke: var(--accents-2);
   }
-  .herosvg:hover svg {
-    stroke: var(--success);
+  span svg:hover {
+    stroke: var(--background);
   }
 `

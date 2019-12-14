@@ -4,7 +4,7 @@ const siteUrl =
 module.exports = {
   siteMetadata: {
     title: `Lauro Silva`,
-    description: `I'm an independent software engineer. I learn in public, write and teach about modern JavaScript.`,
+    description: `I'm Lauro Silva, an independent software engineer from Portland, Oregon. I specialize in taking what I learn, synthesizing it, and sharing it in forms that are accessible and intuitive.`,
     author: `@laurosilvacom`,
     siteUrl,
     social: {

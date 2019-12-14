@@ -25,9 +25,6 @@ const Article = styled.div`
   font-size: 20px;
   line-height: 1.7;
   padding-top: 0;
-  img {
-    border-radius: 4px;
-  }
   h1,
   h2,
   h3,

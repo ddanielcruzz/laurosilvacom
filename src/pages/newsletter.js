@@ -28,7 +28,7 @@ const Newsletter = () => (
       <br />
       <br />
       <p>
-        I will not sell your email address to spammers. No spam. No BS.
+        I will not sell your email address to spammers. No spam. No ads. No BS.
       </p>
     </Content>
   </Layout>

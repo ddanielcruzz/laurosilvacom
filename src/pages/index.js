@@ -29,11 +29,13 @@ const Index = ({ data }) => {
             <h2>Independent Software Engineer</h2>
             <br />
             <p>
-            I learn in public, write and teach modern JavaScript.
+              I do all my{' '}
+              <a href="/articles/learning-in-public">learning in public</a>.
+              Then I write <a href="/writing">tutorials</a> and create{' '}
+              <a href="https://setih.com">screencasts</a> about it.
             </p>
             <Image fadeIn="false" loading="eager" critical="true" />
             <br />
-
             <Button
               buttonLink="https://laurosilvacom.substack.com/subscribe"
               buttonText="Newsletter"

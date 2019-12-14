@@ -14,14 +14,20 @@ const About = () => (
 
     <Content>
       <p>
-      I'm Lauro Silva, an independent software engineer from Portland, Oregon. I learn in public, write and teach modern JavaScript. As of late 2019, I'm working full time on Setih.
+        I'm Lauro Silva, an independent software engineer from Portland, Oregon.
+        I specialize in taking what I learn, synthesizing it, and sharing it in
+        forms that are accessible and intuitive.
       </p>
-     
       <AboutImage fadeIn="false" loading="eager" critical="true" />
+      <br />
+      <p>
+        Outside of work, I enjoy long-distance running and long-distance
+        reading. Preferably with a strong cup of coffee.
+      </p>
       <h2>Work</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - Concise Javascript Screencasts
+          <a href="https://setih.com">Setih</a> - Concise JavaScript Screencasts
         </li>
       </ul>
       <h2>Contact</h2>
@@ -109,13 +115,13 @@ const About = () => (
           <a href="https://github.com/laurosilvacom/dotfiles">dotfiles</a> for
           macOS: zsh, iterm, and more.{' '}
         </li>
-        <li>Computer:&nbsp;MacBook Pro 2018</li>
+        <li>Computer: MacBook Pro 2018</li>
         <li>Headphones: QuietComfort 35 wireless headphones II</li>
-        <li>Hosting:&nbsp; Netlify &nbsp;(blog)</li>
-        <li>Editor:&nbsp; Visual Studio Code</li>
-        <li>Static Site Generator:&nbsp; Gatsby</li>
-        <li>Code Theme:&nbsp;Hyper Term Theme</li>
-        <li>Newsletter:&nbsp; Substack</li>
+        <li>Hosting: Netlify (blog)</li>
+        <li>Editor: Visual Studio Code</li>
+        <li>Static Site Generator: Gatsby</li>
+        <li>Code Theme: Hyper Term Theme</li>
+        <li>Newsletter: Substack</li>
       </ul>
     </Content>
   </Layout>

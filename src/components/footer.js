@@ -38,13 +38,20 @@ const Footer = () => (
                   Learn
                 </LearnTitle>
                 <Link to="/writing">Writing</Link>
-                <Link to="/newsletter">Newsletter</Link>
+                <a
+                  href="https://setih.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Screencasts
+                </a>
               </FooterLearn>
               <FooterCompany>
                 <CompanyTitle className={`${theme.dark ? 'dark' : 'light'}`}>
                   More
                 </CompanyTitle>
                 <Link to="/about">About</Link>
+                <Link to="/newsletter">Newsletter</Link>
               </FooterCompany>
             </FooterContent>
           </FooterMain>
