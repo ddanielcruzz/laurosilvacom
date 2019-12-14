@@ -23,8 +23,10 @@ const ContentWrapper = styled.div`
 
 const Article = styled.div`
   font-size: 20px;
-  line-height: 1.7;
   padding-top: 0;
+  p {
+    line-height: 32px;
+  }
   h1,
   h2,
   h3,

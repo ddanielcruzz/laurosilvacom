@@ -37,7 +37,7 @@ const Footer = () => (
                 <LearnTitle className={`${theme.dark ? 'dark' : 'light'}`}>
                   Learn
                 </LearnTitle>
-                <Link to="/writing">Writing</Link>
+                <Link to="/tutorials">Tutorials</Link>
                 <a
                   href="https://setih.com"
                   target="_blank"
@@ -71,10 +71,6 @@ export default Footer
 const FooterWrapper = styled.div`
   margin-top: 150px;
   position: relative;
-  border-top: 1px solid var(--accents-2);
-  &.dark {
-    border-top: 1px solid var(--accents-7);
-  }
 `
 
 const LearnTitle = styled.h1`
@@ -82,7 +78,7 @@ const LearnTitle = styled.h1`
   padding-bottom: 20px;
   letter-spacing: 2px;
   font-size: 1rem;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--accents-6);
   line-height: 20px;
   &.dark {
@@ -95,7 +91,7 @@ const CompanyTitle = styled.h1`
   padding-bottom: 20px;
   letter-spacing: 2px;
   font-size: 1rem;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--accents-6);
   line-height: 20px;
   &.dark {

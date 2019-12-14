@@ -46,7 +46,7 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
                 <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
                   {tag}
                 </Link>{' '}
-                Related Articles
+                Related Tutorials
               </h3>
             </ArticleRelatedText>
           ))}

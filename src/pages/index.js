@@ -31,7 +31,7 @@ const Index = ({ data }) => {
             <p>
               I do all my{' '}
               <a href="/articles/learning-in-public">learning in public</a>.
-              Then I write <a href="/writing">tutorials</a> and create{' '}
+              Then I write <a href="/tutorials">tutorials</a> and create{' '}
               <a href="https://setih.com">screencasts</a> about it.
             </p>
             <Image fadeIn="false" loading="eager" critical="true" />
@@ -44,7 +44,7 @@ const Index = ({ data }) => {
           </HeroLanding>
 
           <TitleWrapper className={`${theme.dark ? 'dark' : 'light'}`}>
-            <h2>Latest Articles</h2>
+            <h2>Latest Tutorials</h2>
           </TitleWrapper>
 
           <Grid>

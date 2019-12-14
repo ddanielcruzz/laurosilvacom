@@ -3,7 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
-import logo from '../images/logo.svg'
 import logolight from '../images/logolight.svg'
 
 import './header.css'
@@ -50,7 +49,7 @@ class Header extends React.Component {
                 </LogoWrapper>
               </Link>
               <LinksWrapper>
-                <Link to="/writing">Articles</Link>
+                <Link to="/tutorials">Tutorials</Link>
                 <Link to="/newsletter">Newsletter</Link>
                 <Link to="/about">About</Link>
                 <span role="presentation" onClick={theme.toggleDark}>
@@ -113,11 +112,12 @@ const LinksWrapper = styled.div`
   align-items: center;
   a {
     margin-left: 30px;
-    color: var(--accents-2);
+    color: var(--accents-2) !important;
   }
   a:hover {
-    color: var(--background);
+    color: var(--background) !important;
   }
+
   span {
     font-size: 18px;
     margin: 0;

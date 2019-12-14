@@ -16,12 +16,10 @@ export default Content
 
 const Article = styled.div`
   font-size: 20px;
-  line-height: 1.7;
   padding-top: 0;
-  img {
-    border-radius: 4px;
+  p {
+    line-height: 32px;
   }
-
   .gatsby-resp-image-wrapper a {
     border-bottom: 0px solid #1b89da;
   }

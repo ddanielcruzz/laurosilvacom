@@ -1,7 +1,7 @@
 :root {
   /* Main Colors */
-  --foreground: #000;
-  --background: #fff;
+  --foreground: #000010;
+  --background: #f0eff9;
 
   /* Selection Color */
   --selection: #4effd3;
@@ -14,12 +14,12 @@
   --accents-5: #666;
   --accents-6: #444;
   --accents-7: #333;
-  --accents-8: #111;
+  --accents-8: #000010;
 
   /* Success colors */
-  --success-light: #1381ff;
-  --success: #0077ff;
-  --success-dark: #006ae4;
+  --success-light: #5c47ff;
+  --success: #4630eb;
+  --success-dark: #3520d4;
 
   /* Family set */
   --font-sans: "IBM Plex Sans", sans-serif;
@@ -57,6 +57,12 @@ a {
 
 a:hover {
   color: var(--success-dark);
+}
+.dark a {
+  color: var(--success-light);
+}
+.dark a:hover {
+  color: var(--success-light);
 }
 
 * {
@@ -112,7 +118,7 @@ p {
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 24px;
 }
 ul {
   list-style-type: none;
