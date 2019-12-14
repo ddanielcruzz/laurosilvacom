@@ -14,20 +14,14 @@ const About = () => (
 
     <Content>
       <p>
-        I'm Lauro Silva, a software engineer and technical writer from Portland,
-        Oregon. I'm currently working full time on writing and creating
-        open-source projects.
+      I'm Lauro Silva, an independent software engineer from Portland, Oregon. I learn in public, write and teach modern JavaScript. As of late 2019, I'm working full time on Setih.
       </p>
-      <p>
-        I learn in <a href="/articles/learning-in-public">public</a> and{' '}
-        <a href="/writing/">write</a> about everything I know.
-      </p>
+     
       <AboutImage fadeIn="false" loading="eager" critical="true" />
       <h2>Work</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - Looking for a writer for your
-          developer-focused blog or publication? I can help with that!
+          <a href="https://setih.com">Setih</a> - Concise Javascript Screencasts
         </li>
       </ul>
       <h2>Contact</h2>

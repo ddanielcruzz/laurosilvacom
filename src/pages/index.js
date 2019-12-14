@@ -26,13 +26,10 @@ const Index = ({ data }) => {
           />
 
           <HeroLanding>
-            <h2>Software Engineer & Technical Writer</h2>
+            <h2>Independent Software Engineer</h2>
             <br />
             <p>
-              I make things from scratch, learn in
-              <Link to="articles/learning-in-public/"> public</Link>, and{' '}
-              <Link to="articles/learning-in-public/"> write</Link> about web
-              development in an accessible and intuitive way.
+            I learn in public, write and teach about modern JavaScript.
             </p>
             <Image fadeIn="false" loading="eager" critical="true" />
             <br />
