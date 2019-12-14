@@ -5,29 +5,29 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import ThemeContext from '../context/ThemeContext'
 
-import ArticleHeader from '../components/article/header'
-import ArticleContent from '../components/article/content'
-import ArticleRelated from '../components/article/related'
+import TutorialHeader from '../components/tutorial/header'
+import TutorialContent from '../components/tutorial/content'
+import TutorialRelated from '../components/tutorial/related'
 import Card from '../components/card'
 import Grid from '../components/grid'
 import SEO from '../components/seo'
 
 const _ = require('lodash')
 
-const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
+const TutorialTemplate = ({ data: { mdx: tutorial, relatedPosts } }) => (
   <ThemeContext.Consumer>
     {theme => (
       <Layout>
         <SEO
-          title={article.frontmatter.title}
-          description={article.excerpt}
-          image={article.frontmatter.image.sharp.fluid}
+          title={tutorial.frontmatter.title}
+          description={tutorial.excerpt}
+          image={tutorial.frontmatter.image.sharp.fluid}
         />
-        <ArticleHeader
-          title={article.frontmatter.title}
-          icon={article.frontmatter.icon.sharp.fluid}
-          time={article.frontmatter.articleDate}
-          tag={article.frontmatter.tags.map((tag, i) => (
+        <TutorialHeader
+          title={tutorial.frontmatter.title}
+          icon={tutorial.frontmatter.icon.sharp.fluid}
+          time={tutorial.frontmatter.tutorialDate}
+          tag={tutorial.frontmatter.tags.map((tag, i) => (
             <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
               {tag}
             </Link>
@@ -35,35 +35,35 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
         />
         <MainWrapper>
           <ContentWrapper>
-            <ArticleContent article={article.body} />
+            <TutorialContent tutorial={tutorial.body} />
           </ContentWrapper>
         </MainWrapper>
 
-        <ArticleRelated
-          tag={article.frontmatter.tags.map((tag, i) => (
-            <ArticleRelatedText className={`${theme.dark ? 'dark' : 'light'}`}>
+        <TutorialRelated
+          tag={tutorial.frontmatter.tags.map((tag, i) => (
+            <TutorialRelatedText className={`${theme.dark ? 'dark' : 'light'}`}>
               <h3>
                 <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
                   {tag}
                 </Link>{' '}
                 Related Tutorials
               </h3>
-            </ArticleRelatedText>
+            </TutorialRelatedText>
           ))}
         />
         <Grid>
           {relatedPosts.edges.map(node => (
             <Link
               key={node.node.id}
-              to={`/articles/${node.node.frontmatter.slug}`}
+              to={`/tutorials/${node.node.frontmatter.slug}`}
             >
               <Card
-                articleNumber={node.node.frontmatter.articleID}
-                articleDate={node.node.frontmatter.articleDate}
-                articleIcon={node.node.frontmatter.icon.sharp.fluid}
-                articleTags={node.node.frontmatter.tags}
-                articleTitle={node.node.frontmatter.title}
-                articleImage={node.node.frontmatter.image.sharp.fluid.src}
+                tutorialNumber={node.node.frontmatter.tutorialID}
+                tutorialDate={node.node.frontmatter.tutorialDate}
+                tutorialIcon={node.node.frontmatter.icon.sharp.fluid}
+                tutorialTags={node.node.frontmatter.tags}
+                tutorialTitle={node.node.frontmatter.title}
+                tutorialImage={node.node.frontmatter.image.sharp.fluid.src}
               />
             </Link>
           ))}
@@ -73,7 +73,7 @@ const ArticleTemplate = ({ data: { mdx: article, relatedPosts } }) => (
   </ThemeContext.Consumer>
 )
 
-export default ArticleTemplate
+export default TutorialTemplate
 
 const MainWrapper = styled.div`
   margin: auto;
@@ -86,7 +86,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
 `
 
-const ArticleRelatedText = styled.div`
+const TutorialRelatedText = styled.div`
   a {
     color: var(--foreground);
   }
@@ -105,8 +105,8 @@ export const query = graphql`
       frontmatter {
         title
         tags
-        articleID
-        articleDate(formatString: "MMMM DD, YYYY")
+        tutorialID
+        tutorialDate(formatString: "MMMM DD, YYYY")
         image {
           sharp: childImageSharp {
             fluid {
@@ -127,7 +127,7 @@ export const query = graphql`
 
     relatedPosts: allMdx(
       filter: { frontmatter: { tags: { in: $tags }, slug: { ne: $slug } } }
-      sort: { fields: frontmatter___articleID, order: ASC }
+      sort: { fields: frontmatter___tutorialID, order: ASC }
     ) {
       edges {
         node {
@@ -136,8 +136,8 @@ export const query = graphql`
             title
             slug
             tags
-            articleID
-            articleDate
+            tutorialID
+            tutorialDate
             image {
               sharp: childImageSharp {
                 fluid {

@@ -6,15 +6,15 @@ import ThemeContext from '../../context/ThemeContext'
 const Content = props => (
   <ThemeContext.Consumer>
     {theme => (
-      <Article className={`${theme.dark ? 'dark' : 'light'}`}>
-        <MDXRenderer>{props.article}</MDXRenderer>
-      </Article>
+      <Tutorial className={`${theme.dark ? 'dark' : 'light'}`}>
+        <MDXRenderer>{props.tutorial}</MDXRenderer>
+      </Tutorial>
     )}
   </ThemeContext.Consumer>
 )
 export default Content
 
-const Article = styled.div`
+const Tutorial = styled.div`
   font-size: 20px;
   padding-top: 0;
   p {

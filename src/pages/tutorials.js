@@ -9,7 +9,7 @@ import Grid from '../components/grid'
 import HeroContent from '../components/herocontent'
 
 const Tutorials = ({ data }) => {
-  const { edges: articles } = data.allMdx
+  const { edges: tutorials } = data.allMdx
 
   return (
     <ThemeContext.Consumer>
@@ -25,15 +25,15 @@ const Tutorials = ({ data }) => {
           </HeroContent>
 
           <Grid>
-            {articles.map(({ node: article }) => (
+            {tutorials.map(({ node: tutorial }) => (
               <Link
-                key={article.id}
-                to={`/articles/${article.frontmatter.slug}`}
+                key={tutorial.id}
+                to={`/tutorials/${tutorial.frontmatter.slug}`}
               >
                 <Card
-                  articleIcon={article.frontmatter.icon.sharp.fluid}
-                  articleTags={article.frontmatter.tags}
-                  articleTitle={article.frontmatter.title}
+                  tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+                  tutorialTags={tutorial.frontmatter.tags}
+                  tutorialTitle={tutorial.frontmatter.title}
                 />
               </Link>
             ))}
@@ -46,7 +46,7 @@ const Tutorials = ({ data }) => {
 
 export const pageQuery = graphql`
   query WritingPage {
-    allMdx(sort: { fields: frontmatter___articleID, order: DESC }) {
+    allMdx(sort: { fields: frontmatter___tutorialID, order: DESC }) {
       edges {
         node {
           id
@@ -55,8 +55,8 @@ export const pageQuery = graphql`
             title
             slug
             tags
-            articleID
-            articleDate
+            tutorialID
+            tutorialDate
             image {
               sharp: childImageSharp {
                 fluid {

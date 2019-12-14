@@ -45,15 +45,15 @@ module.exports = {
               allMdx.edges.map(edge => ({
                 ...edge.node.frontmatter,
                 description: edge.node.excerpt,
-                date: edge.node.frontmatter.articleDate,
-                url: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
-                guid: `${site.siteMetadata.siteUrl}/articles/${edge.node.frontmatter.slug}`,
+                date: edge.node.frontmatter.tutorialDate,
+                url: `${site.siteMetadata.siteUrl}/tutorials/${edge.node.frontmatter.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/tutorials/${edge.node.frontmatter.slug}`,
                 custom_elements: [{ 'content:encoded': edge.node.html }],
               })),
             query: `
               {
                 allMdx(
-                  sort: { order: DESC, fields: [frontmatter___articleID] },
+                  sort: { order: DESC, fields: [frontmatter___tutorialID] },
                 ) {
                   edges {
                     node {
@@ -62,8 +62,8 @@ module.exports = {
                       frontmatter {
                         slug
                         title
-                        articleDate
-                        articleID
+                        tutorialDate
+                        tutorialID
                       }
                     }
                   }
@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `articles`,
-        path: `${__dirname}/articles/`,
+        name: `tutorials`,
+        path: `${__dirname}/tutorials/`,
       },
     },
     {

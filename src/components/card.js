@@ -9,14 +9,14 @@ const Card = props => (
     {theme => (
       <CardWrapper className={theme.dark ? 'dark' : 'light'}>
         <CardContent>
-          <ArticleIcon>
-            <Image fluid={props.articleIcon} />
-          </ArticleIcon>
-          <ArticleText>
-            <ArticleTitle className={theme.dark ? 'dark' : 'light'}>
-              {props.articleTitle}
-            </ArticleTitle>
-          </ArticleText>
+          <TutorialIcon>
+            <Image fluid={props.tutorialIcon} />
+          </TutorialIcon>
+          <TutorialText>
+            <TutorialTitle className={theme.dark ? 'dark' : 'light'}>
+              {props.tutorialTitle}
+            </TutorialTitle>
+          </TutorialText>
         </CardContent>
       </CardWrapper>
     )}
@@ -25,7 +25,7 @@ const Card = props => (
 
 export default Card
 
-const ArticleText = styled.div`
+const TutorialText = styled.div`
   padding-left: 10px;
   align-self: auto;
 `
@@ -54,7 +54,7 @@ const CardWrapper = styled.div`
   }
 `
 
-const ArticleIcon = styled.div`
+const TutorialIcon = styled.div`
   width: 60px;
   align-self: center;
 `
@@ -66,7 +66,7 @@ const CardContent = styled.div`
   align-items: center;
 `
 
-const ArticleTitle = styled.h1`
+const TutorialTitle = styled.h1`
   font-size: 22px;
   margin: 0;
   line-height: 1.01em;

@@ -21,18 +21,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `)
 
   if (result.errors) {
-    reporter.panic('failed to create articles', result.errors)
+    reporter.panic('failed to create tutorials', result.errors)
   }
 
-  const articles = result.data.allMdx.nodes
+  const tutorials = result.data.allMdx.nodes
 
-  articles.forEach(article => {
+  tutorials.forEach(tutorial => {
     actions.createPage({
-      path: `/articles/${article.frontmatter.slug}/`,
-      component: require.resolve('./src/templates/article.js'),
+      path: `/tutorials/${tutorial.frontmatter.slug}/`,
+      component: require.resolve('./src/templates/tutorial.js'),
       context: {
-        slug: article.frontmatter.slug,
-        tags: article.frontmatter.tags,
+        slug: tutorial.frontmatter.slug,
+        tags: tutorial.frontmatter.tags,
       },
     })
   })

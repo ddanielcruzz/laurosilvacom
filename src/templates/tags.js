@@ -11,13 +11,13 @@ import SEO from '../components/seo'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges: articles } = data.allMdx
+  const { edges: tutorials } = data.allMdx
 
   return (
     <ThemeContext.Consumer>
       {theme => (
         <Layout>
-          <SEO title={`Articles tagged as ${tag}`} />
+          <SEO title={`Tutorials tagged as ${tag}`} />
 
           <MainWrapper>
             <HeroContent className={`${theme.dark ? 'dark' : 'light'}`}>
@@ -25,18 +25,18 @@ const Tags = ({ pageContext, data }) => {
             </HeroContent>
 
             <Grid>
-              {articles.map(({ node: article }) => (
+              {tutorials.map(({ node: tutorial }) => (
                 <Link
-                  key={article.id}
-                  to={`/articles/${article.frontmatter.slug}`}
+                  key={tutorial.id}
+                  to={`/tutorials/${tutorial.frontmatter.slug}`}
                 >
                   <Card
-                    articleNumber={article.frontmatter.articleID}
-                    articleDate={article.frontmatter.articleDate}
-                    articleIcon={article.frontmatter.icon.sharp.fluid}
-                    articleTags={article.frontmatter.tags}
-                    articleTitle={article.frontmatter.title}
-                    articleImage={article.frontmatter.image.sharp.fluid.src}
+                    tutorialNumber={tutorial.frontmatter.tutorialID}
+                    tutorialDate={tutorial.frontmatter.tutorialDate}
+                    tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+                    tutorialTags={tutorial.frontmatter.tags}
+                    tutorialTitle={tutorial.frontmatter.title}
+                    tutorialImage={tutorial.frontmatter.image.sharp.fluid.src}
                   />
                 </Link>
               ))}
@@ -63,8 +63,8 @@ export const pageQuery = graphql`
             title
             slug
             tags
-            articleID
-            articleDate
+            tutorialID
+            tutorialDate
             image {
               sharp: childImageSharp {
                 fluid {

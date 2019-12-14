@@ -13,7 +13,7 @@ import Button from '../components/button'
 import Image from '../components/image'
 
 const Index = ({ data }) => {
-  const { edges: articles } = data.allMdx
+  const { edges: tutorials } = data.allMdx
 
   return (
     <ThemeContext.Consumer>
@@ -29,10 +29,8 @@ const Index = ({ data }) => {
             <h2>Independent Software Engineer</h2>
             <br />
             <p>
-              I do all my{' '}
-              <a href="/articles/learning-in-public">learning in public</a>.
-              Then I write <a href="/tutorials">tutorials</a> and create{' '}
-              <a href="https://setih.com">screencasts</a> about it.
+              I do all my learning in public. Then I write in-depth technical
+              tutorials, and create concise screencasts about it.
             </p>
             <Image fadeIn="false" loading="eager" critical="true" />
             <br />
@@ -48,15 +46,15 @@ const Index = ({ data }) => {
           </TitleWrapper>
 
           <Grid>
-            {articles.map(({ node: article }) => (
+            {tutorials.map(({ node: tutorial }) => (
               <Link
-                key={article.id}
-                to={`/articles/${article.frontmatter.slug}`}
+                key={tutorial.id}
+                to={`/tutorials/${tutorial.frontmatter.slug}`}
               >
                 <Card
-                  articleIcon={article.frontmatter.icon.sharp.fluid}
-                  articleTags={article.frontmatter.tags}
-                  articleTitle={article.frontmatter.title}
+                  tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+                  tutorialTags={tutorial.frontmatter.tags}
+                  tutorialTitle={tutorial.frontmatter.title}
                 />
               </Link>
             ))}
@@ -77,7 +75,7 @@ const TitleWrapper = styled.div`
 `
 export const pageQuery = graphql`
   query IndexPage {
-    allMdx(sort: { fields: frontmatter___articleID, order: DESC }) {
+    allMdx(sort: { fields: frontmatter___tutorialID, order: DESC }) {
       edges {
         node {
           id
@@ -86,8 +84,8 @@ export const pageQuery = graphql`
             title
             slug
             tags
-            articleID
-            articleDate
+            tutorialID
+            tutorialDate
             image {
               sharp: childImageSharp {
                 fluid {

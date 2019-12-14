@@ -6,9 +6,9 @@ const Content = ({ children }) => (
   <ThemeContext.Consumer>
     {theme => (
       <ContentWrapper>
-        <Article className={`${theme.dark ? 'dark' : 'light'}`}>
+        <Tutorial className={`${theme.dark ? 'dark' : 'light'}`}>
           {children}
-        </Article>
+        </Tutorial>
       </ContentWrapper>
     )}
   </ThemeContext.Consumer>
@@ -21,7 +21,7 @@ const ContentWrapper = styled.div`
   padding: 20px;
 `
 
-const Article = styled.div`
+const Tutorial = styled.div`
   font-size: 20px;
   padding-top: 0;
   p {
