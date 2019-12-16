@@ -63,6 +63,7 @@ const Tag = styled.p`
   margin: 0;
   font-size: 1rem;
   color: var(--accents-4);
+  font-weight: 500;
   span {
     padding-right: 10px;
   }

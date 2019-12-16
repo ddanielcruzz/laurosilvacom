@@ -33,23 +33,23 @@ const TutorialText = styled.div`
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 20px;
   grid-gap: 10px;
-  border: 1px solid var(--accents-2);
+  border: 2px solid var(--accents-2);
   :hover {
-    border: 1px solid var(--foreground);
+    border: 2px solid var(--foreground);
   }
   :active {
-    border: 1px solid var(--success);
+    border: 2px solid var(--success);
   }
   &.dark {
-    border: 1px solid var(--accents-7);
+    border: 2px solid var(--accents-7);
     :hover {
-      border: 1px solid var(--accents-4);
+      border: 2px solid var(--accents-4);
     }
     :active {
-      border: 1px solid var(--success);
+      border: 2px solid var(--success);
     }
   }
 `

@@ -21,9 +21,9 @@ const Wrapper = styled.div`
   cursor: pointer;
   text-decoration: none;
   background: var(--success);
-  color: var(--background);
+  color: var(--foreground);
   text-align: center;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 10px 20px;
   letter-spacing: 0.4px;
   display: inline-block;

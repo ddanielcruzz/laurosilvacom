@@ -1,10 +1,10 @@
 :root {
   /* Main Colors */
-  --foreground: #000010;
-  --background: #f0eff9;
+  --foreground: #000;
+  --background: #fff;
 
   /* Selection Color */
-  --selection: #4effd3;
+  --selection: #ffc800;
 
   /* Primary colors */
   --accents-1: #fafafa;
@@ -14,12 +14,12 @@
   --accents-5: #666;
   --accents-6: #444;
   --accents-7: #333;
-  --accents-8: #000010;
+  --accents-8: #111;
 
   /* Success colors */
-  --success-light: #5c47ff;
-  --success: #4630eb;
-  --success-dark: #3520d4;
+  --success-light: #ffc800;
+  --success: #ffcd1a;
+  --success-dark: #e0b000;
 
   /* Family set */
   --font-sans: "IBM Plex Sans", sans-serif;
@@ -53,24 +53,20 @@ body {
 a {
   color: var(--success);
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
   color: var(--success-dark);
 }
-.dark a {
-  color: var(--success-light);
-}
-.dark a:hover {
-  color: var(--success-light);
-}
+
 
 * {
   outline: none !important;
 }
 
 img {
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 hr {
@@ -152,7 +148,7 @@ blockquote {
   color: var(--background);
   border: 1px solid var(--success-dark);
   background: var(--foreground);
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 500;
   margin: 1.5rem 0;
   padding: 1.5rem;
@@ -235,7 +231,7 @@ code[class*="language-"] span::selection {
  */
 .gatsby-highlight {
   background: var(--foreground);
-  border-radius: 4px;
+  border-radius: 6px;
   margin: 2.5em 0;
   padding: 20px;
   overflow: auto;
