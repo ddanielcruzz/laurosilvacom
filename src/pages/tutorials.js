@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import ThemeContext from '../context/ThemeContext'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,35 +11,31 @@ const Tutorials = ({ data }) => {
   const { edges: tutorials } = data.allMdx
 
   return (
-    <ThemeContext.Consumer>
-      {theme => (
-        <Layout>
-          <SEO
-            title="Technical Writing"
-            keywords={[`blog`, `writing`, `tutorials`, `javascript`, `react`]}
-          />
+    <Layout>
+      <SEO
+        title="Technical Writing"
+        keywords={[`blog`, `writing`, `tutorials`, `javascript`, `react`]}
+      />
 
-          <HeroContent className={`${theme.dark ? 'dark' : 'light'}`}>
-            <h2>All Tutorials</h2>
-          </HeroContent>
+      <HeroContent>
+        <h2>All Tutorials</h2>
+      </HeroContent>
 
-          <Grid>
-            {tutorials.map(({ node: tutorial }) => (
-              <Link
-                key={tutorial.id}
-                to={`/tutorials/${tutorial.frontmatter.slug}`}
-              >
-                <Card
-                  tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
-                  tutorialTags={tutorial.frontmatter.tags}
-                  tutorialTitle={tutorial.frontmatter.title}
-                />
-              </Link>
-            ))}
-          </Grid>
-        </Layout>
-      )}
-    </ThemeContext.Consumer>
+      <Grid>
+        {tutorials.map(({ node: tutorial }) => (
+          <Link
+            key={tutorial.id}
+            to={`/tutorials/${tutorial.frontmatter.slug}`}
+          >
+            <Card
+              tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+              tutorialTags={tutorial.frontmatter.tags}
+              tutorialTitle={tutorial.frontmatter.title}
+            />
+          </Link>
+        ))}
+      </Grid>
+    </Layout>
   )
 }
 

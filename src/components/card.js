@@ -2,25 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 
-import ThemeContext from '../context/ThemeContext'
-
 const Card = props => (
-  <ThemeContext.Consumer>
-    {theme => (
-      <CardWrapper className={theme.dark ? 'dark' : 'light'}>
-        <CardContent>
-          <TutorialIcon>
-            <Image fluid={props.tutorialIcon} />
-          </TutorialIcon>
-          <TutorialText>
-            <TutorialTitle className={theme.dark ? 'dark' : 'light'}>
-              {props.tutorialTitle}
-            </TutorialTitle>
-          </TutorialText>
-        </CardContent>
-      </CardWrapper>
-    )}
-  </ThemeContext.Consumer>
+  <CardWrapper>
+    <CardContent>
+      <TutorialIcon>
+        <Image fluid={props.tutorialIcon} />
+      </TutorialIcon>
+      <TutorialText>
+        <TutorialTitle>{props.tutorialTitle}</TutorialTitle>
+      </TutorialText>
+    </CardContent>
+  </CardWrapper>
 )
 
 export default Card
@@ -36,21 +28,13 @@ const CardWrapper = styled.div`
   border-radius: 6px;
   padding: 20px;
   grid-gap: 10px;
-  border: 2px solid var(--accents-2);
+
+  border: 2px solid var(--accents-7);
   :hover {
-    border: 2px solid var(--foreground);
+    border: 2px solid var(--accents-4);
   }
   :active {
     border: 2px solid var(--success);
-  }
-  &.dark {
-    border: 2px solid var(--accents-7);
-    :hover {
-      border: 2px solid var(--accents-4);
-    }
-    :active {
-      border: 2px solid var(--success);
-    }
   }
 `
 
@@ -70,11 +54,8 @@ const TutorialTitle = styled.h1`
   font-size: 22px;
   margin: 0;
   line-height: 1.01em;
-  color: var(--foreground);
+  color: var(--accents-1);
   @media (max-width: 780px) {
     font-size: 20px;
-  }
-  &.dark {
-    color: var(--accents-1);
   }
 `

@@ -1,14 +1,10 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { FiSun, FiMoon } from 'react-icons/fi'
 
 import logolight from '../images/logolight.svg'
-import logo from '../images/logo.svg'
 
 import './header.css'
-
-import ThemeContext from '../context/ThemeContext'
 
 class Header extends React.Component {
   constructor(props) {
@@ -35,46 +31,26 @@ class Header extends React.Component {
 
   render() {
     return (
-      <ThemeContext.Consumer>
-        {theme => (
-          <HeaderWrapper
-            className={`${
-              this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
-            } ${theme.dark ? 'dark' : 'light'}`}
-          >
-            <HeaderGroup>
-              <Link to="/">
-                <LogoWrapper>
-                  {theme.dark ? (
-                    <Image src={logolight} alt="Lauro Silva Logo" />
-                  ) : (
-                    <Image src={logo} alt="Lauro Silva Logo" />
-                  )}
-                  <LogoTitle className={`${theme.dark ? 'dark' : 'light'}`}>
-                    Lauro Silva
-                  </LogoTitle>
-                </LogoWrapper>
-              </Link>
-              <LinksWrapper>
-                <Link to="/tutorials">Tutorials</Link>
-                <Link to="/newsletter">Newsletter</Link>
-                <Link to="/about">About</Link>
-                <span
-                  role="presentation"
-                  onClick={theme.toggleDark}
-                  className={`${
-                    theme.dark
-                      ? ' dark-switcher herosvg'
-                      : ' dark-switcher herosvg'
-                  }`}
-                >
-                  {theme.dark ? <FiSun /> : <FiMoon />}
-                </span>
-              </LinksWrapper>
-            </HeaderGroup>
-          </HeaderWrapper>
-        )}
-      </ThemeContext.Consumer>
+      <HeaderWrapper
+        className={`${
+          this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
+        } `}
+      >
+        <HeaderGroup>
+          <Link to="/">
+            <LogoWrapper>
+              <Image src={logolight} alt="Lauro Silva Logo" />
+
+              <LogoTitle>Lauro Silva</LogoTitle>
+            </LogoWrapper>
+          </Link>
+          <LinksWrapper>
+            <Link to="/tutorials">Tutorials</Link>
+            <Link to="/newsletter">Newsletter</Link>
+            <Link to="/about">About</Link>
+          </LinksWrapper>
+        </HeaderGroup>
+      </HeaderWrapper>
     )
   }
 }
@@ -87,9 +63,7 @@ const LogoTitle = styled.h2`
   color: black;
   font-size: 24px;
   font-weight: 800;
-  &.dark {
-    color: var(--background);
-  }
+  color: var(--background);
   @media (max-width: 680px) {
     display: none;
   }
@@ -101,12 +75,8 @@ const Image = styled.img`
 `
 
 const HeaderWrapper = styled.div`
-  border-bottom: 1px solid var(--accents-2);
-  background: var(--background);
-  &.dark {
-    background: var(--foreground);
-    border-bottom: 1px solid var(--accents-7);
-  }
+  background: var(--foreground);
+  border-bottom: 1px solid var(--accents-7);
 `
 const HeaderGroup = styled.div`
   margin: auto;
@@ -135,20 +105,5 @@ const LinksWrapper = styled.div`
   a {
     margin-left: 40px;
     color: var(--accents-4);
-  }
-  span {
-    font-size: 18px;
-    margin: 0;
-    margin-left: 40px;
-    margin-bottom: -6px;
-  }
-  .herosvg svg {
-    stroke: var(--success);
-    fill: var(--success);
-    opacity: 0.9;
-  }
-  .herosvg:hover svg {
-    stroke: var(--success);
-    opacity: 1;
   }
 `

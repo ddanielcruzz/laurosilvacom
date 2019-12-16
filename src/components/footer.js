@@ -2,68 +2,55 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { FiTwitter, FiGithub, FiRss } from 'react-icons/fi'
-import ThemeContext from '../context/ThemeContext'
 import Button from './button'
 
 const Footer = () => (
-  <ThemeContext.Consumer>
-    {theme => (
-      <FooterWrapper
-        className={`
-        ${theme.dark ? 'dark' : 'light'}
-      `}
-      >
-        <FooterGroup>
-          <FooterMain>
-            <FooterAbout>
-              <Button
-                buttonLink="http://twitter.com/laurosilvacom"
-                buttonText="Twitter"
-                buttonIcon={<FiTwitter />}
-              />
-              <Button
-                buttonLink="http://github.com/laurosilvacom"
-                buttonText="Github"
-                buttonIcon={<FiGithub />}
-              />
-              <Button
-                buttonLink="https://laurosilva.com/rss.xml"
-                buttonText="RSS"
-                buttonIcon={<FiRss />}
-              />
-            </FooterAbout>
-            <FooterContent>
-              <FooterLearn>
-                <LearnTitle className={`${theme.dark ? 'dark' : 'light'}`}>
-                  Learn
-                </LearnTitle>
-                <Link to="/tutorials">Tutorials</Link>
-                <a
-                  href="https://setih.com"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Screencasts
-                </a>
-              </FooterLearn>
-              <FooterCompany>
-                <CompanyTitle className={`${theme.dark ? 'dark' : 'light'}`}>
-                  More
-                </CompanyTitle>
-                <Link to="/about">About</Link>
-                <Link to="/newsletter">Newsletter</Link>
-              </FooterCompany>
-            </FooterContent>
-          </FooterMain>
-          <FooterCopyRight>
-            <CopyRight>
-              Copyright © 2019 Lauro Silva, LLC. All rights reserved.
-            </CopyRight>
-          </FooterCopyRight>
-        </FooterGroup>
-      </FooterWrapper>
-    )}
-  </ThemeContext.Consumer>
+  <FooterWrapper>
+    <FooterGroup>
+      <FooterMain>
+        <FooterAbout>
+          <Button
+            buttonLink="http://twitter.com/laurosilvacom"
+            buttonText="Twitter"
+            buttonIcon={<FiTwitter />}
+          />
+          <Button
+            buttonLink="http://github.com/laurosilvacom"
+            buttonText="Github"
+            buttonIcon={<FiGithub />}
+          />
+          <Button
+            buttonLink="https://laurosilva.com/rss.xml"
+            buttonText="RSS"
+            buttonIcon={<FiRss />}
+          />
+        </FooterAbout>
+        <FooterContent>
+          <FooterLearn>
+            <LearnTitle>Learn</LearnTitle>
+            <Link to="/tutorials">Tutorials</Link>
+            <a
+              href="https://setih.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Screencasts
+            </a>
+          </FooterLearn>
+          <FooterCompany>
+            <CompanyTitle>More</CompanyTitle>
+            <Link to="/about">About</Link>
+            <Link to="/newsletter">Newsletter</Link>
+          </FooterCompany>
+        </FooterContent>
+      </FooterMain>
+      <FooterCopyRight>
+        <CopyRight>
+          Copyright © 2019 Lauro Silva, LLC. All rights reserved.
+        </CopyRight>
+      </FooterCopyRight>
+    </FooterGroup>
+  </FooterWrapper>
 )
 
 export default Footer
@@ -79,11 +66,8 @@ const LearnTitle = styled.h1`
   letter-spacing: 2px;
   font-size: 1rem;
   font-size: 16px;
-  color: var(--accents-6);
+  color: var(--accents-1);
   line-height: 20px;
-  &.dark {
-    color: var(--accents-1);
-  }
 `
 
 const CompanyTitle = styled.h1`
@@ -92,11 +76,8 @@ const CompanyTitle = styled.h1`
   letter-spacing: 2px;
   font-size: 1rem;
   font-size: 16px;
-  color: var(--accents-6);
+  color: var(--accents-1);
   line-height: 20px;
-  &.dark {
-    color: var(--accents-1);
-  }
 `
 
 const FooterMain = styled.div`

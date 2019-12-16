@@ -1,27 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
-import ThemeContext from '../../context/ThemeContext'
 
 const Header = props => (
-  <ThemeContext.Consumer>
-    {theme => (
-      <HeaderMainWrapper>
-        <HeaderMain>
-          <Icon>
-            <Image fluid={props.icon} />
-          </Icon>
-          <HeaderWrapper className={`${theme.dark ? 'dark' : 'light'}`}>
-            <Title>{props.title}</Title>
-            <Tag>
-              <span>{props.tag}</span>
-              <span>{props.time}</span>
-            </Tag>
-          </HeaderWrapper>
-        </HeaderMain>
-      </HeaderMainWrapper>
-    )}
-  </ThemeContext.Consumer>
+  <HeaderMainWrapper>
+    <HeaderMain>
+      <Icon>
+        <Image fluid={props.icon} />
+      </Icon>
+      <HeaderWrapper>
+        <Title>{props.title}</Title>
+        <Tag>
+          <span>{props.tag}</span>
+          <span>{props.time}</span>
+        </Tag>
+      </HeaderWrapper>
+    </HeaderMain>
+  </HeaderMainWrapper>
 )
 
 export default Header
@@ -70,9 +65,6 @@ const Tag = styled.p`
 `
 const HeaderWrapper = styled.div`
   h2 {
-    color: var(--foreground);
-  }
-  &.dark h2 {
     color: var(--background);
   }
 `

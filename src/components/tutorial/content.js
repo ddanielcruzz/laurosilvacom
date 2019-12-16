@@ -1,16 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import ThemeContext from '../../context/ThemeContext'
 
 const Content = props => (
-  <ThemeContext.Consumer>
-    {theme => (
-      <Tutorial className={`${theme.dark ? 'dark' : 'light'}`}>
-        <MDXRenderer>{props.tutorial}</MDXRenderer>
-      </Tutorial>
-    )}
-  </ThemeContext.Consumer>
+  <Tutorial>
+    <MDXRenderer>{props.tutorial}</MDXRenderer>
+  </Tutorial>
 )
 export default Content
 
@@ -23,6 +18,13 @@ const Tutorial = styled.div`
   .gatsby-resp-image-wrapper a {
     border-bottom: 0px solid #1b89da;
   }
+
+  p,
+  ul,
+  li {
+    color: var(--accents-4);
+  }
+
   h1,
   h2,
   h3,
@@ -30,35 +32,13 @@ const Tutorial = styled.div`
   h5,
   h6,
   strong {
-    color: var(--foreground);
+    color: var(--background);
   }
-  p,
-  ul,
-  li {
-    color: var(--accents-5);
-  }
-  &.dark {
-    p,
-    ul,
-    li {
-      color: var(--accents-4);
-    }
-  }
-  &.dark {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong {
-      color: var(--background);
-    }
-  }
-  &.dark blockquote {
+
+  blockquote {
     background: var(--foreground);
   }
-  &.dark blockquote p {
+  blockquote p {
     color: var(--background);
   }
 `

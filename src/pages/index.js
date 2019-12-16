@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { FiMail } from 'react-icons/fi'
-import ThemeContext from '../context/ThemeContext'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -16,52 +15,48 @@ const Index = ({ data }) => {
   const { edges: tutorials } = data.allMdx
 
   return (
-    <ThemeContext.Consumer>
-      {theme => (
-        <Layout>
-          <SEO
-            title="Lauro Silva"
-            keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-            image={data.placeholderImage2.childImageSharp.fluid}
-          />
+    <Layout>
+      <SEO
+        title="Lauro Silva"
+        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        image={data.placeholderImage2.childImageSharp.fluid}
+      />
 
-          <HeroLanding>
-            <h2>Independent Software Engineer</h2>
-            <br />
-            <p>
-              I do all my learning in public. Then I write in-depth technical
-              tutorials, and create concise screencasts about it.
-            </p>
-            <Image fadeIn="false" loading="eager" critical="true" />
-            <br />
-            <Button
-              buttonLink="https://laurosilvacom.substack.com/subscribe"
-              buttonText="Newsletter"
-              buttonIcon={<FiMail />}
+      <HeroLanding>
+        <h2>Independent Software Engineer</h2>
+        <br />
+        <p>
+          I do all my learning in public. Then I write in-depth technical
+          tutorials, and create concise screencasts about it.
+        </p>
+        <Image fadeIn="false" loading="eager" critical="true" />
+        <br />
+        <Button
+          buttonLink="https://laurosilvacom.substack.com/subscribe"
+          buttonText="Newsletter"
+          buttonIcon={<FiMail />}
+        />
+      </HeroLanding>
+
+      <TitleWrapper>
+        <h2>Latest Tutorials</h2>
+      </TitleWrapper>
+
+      <Grid>
+        {tutorials.map(({ node: tutorial }) => (
+          <Link
+            key={tutorial.id}
+            to={`/tutorials/${tutorial.frontmatter.slug}`}
+          >
+            <Card
+              tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+              tutorialTags={tutorial.frontmatter.tags}
+              tutorialTitle={tutorial.frontmatter.title}
             />
-          </HeroLanding>
-
-          <TitleWrapper className={`${theme.dark ? 'dark' : 'light'}`}>
-            <h2>Latest Tutorials</h2>
-          </TitleWrapper>
-
-          <Grid>
-            {tutorials.map(({ node: tutorial }) => (
-              <Link
-                key={tutorial.id}
-                to={`/tutorials/${tutorial.frontmatter.slug}`}
-              >
-                <Card
-                  tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
-                  tutorialTags={tutorial.frontmatter.tags}
-                  tutorialTitle={tutorial.frontmatter.title}
-                />
-              </Link>
-            ))}
-          </Grid>
-        </Layout>
-      )}
-    </ThemeContext.Consumer>
+          </Link>
+        ))}
+      </Grid>
+    </Layout>
   )
 }
 
@@ -69,9 +64,7 @@ const TitleWrapper = styled.div`
   max-width: 680px;
   margin: auto;
   padding: 20px;
-  &.dark h2 {
-    color: var(--background);
-  }
+  color: var(--background);
 `
 export const pageQuery = graphql`
   query IndexPage {

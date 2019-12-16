@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import ThemeContext from '../context/ThemeContext'
 
 import Layout from '../components/layout'
 import Card from '../components/card'
@@ -14,37 +13,33 @@ const Tags = ({ pageContext, data }) => {
   const { edges: tutorials } = data.allMdx
 
   return (
-    <ThemeContext.Consumer>
-      {theme => (
-        <Layout>
-          <SEO title={`Tutorials tagged as ${tag}`} />
+    <Layout>
+      <SEO title={`Tutorials tagged as ${tag}`} />
 
-          <MainWrapper>
-            <HeroContent className={`${theme.dark ? 'dark' : 'light'}`}>
-              <h2>{`${tag}`}</h2>
-            </HeroContent>
+      <MainWrapper>
+        <HeroContent>
+          <h2>{`${tag}`}</h2>
+        </HeroContent>
 
-            <Grid>
-              {tutorials.map(({ node: tutorial }) => (
-                <Link
-                  key={tutorial.id}
-                  to={`/tutorials/${tutorial.frontmatter.slug}`}
-                >
-                  <Card
-                    tutorialNumber={tutorial.frontmatter.tutorialID}
-                    tutorialDate={tutorial.frontmatter.tutorialDate}
-                    tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
-                    tutorialTags={tutorial.frontmatter.tags}
-                    tutorialTitle={tutorial.frontmatter.title}
-                    tutorialImage={tutorial.frontmatter.image.sharp.fluid.src}
-                  />
-                </Link>
-              ))}
-            </Grid>
-          </MainWrapper>
-        </Layout>
-      )}
-    </ThemeContext.Consumer>
+        <Grid>
+          {tutorials.map(({ node: tutorial }) => (
+            <Link
+              key={tutorial.id}
+              to={`/tutorials/${tutorial.frontmatter.slug}`}
+            >
+              <Card
+                tutorialNumber={tutorial.frontmatter.tutorialID}
+                tutorialDate={tutorial.frontmatter.tutorialDate}
+                tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+                tutorialTags={tutorial.frontmatter.tags}
+                tutorialTitle={tutorial.frontmatter.title}
+                tutorialImage={tutorial.frontmatter.image.sharp.fluid.src}
+              />
+            </Link>
+          ))}
+        </Grid>
+      </MainWrapper>
+    </Layout>
   )
 }
 
