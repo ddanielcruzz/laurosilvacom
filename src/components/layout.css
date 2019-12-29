@@ -72,7 +72,7 @@ a:hover {
 }
 
 img {
-  border-radius: 6px;
+  border-radius: 0.5rem;
 }
 
 hr {
@@ -151,7 +151,7 @@ ul.contains-task-list {
 }
 
 blockquote {
-  border-radius: 6px;
+  border-radius: 0.5rem;
   font-weight: 500;
   margin: 1.5rem 0;
   padding: 1.5rem;
@@ -235,7 +235,7 @@ code[class*="language-"] span::selection {
  */
 .gatsby-highlight {
   background: #20374e;
-  border-radius: 6px;
+  border-radius: 0.5rem;
   margin: 2.5em 0;
   padding: 20px;
   overflow: auto;

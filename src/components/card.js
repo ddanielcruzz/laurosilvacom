@@ -25,7 +25,7 @@ const TutorialText = styled.div`
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  border-radius: 6px;
+  border-radius: 0.5rem;
   padding: 20px;
   grid-gap: 10px;
   box-shadow: var(--shadow);
