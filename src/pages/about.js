@@ -21,13 +21,14 @@ const About = () => (
       <AboutImage fadeIn="false" loading="eager" critical="true" />
       <br />
       <p>
-        Outside of work, I enjoy long-distance running and long-distance
-        reading. Preferably with a strong cup of coffee.
+        Outside of work, I enjoy trail running, finding the perfect cup of
+        coffee, and spending time with my dog, Marvel.
       </p>
       <h2>Work</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - Concise JavaScript Screencasts
+          <a href="https://setih.com">Setih</a> - practical, concise, in-depth
+          video tutorials that increase developer happiness and productivity.
         </li>
       </ul>
       <h2>Contact</h2>
