@@ -4,7 +4,7 @@
   --background: #fff;
 
   /* Selection Color */
-  --selection: #ffc800;
+  --selection: #0070f3;
 
   /* Primary colors */
   --accents-1: #fafafa;
@@ -17,9 +17,9 @@
   --accents-8: #111;
 
   /* Success colors */
-  --success-light: #ffc800;
-  --success: #ffcd1a;
-  --success-dark: #e0b000;
+  --success-light: #3291ff;
+  --success: #0070f3;
+  --success-dark: #0366d6;
 
   /* Family set */
   --font-sans: "IBM Plex Sans", sans-serif;
@@ -59,7 +59,6 @@ a {
 a:hover {
   color: var(--success-dark);
 }
-
 
 * {
   outline: none !important;
