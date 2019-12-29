@@ -10,13 +10,16 @@ export default Content
 
 const ContentWrapper = styled.div`
   margin: auto;
-  max-width: 680px;
+  max-width: 780px;
   padding: 20px;
 `
 
 const Tutorial = styled.div`
+  padding: 20px;
+  box-shadow: 0 0 10px #0b1c2d;
+  background-color: #274059;
+  border-radius: 0.5rem;
   font-size: 20px;
-  padding-top: 0;
   p {
     line-height: 32px;
   }

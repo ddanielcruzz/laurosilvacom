@@ -61,7 +61,7 @@ const Index = ({ data }) => {
 }
 
 const TitleWrapper = styled.div`
-  max-width: 680px;
+  max-width: 780px;
   margin: auto;
   padding: 20px;
   color: var(--background);

@@ -36,7 +36,8 @@ const Tutorial = styled.div`
   }
 
   blockquote {
-    background: var(--foreground);
+    background-color: #20374e;
+    border-color: #0e2439;
   }
   blockquote p {
     color: var(--background);

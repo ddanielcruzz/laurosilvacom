@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 `
 const WrapperGroup = styled.div`
   margin: auto;
-  max-width: 680px;
+  max-width: 780px;
   padding: 130px 20px;
   h2 {
     line-height: 1;

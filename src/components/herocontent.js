@@ -15,8 +15,9 @@ const Wrapper = styled.section`
 
 const WrapperGroup = styled.div`
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 780px;
   padding: 100px 20px 0;
+  text-align: center;
 
   h1 {
     color: var(--background);

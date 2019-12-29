@@ -61,7 +61,7 @@ const LogoTitle = styled.h2`
   margin: 0;
   line-height: 0;
   color: black;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--background);
   @media (max-width: 680px) {
@@ -76,7 +76,6 @@ const Image = styled.img`
 
 const HeaderWrapper = styled.div`
   background: var(--foreground);
-  border-bottom: 1px solid var(--accents-7);
 `
 const HeaderGroup = styled.div`
   margin: auto;

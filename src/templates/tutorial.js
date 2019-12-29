@@ -76,9 +76,13 @@ const MainWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  max-width: 680px;
+  max-width: 780px;
   margin-top: 40px;
   margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #0b1c2d;
+  background-color: #274059;
+  border-radius: 0.5rem;
 `
 
 const TutorialRelatedText = styled.div`

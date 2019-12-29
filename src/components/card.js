@@ -28,13 +28,11 @@ const CardWrapper = styled.div`
   border-radius: 6px;
   padding: 20px;
   grid-gap: 10px;
-
-  border: 2px solid var(--accents-7);
+  box-shadow: var(--shadow);
+  background: var(--teal-400);
+  transition: transform 160ms;
   :hover {
-    border: 2px solid var(--accents-4);
-  }
-  :active {
-    border: 2px solid var(--success);
+    transform: scale(1.05);
   }
 `
 

@@ -1,25 +1,32 @@
 :root {
   /* Main Colors */
-  --foreground: #000;
+  --foreground: #0e2439;
   --background: #fff;
 
   /* Selection Color */
-  --selection: #0070f3;
+  --selection: #f73747;
 
   /* Primary colors */
   --accents-1: #fafafa;
   --accents-2: #eaeaea;
   --accents-3: #999;
-  --accents-4: #888;
+  --accents-4: #b9c9da;
   --accents-5: #666;
   --accents-6: #444;
-  --accents-7: #333;
+  --accents-7: #274059;
   --accents-8: #111;
 
   /* Success colors */
-  --success-light: #3291ff;
-  --success: #0070f3;
-  --success-dark: #0366d6;
+  --success-light: #f73747;
+  --success: #e23241;
+  --success-dark: #ca2d3a;
+
+  --teal-300: #b9c9da;
+  --teal-400: #274059;
+  --teal-500: #1f364d;
+  --teal-600: #0e2439;
+
+  --shadow: 0 0 10px #0b1c2d;
 
   /* Family set */
   --font-sans: "IBM Plex Sans", sans-serif;
@@ -51,7 +58,7 @@ body {
 }
 
 a {
-  color: var(--success);
+  color: var(--success-light);
   text-decoration: none;
   font-weight: bold;
 }
@@ -144,16 +151,14 @@ ul.contains-task-list {
 }
 
 blockquote {
-  color: var(--background);
-  border: 1px solid var(--success-dark);
-  background: var(--foreground);
   border-radius: 6px;
   font-weight: 500;
   margin: 1.5rem 0;
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
-  border: 1px solid var(--accents-7);
+  background-color: #20374e;
+  border-color: #0e2439;
 }
 
 blockquote p {
@@ -173,7 +178,7 @@ blockquote p:last-of-type {
 }
 
 blockquote code {
-  background: rgb(24, 106, 165);
+  background: #20374e;
 }
 
 @keyframes HeroAnimation {
@@ -229,7 +234,7 @@ code[class*="language-"] span::selection {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background: var(--foreground);
+  background: #20374e;
   border-radius: 6px;
   margin: 2.5em 0;
   padding: 20px;
@@ -245,7 +250,7 @@ pre[class*="language-"] {
 
 code[class*="language-"] {
   background: black;
-  color: white;
+  color: #b9c9da;
   box-shadow: none;
 }
 
