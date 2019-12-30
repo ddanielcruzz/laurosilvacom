@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background: var(--success);
   color: var(--background);
   text-align: center;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   padding: 10px 20px;
   letter-spacing: 0.4px;
   display: inline-block;

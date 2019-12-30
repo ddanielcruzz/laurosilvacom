@@ -14,21 +14,21 @@ const About = () => (
 
     <Content>
       <p>
-        I'm Lauro Silva, an independent software engineer from Portland, Oregon.
-        I specialize in taking what I learn, synthesizing it, and sharing it in
-        forms that are accessible and intuitive.
+        I'm a software engineer specializing in modern JavaScript. I make things
+        from scratch, contribute to open source, and create resources that are
+        accessible and intuitive to new developers.
       </p>
       <AboutImage fadeIn="false" loading="eager" critical="true" />
       <br />
       <p>
-        Outside of work, I enjoy trail running, finding the perfect cup of
-        coffee, and spending time with my dog, Marvel.
+        Outside of work, I enjoy trail running, hiking, and spending time with
+        my dog, Marvel.
       </p>
       <h2>Work</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - practical, concise, in-depth
-          video tutorials that increase developer happiness and productivity.
+          <a href="https://setih.com">Setih</a> - Short Screencasts of Gourmet
+          JavaScript.
         </li>
       </ul>
       <h2>Contact</h2>
@@ -72,18 +72,6 @@ const About = () => (
             Google + EpicQueen
           </a>{' '}
           - Code Reviews: CSS edition
-        </li>
-        <li>
-          <a href="https://twitter.com/ChilangoDev/status/670074324963880960">
-            Chilango Dev
-          </a>{' '}
-          - Implementing Accessibility in tech communities
-        </li>
-        <li>
-          <a href="https://twitter.com/SiseiOnline/status/659056842664882176">
-            Platzi
-          </a>{' '}
-          - The Wonderful World of Linting in JavaScript
         </li>
         <li>
           <a href="https://secure.meetupstatic.com/photos/event/1/3/c/2/highres_441425058.jpeg">

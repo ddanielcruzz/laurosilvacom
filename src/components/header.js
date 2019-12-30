@@ -103,6 +103,6 @@ const LinksWrapper = styled.div`
   align-items: center;
   a {
     margin-left: 40px;
-    color: var(--accents-4);
+    color: var(--accent-300);
   }
 `

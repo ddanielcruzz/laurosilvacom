@@ -1,34 +1,24 @@
 :root {
   /* Main Colors */
-  --foreground: #0e2439;
+  --foreground: #111518;
   --background: #fff;
 
   /* Selection Color */
-  --selection: #f73747;
-
-  /* Primary colors */
-  --accents-1: #fafafa;
-  --accents-2: #eaeaea;
-  --accents-3: #999;
-  --accents-4: #b9c9da;
-  --accents-5: #666;
-  --accents-6: #444;
-  --accents-7: #274059;
-  --accents-8: #111;
+  --selection: #0070f3;
 
   /* Success colors */
-  --success-light: #f73747;
-  --success: #e23241;
-  --success-dark: #ca2d3a;
+  --success-light: #3291ff;
+  --success: #0070f3;
+  --success-dark: #0366d6;
 
-  --teal-300: #b9c9da;
-  --teal-400: #274059;
-  --teal-500: #1f364d;
-  --teal-600: #0e2439;
+  /* Primary colors */
+  --accent-300: #e4e4e4;
+  --accent-400: #1c2022;
 
-  --shadow: 0 0 10px #0b1c2d;
+  /* Shadows */
+  --shadow: 0 0 10px #0b0d0f;
 
-  /* Family set */
+  /* Family Font set */
   --font-sans: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
@@ -72,11 +62,11 @@ a:hover {
 }
 
 img {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 hr {
-  border-color: var(--accents-2);
+  border-color: var(--background);
   padding: 20px;
 }
 
@@ -151,14 +141,13 @@ ul.contains-task-list {
 }
 
 blockquote {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   font-weight: 500;
   margin: 1.5rem 0;
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
-  background-color: #20374e;
-  border-color: #0e2439;
+  background: var(--accent-400);
 }
 
 blockquote p {
@@ -178,7 +167,7 @@ blockquote p:last-of-type {
 }
 
 blockquote code {
-  background: #20374e;
+  background: var(--accent-400);
 }
 
 @keyframes HeroAnimation {
@@ -194,18 +183,9 @@ blockquote code {
 
 ::selection {
   background: var(--selection); /* WebKit/Blink Browsers */
-  color: var(--foreground);
-}
-::-moz-selection {
-  background: var(--selection); /* Gecko Browsers */
-  color: var(--foreground);
-}
-
-.dark ::selection {
-  background: var(--selection); /* WebKit/Blink Browsers */
   color: var(--background);
 }
-.dark ::-moz-selection {
+::-moz-selection {
   background: var(--selection); /* Gecko Browsers */
   color: var(--background);
 }
@@ -216,7 +196,7 @@ code[class*="language-"] span::selection {
 }
 
 .gatsby-highlight-code-line {
-  background: var(--accents-8);
+  background: var(--foreground);
   display: block;
   margin-right: 0em;
   margin-left: -2.6em;
@@ -234,12 +214,11 @@ code[class*="language-"] span::selection {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background: #20374e;
-  border-radius: 0.5rem;
+  background: var(--foreground);
+  border-radius: 0.3rem;
   margin: 2.5em 0;
   padding: 20px;
   overflow: auto;
-  border: 1px solid var(--accents-7);
 }
 
 :not(pre) > code[class*="language-"],
@@ -250,7 +229,7 @@ pre[class*="language-"] {
 
 code[class*="language-"] {
   background: black;
-  color: #b9c9da;
+  color: var(--background);
   box-shadow: none;
 }
 
@@ -326,7 +305,7 @@ table {
 }
 
 tr {
-  background: var(--accents-1);
+  background: var(--background);
 }
 
 th {
@@ -358,7 +337,7 @@ td {
   border-top-right-radius: 6px;
   margin-bottom: -3.4rem;
   font-family: var(--font-mono);
-  border: 1px solid var(--accents-7);
+  border: 1px solid var(--foreground);
 }
 
 /* Dark mode styles */

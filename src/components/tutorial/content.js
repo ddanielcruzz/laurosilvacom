@@ -22,7 +22,7 @@ const Tutorial = styled.div`
   p,
   ul,
   li {
-    color: var(--accents-4);
+    color: var(--accent-300);
   }
 
   h1,
@@ -36,8 +36,7 @@ const Tutorial = styled.div`
   }
 
   blockquote {
-    background-color: #20374e;
-    border-color: #0e2439;
+    background: var(--foreground);
   }
   blockquote p {
     color: var(--background);

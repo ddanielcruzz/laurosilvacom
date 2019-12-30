@@ -57,7 +57,7 @@ const Title = styled.h2`
 const Tag = styled.p`
   margin: 0;
   font-size: 1rem;
-  color: var(--accents-4);
+  color: var(--accent-300);
   font-weight: 500;
   span {
     padding-right: 10px;

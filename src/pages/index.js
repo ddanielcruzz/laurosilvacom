@@ -23,11 +23,11 @@ const Index = ({ data }) => {
       />
 
       <HeroLanding>
-        <h2>Independent Software Engineer</h2>
+        <h2>I'm Lauro Silva!</h2>
         <br />
         <p>
-          I do all my learning in public. Then I write in-depth technical
-          tutorials, and create concise screencasts about it.
+          I enjoy building thoughtful software and inspiring people to become
+          better programmers.
         </p>
         <Image fadeIn="false" loading="eager" critical="true" />
         <br />

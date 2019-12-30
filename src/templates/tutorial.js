@@ -80,9 +80,9 @@ const ContentWrapper = styled.div`
   margin-top: 40px;
   margin: 0 auto;
   padding: 20px;
-  box-shadow: 0 0 10px #0b1c2d;
-  background-color: #274059;
-  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  background: var(--accent-400);
+  border-radius: 0.3rem;
 `
 
 const TutorialRelatedText = styled.div`

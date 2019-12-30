@@ -16,9 +16,9 @@ const ContentWrapper = styled.div`
 
 const Tutorial = styled.div`
   padding: 20px;
-  box-shadow: 0 0 10px #0b1c2d;
-  background-color: #274059;
-  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  background: var(--accent-400);
+  border-radius: 0.3rem;
   font-size: 20px;
   p {
     line-height: 32px;
@@ -41,6 +41,6 @@ const Tutorial = styled.div`
   p,
   ul,
   li {
-    color: var(--accents-4);
+    color: var(--accent-300);
   }
 `

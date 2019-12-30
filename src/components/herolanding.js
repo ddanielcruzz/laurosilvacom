@@ -25,6 +25,6 @@ const WrapperGroup = styled.div`
     color: var(--background);
   }
   p {
-    color: var(--accents-4);
+    color: var(--accent-300);
   }
 `

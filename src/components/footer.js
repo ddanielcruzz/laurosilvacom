@@ -66,7 +66,7 @@ const LearnTitle = styled.h1`
   letter-spacing: 2px;
   font-size: 1rem;
   font-size: 16px;
-  color: var(--accents-1);
+  color: var(--background);
   line-height: 20px;
 `
 
@@ -76,7 +76,7 @@ const CompanyTitle = styled.h1`
   letter-spacing: 2px;
   font-size: 1rem;
   font-size: 16px;
-  color: var(--accents-1);
+  color: var(--background);
   line-height: 20px;
 `
 
@@ -119,7 +119,7 @@ const FooterContent = styled.div`
   }
   a {
     padding-bottom: 20px;
-    color: var(--accents-4);
+    color: var(--accent-300);
   }
 `
 
@@ -150,7 +150,7 @@ const FooterCopyRight = styled.div`
 
 const CopyRight = styled.div`
   font-size: 12px;
-  color: var(--accents-4);
+  color: var(--accent-300);
   margin-top: 20px;
   font-weight: 500;
   letter-spacing: 1px;
