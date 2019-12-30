@@ -32,7 +32,7 @@ const CardWrapper = styled.div`
   background: var(--accent-400);
   transition: transform 160ms;
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 `
 
