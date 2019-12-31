@@ -27,8 +27,8 @@ const About = () => (
       <h2>Work</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - Short Screencasts of Gourmet
-          JavaScript.
+          <a href="https://setih.com">Setih</a> - Practical, concise,
+          programming screencasts.
         </li>
       </ul>
       <h2>Contact</h2>
