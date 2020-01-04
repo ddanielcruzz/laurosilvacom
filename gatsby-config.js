@@ -114,6 +114,7 @@ module.exports = {
           },
           'gatsby-remark-prismjs',
           { resolve: 'gatsby-remark-smartypants' },
+          { resolve: 'gatsby-remark-copy-relative-linked-files' },
         ],
         plugins: [{ resolve: 'gatsby-remark-images' }],
       },
