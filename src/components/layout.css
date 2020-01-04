@@ -48,7 +48,7 @@ body {
 }
 
 a {
-  color: var(--success-light);
+  color: var(--success);
   text-decoration: none;
   font-weight: bold;
 }
