@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import HeroContent from '../components/herocontent'
@@ -97,20 +98,11 @@ const About = () => (
           - Spanish translation of react-typescript-cheatsheet
         </li>
       </ul>
-      <h2>Gear</h2>
+      <h2>Uses</h2>
       <ul>
         <li>
-          Personal{' '}
-          <a href="https://github.com/laurosilvacom/dotfiles">dotfiles</a> for
-          macOS: zsh, iterm, and more.{' '}
+          <Link to="/uses">Uses</Link> - links to all the stuff I use
         </li>
-        <li>Computer: MacBook Pro 2018</li>
-        <li>Headphones: QuietComfort 35 wireless headphones II</li>
-        <li>Hosting: Netlify (blog)</li>
-        <li>Editor: Visual Studio Code</li>
-        <li>Static Site Generator: Gatsby</li>
-        <li>Code Theme: Hyper Term Theme</li>
-        <li>Newsletter: Substack</li>
       </ul>
     </Content>
   </Layout>
