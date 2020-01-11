@@ -44,7 +44,7 @@ const About = () => (
           <a href="https://github.com/evanlucas/learnyoumongo">
             PDX Nodeschool
           </a>{' '}
-          - Getting started with MongoDB
+          - Workshop: Getting started with MongoDB
         </li>
         <li>
           <a href="https://twitter.com/emiliorami/status/708450488522448896">
@@ -56,7 +56,7 @@ const About = () => (
           <a href="https://twitter.com/SULMAGUTIERREZ/status/729113496881750016">
             EpicQueen
           </a>{' '}
-          - 101 Workshop: How Webpack Works
+          - How Webpack Works
         </li>
         <li>
           <a href="https://twitter.com/EpicQueen/status/702686804009312256">
