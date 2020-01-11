@@ -44,7 +44,7 @@ const About = () => (
           <a href="https://github.com/evanlucas/learnyoumongo">
             PDX Nodeschool
           </a>{' '}
-          - Workshop: Getting started with MongoDB
+          - Workshop: MongoDB 101
         </li>
         <li>
           <a href="https://twitter.com/emiliorami/status/708450488522448896">
