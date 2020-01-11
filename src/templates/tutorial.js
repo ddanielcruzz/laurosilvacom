@@ -118,7 +118,7 @@ export const query = graphql`
         tutorialDate(formatString: "MMMM DD, YYYY")
         image {
           sharp: childImageSharp {
-            fluid {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
