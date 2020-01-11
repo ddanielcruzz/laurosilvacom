@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import Card from '../components/card'
@@ -16,36 +15,29 @@ const Tags = ({ pageContext, data }) => {
     <Layout>
       <SEO title={`Tutorials tagged as ${tag}`} />
 
-      <MainWrapper>
-        <HeroContent>
-          <h2>{`${tag}`}</h2>
-        </HeroContent>
+      <HeroContent>
+        <h2>{`${tag}`}</h2>
+      </HeroContent>
 
-        <Grid>
-          {tutorials.map(({ node: tutorial }) => (
-            <Link
-              key={tutorial.id}
-              to={`/tutorials/${tutorial.frontmatter.slug}`}
-            >
-              <Card
-                tutorialNumber={tutorial.frontmatter.tutorialID}
-                tutorialDate={tutorial.frontmatter.tutorialDate}
-                tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
-                tutorialTags={tutorial.frontmatter.tags}
-                tutorialTitle={tutorial.frontmatter.title}
-                tutorialImage={tutorial.frontmatter.image.sharp.fluid.src}
-              />
-            </Link>
-          ))}
-        </Grid>
-      </MainWrapper>
+      <Grid>
+        {tutorials.map(({ node: tutorial }) => (
+          <Link
+            key={tutorial.id}
+            to={`/tutorials/${tutorial.frontmatter.slug}`}
+          >
+            <Card
+              tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
+              tutorialTags={tutorial.frontmatter.tags}
+              tutorialTitle={tutorial.frontmatter.title}
+            />
+          </Link>
+        ))}
+      </Grid>
     </Layout>
   )
 }
 
 export default Tags
-
-const MainWrapper = styled.div``
 
 export const pageQuery = graphql`
   query($tag: String) {

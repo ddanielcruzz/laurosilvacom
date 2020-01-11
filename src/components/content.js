@@ -9,21 +9,13 @@ const Content = ({ children }) => (
 export default Content
 
 const ContentWrapper = styled.div`
-  margin: auto;
-  max-width: 780px;
   padding: 20px;
 `
 
 const Tutorial = styled.div`
-  padding: 20px;
-  box-shadow: var(--shadow);
-  background: var(--accent-400);
-  border-radius: 0.3rem;
-  font-size: 20px;
-  p {
-    line-height: 32px;
-  }
-
+  margin: auto;
+  max-width: 720px;
+  font-size: 1rem;
   h1,
   h2,
   h3,

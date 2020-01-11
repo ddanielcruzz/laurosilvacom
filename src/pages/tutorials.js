@@ -13,7 +13,7 @@ const Tutorials = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Technical Writing"
+        title="Tutorials"
         keywords={[`blog`, `writing`, `tutorials`, `javascript`, `react`]}
       />
 

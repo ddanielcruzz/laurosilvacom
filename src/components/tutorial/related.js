@@ -15,7 +15,13 @@ const SidebarWrapper = styled.div`
 `
 
 const SidebarTitle = styled.div`
-  max-width: 780px;
+  max-width: 720px;
   margin-top: 40px;
   margin: 0 auto;
+  a {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
 `

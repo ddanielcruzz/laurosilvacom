@@ -4,38 +4,10 @@ import styled from 'styled-components'
 
 import logolight from '../images/logolight.svg'
 
-import './header.css'
-
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      hasScrolled: false,
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
-    const scrollTop = window.pageYOffset
-
-    if (scrollTop > 50) {
-      this.setState({ hasScrolled: true })
-    } else {
-      this.setState({ hasScrolled: false })
-    }
-  }
-
   render() {
     return (
-      <HeaderWrapper
-        className={`${
-          this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'
-        } `}
-      >
+      <HeaderWrapper>
         <HeaderGroup>
           <Link to="/">
             <LogoWrapper>
@@ -46,7 +18,7 @@ class Header extends React.Component {
           </Link>
           <LinksWrapper>
             <Link to="/tutorials">Tutorials</Link>
-            <Link to="/newsletter">Newsletter</Link>
+            <Link to="/contact">Contact</Link>
             <Link to="/about">About</Link>
           </LinksWrapper>
         </HeaderGroup>
@@ -61,7 +33,7 @@ const LogoTitle = styled.h2`
   margin: 0;
   line-height: 0;
   color: black;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--background);
   @media (max-width: 680px) {
@@ -79,11 +51,14 @@ const HeaderWrapper = styled.div`
 `
 const HeaderGroup = styled.div`
   margin: auto;
-  max-width: 2220px;
+  max-width: 720px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 20px 0;
+  @media (max-width: 680px) {
+    padding: 20px;
+  }
 `
 
 const LogoWrapper = styled.div`

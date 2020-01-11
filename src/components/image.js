@@ -15,7 +15,13 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Img
+      fadeIn="false"
+      loading="eager"
+      fluid={data.placeholderImage.childImageSharp.fluid}
+    />
+  )
 }
 
 export default Image

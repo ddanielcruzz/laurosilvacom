@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { FiTwitter, FiGithub, FiRss } from 'react-icons/fi'
+import { FiTwitter, FiGithub, FiRss, FiMail } from 'react-icons/fi'
 import Button from './button'
 
 const Footer = () => (
@@ -24,30 +23,15 @@ const Footer = () => (
             buttonText="RSS"
             buttonIcon={<FiRss />}
           />
+          <Button
+            buttonLink="https://laurosilvacom.substack.com/subscribe"
+            buttonText="Newsletter"
+            buttonIcon={<FiMail />}
+          />
         </FooterAbout>
-        <FooterContent>
-          <FooterLearn>
-            <LearnTitle>Learn</LearnTitle>
-            <Link to="/tutorials">Tutorials</Link>
-            <a
-              href="https://setih.com"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Screencasts
-            </a>
-          </FooterLearn>
-          <FooterCompany>
-            <CompanyTitle>More</CompanyTitle>
-            <Link to="/about">About</Link>
-            <Link to="/newsletter">Newsletter</Link>
-          </FooterCompany>
-        </FooterContent>
       </FooterMain>
       <FooterCopyRight>
-        <CopyRight>
-          Copyright © 2019 Lauro Silva, LLC. All rights reserved.
-        </CopyRight>
+        <CopyRight>© 2019 Lauro Silva, LLC. All rights reserved.</CopyRight>
       </FooterCopyRight>
     </FooterGroup>
   </FooterWrapper>
@@ -60,98 +44,31 @@ const FooterWrapper = styled.div`
   position: relative;
 `
 
-const LearnTitle = styled.h1`
-  margin: 0;
-  padding-bottom: 20px;
-  letter-spacing: 2px;
-  font-size: 1rem;
-  font-size: 16px;
-  color: var(--background);
-  line-height: 20px;
-`
-
-const CompanyTitle = styled.h1`
-  margin: 0;
-  padding-bottom: 20px;
-  letter-spacing: 2px;
-  font-size: 1rem;
-  font-size: 16px;
-  color: var(--background);
-  line-height: 20px;
-`
-
 const FooterMain = styled.div`
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: 780px) {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-items: center;
-    grid-gap: 40px;
-  }
+  justify-content: center;
+  display: grid;
 `
 
 const FooterAbout = styled.div`
-  max-width: 450px;
-  line-height: 2.5;
-  font-size: 1rem;
-  @media (max-width: 780px) {
-    text-align: center;
-  }
+  text-align: center;
 `
 
 const FooterGroup = styled.div`
   margin: auto;
-  max-width: 2220px;
+  max-width: 720px;
   padding-top: 100px;
   padding: 20px;
   padding-top: 50px;
 `
 
-const FooterContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: baseline;
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-  a {
-    padding-bottom: 20px;
-    color: var(--accent-300);
-  }
-`
-
-const FooterLearn = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 0 50px;
-  @media (max-width: 720px) {
-    margin-bottom: 50px;
-  }
-`
-
-const FooterCompany = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 0 50px;
-  @media (max-width: 720px) {
-    margin-bottom: 50px;
-  }
-`
-
 const FooterCopyRight = styled.div`
-  margin-top: 100px;
   padding-bottom: 20px;
   padding-top: 20px;
   text-align: center;
 `
 
 const CopyRight = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   color: var(--accent-300);
   margin-top: 20px;
-  font-weight: 500;
-  letter-spacing: 1px;
 `

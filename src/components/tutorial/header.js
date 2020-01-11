@@ -28,22 +28,22 @@ const HeaderMainWrapper = styled.div`
 const HeaderMain = styled.div`
   margin: auto;
   display: grid;
-  grid-template-columns: 100px 1fr;
-  max-width: 780px;
-  padding: 140px 0px 0;
-  grid-gap: 30px;
+  grid-template-columns: 70px 1fr;
+  max-width: 720px;
+  padding: 50px 0px 0;
+  grid-gap: 40px;
   @media (max-width: 780px) {
     grid-template-columns: 1fr;
   }
 `
 
 const Icon = styled.div`
-  width: 100px;
+  width: 70px;
   margin: auto;
   margin-bottom: 25px;
   @media (max-width: 780px) {
     margin: 0;
-    width: 80px;
+    width: 60px;
   }
 `
 const Title = styled.h2`

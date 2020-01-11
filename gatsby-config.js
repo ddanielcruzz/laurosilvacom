@@ -4,7 +4,7 @@ const siteUrl =
 module.exports = {
   siteMetadata: {
     title: `Lauro Silva`,
-    description: `I'm a software engineer specializing in modern JavaScript. I make things from scratch, contribute to open source, and create resources that are accessible and intuitive to new developers.`,
+    description: `I'm a software engineer specializing in modern JavaScript and a technical writer. I make things from scratch, contribute to open source, and create resources that are accessible and intuitive to new developers.`,
     author: `@laurosilvacom`,
     siteUrl,
     social: {
@@ -120,21 +120,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `IBM Plex Mono`,
-            variants: [`400`, `600`],
-          },
-          {
-            family: `IBM Plex Sans`,
-            variants: [`400`, `500`, `600`, `700`],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -147,8 +132,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#000`,
-        theme_color: `#fff`,
+        background_color: `#111518`,
+        theme_color: `#0070f3`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },

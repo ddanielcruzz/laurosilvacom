@@ -8,7 +8,7 @@ const Uses = () => (
   <Layout>
     <SEO title="Uses" keywords={[`gear`, `uses`]} />
     <HeroContent>
-      <h2>Uses</h2>
+      <h2>The tools I use</h2>
     </HeroContent>
 
     <Content>

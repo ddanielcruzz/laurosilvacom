@@ -21,56 +21,46 @@ const About = () => (
       </p>
       <AboutImage fadeIn="false" loading="eager" critical="true" />
       <br />
-      <p>
-        Outside of work, I enjoy trail running, hiking, and spending time with
-        my dog, Marvel.
-      </p>
-      <h2>Work</h2>
+      <p>Outside of work you can find me hiking with my dog, Marvel.</p>
+      <h2>Writing</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - Practical, concise,
-          programming screencasts.
+          <a href="/tutorials">Main Blog</a>
+        </li>
+        <li>
+          <a href="https://dev.to/laurosilvacom">The Practical DEV</a>
         </li>
       </ul>
-      <h2>Contact</h2>
+      <h2>Teaching</h2>
       <ul>
         <li>
-          Email:&nbsp;
-          <a href="mailto:lauro@laurosilva.com">lauro@laurosilva.com</a>
-        </li>
-        <li>
-          GitHub: <a href="https://github.com/laurosilvacom">laurosilvacom</a>
-        </li>
-        <li>
-          Twitter: <a href="https://twitter.com/laurosilvacom">laurosilvacom</a>
-        </li>
-        <li>
-          Newsletter: <a href="/newsletter">laurosilvacom</a>
+          <a href="https://setih.com">Setih</a> - where I publish practical,
+          concise, programming screencasts
         </li>
       </ul>
       <h2>Speaking</h2>
       <ul>
         <li>
           <a href="https://github.com/evanlucas/learnyoumongo">
-            Portland Nodeschool
+            PDX Nodeschool
           </a>{' '}
-          - Getting started with MongoDB and Node.js
+          - Getting started with MongoDB
         </li>
         <li>
           <a href="https://twitter.com/emiliorami/status/708450488522448896">
-            ProductHunt Meetup
+            ProductHunt
           </a>{' '}
-          - Implementing Accessibility in tech communities
+          - Implementing Accessibility 101
         </li>
         <li>
           <a href="https://twitter.com/SULMAGUTIERREZ/status/729113496881750016">
-            Google + EpicQueen
+            EpicQueen
           </a>{' '}
           - 101 Workshop: How Webpack Works
         </li>
         <li>
           <a href="https://twitter.com/EpicQueen/status/702686804009312256">
-            Google + EpicQueen
+            EpicQueen
           </a>{' '}
           - Code Reviews: CSS edition
         </li>
@@ -82,26 +72,26 @@ const About = () => (
         </li>
       </ul>
 
-      <h2>OSS</h2>
+      <h2>Open Source</h2>
       <ul>
         <li>
           <a href="https://github.com/laurosilvacom/laurosilvacom">
             laurosilvacom
           </a>{' '}
-          - personal theme for Gatsby (the source of this website)
+          - My personal theme for Gatsby (the source of this website)
         </li>
 
         <li>
           <a href="https://github.com/typescript-cheatsheets/react-typescript-cheatsheet-es">
-            React+TypeScript Cheatsheets en Español
+            React+TypeScript Cheatsheets ES
           </a>{' '}
           - Spanish translation of react-typescript-cheatsheet
         </li>
       </ul>
-      <h2>Uses</h2>
+      <h2>More</h2>
       <ul>
         <li>
-          <Link to="/uses">Uses</Link> - links to all the stuff I use
+          <Link to="/uses">Uses</Link> - Links to all the tools I use
         </li>
       </ul>
     </Content>

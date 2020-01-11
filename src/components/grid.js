@@ -1,15 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Grid = ({ children }) => <GridWrapper>{children}</GridWrapper>
+const Grid = ({ children }) => (
+  <GridMain>
+    <GridWrapper>{children}</GridWrapper>
+  </GridMain>
+)
 
 export default Grid
+
+const GridMain = styled.div`
+  padding: 20px;
+`
 
 const GridWrapper = styled.div`
   align-items: end;
   display: grid;
-  max-width: 780px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 20px;
-  grid-gap: 40px;
+  grid-gap: 20px;
 `

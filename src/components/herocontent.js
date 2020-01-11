@@ -11,18 +11,20 @@ export default Hero
 
 const Wrapper = styled.section`
   position: relative;
+  padding: 20px;
 `
 
 const WrapperGroup = styled.div`
   margin: 0 auto;
-  max-width: 780px;
-  padding: 100px 20px 0;
-  text-align: center;
+  max-width: 720px;
+  padding: 50px 0px 0;
 
   h1 {
     color: var(--background);
+    margin: 0;
   }
   h2 {
     color: var(--background);
+    margin: 0;
   }
 `

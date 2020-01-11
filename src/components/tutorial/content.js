@@ -10,11 +10,8 @@ const Content = props => (
 export default Content
 
 const Tutorial = styled.div`
-  font-size: 20px;
+  font-size: 1rem;
   padding-top: 0;
-  p {
-    line-height: 32px;
-  }
   .gatsby-resp-image-wrapper a {
     border-bottom: 0px solid #1b89da;
   }
@@ -36,7 +33,7 @@ const Tutorial = styled.div`
   }
 
   blockquote {
-    background: var(--foreground);
+    background: var(--accent-400);
   }
   blockquote p {
     color: var(--background);

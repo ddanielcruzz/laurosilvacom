@@ -25,7 +25,7 @@ const TutorialText = styled.div`
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   padding: 20px;
   grid-gap: 10px;
   box-shadow: var(--shadow);
@@ -37,13 +37,13 @@ const CardWrapper = styled.div`
 `
 
 const TutorialIcon = styled.div`
-  width: 60px;
+  width: 40px;
   align-self: center;
 `
 
 const CardContent = styled.div`
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: 40px 1fr;
   grid-gap: 20px;
   align-items: center;
 `

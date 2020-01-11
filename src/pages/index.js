@@ -17,30 +17,33 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Lauro Silva"
+        title="Home"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         image={data.placeholderImage2.childImageSharp.fluid}
       />
 
       <HeroLanding>
-        <h2>I'm Lauro Silva!</h2>
+        <h2>Software Engineer and Technical Writer</h2>
         <br />
         <p>
-          I enjoy building thoughtful software and inspiring people to become
+          I enjoy building thoughtful software and helping individuals become
           better programmers.
         </p>
         <Image fadeIn="false" loading="eager" critical="true" />
         <br />
+
         <Button
           buttonLink="https://laurosilvacom.substack.com/subscribe"
-          buttonText="Newsletter"
+          buttonText="Subscribe to Newsletter"
           buttonIcon={<FiMail />}
         />
       </HeroLanding>
 
-      <TitleWrapper>
-        <h2>Latest Tutorials</h2>
-      </TitleWrapper>
+      <TitlePadding>
+        <TitleWrapper>
+          <h2>Latest Tutorials</h2>
+        </TitleWrapper>
+      </TitlePadding>
 
       <Grid>
         {tutorials.map(({ node: tutorial }) => (
@@ -60,10 +63,12 @@ const Index = ({ data }) => {
   )
 }
 
-const TitleWrapper = styled.div`
-  max-width: 780px;
-  margin: auto;
+const TitlePadding = styled.div`
   padding: 20px;
+`
+const TitleWrapper = styled.div`
+  max-width: 720px;
+  margin: auto;
   color: var(--background);
 `
 export const pageQuery = graphql`

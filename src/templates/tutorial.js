@@ -2,6 +2,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
+import { FiMail } from 'react-icons/fi'
 import Layout from '../components/layout'
 
 import TutorialHeader from '../components/tutorial/header'
@@ -10,6 +11,7 @@ import TutorialRelated from '../components/tutorial/related'
 import Card from '../components/card'
 import Grid from '../components/grid'
 import SEO from '../components/seo'
+import Button from '../components/button'
 
 const _ = require('lodash')
 
@@ -33,18 +35,29 @@ const TutorialTemplate = ({ data: { mdx: tutorial, relatedPosts } }) => (
     <MainWrapper>
       <ContentWrapper>
         <TutorialContent tutorial={tutorial.body} />
+        <hr />
+        <h3>Join the newsletter</h3>
+        <p>
+          I write about modern JavaScript and programming. Once a month, I’ll
+          send you a tutorial that’s guaranteed to help you become a better
+          developer. No unexplained jargons. Just plain good content.{' '}
+          <u>One-click unsubscribe anytime.</u>
+        </p>
+        <Button
+          buttonLink="https://laurosilvacom.substack.com/subscribe"
+          buttonText="Subscribe to Newsletter"
+          buttonIcon={<FiMail />}
+        />
       </ContentWrapper>
     </MainWrapper>
 
     <TutorialRelated
       tag={tutorial.frontmatter.tags.map((tag, i) => (
         <TutorialRelatedText>
-          <h3>
-            <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-              {tag}
-            </Link>{' '}
-            Related Tutorials
-          </h3>
+          <hr />
+          <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
+            {tag} Related Tutorials
+          </Link>
         </TutorialRelatedText>
       ))}
     />
@@ -76,13 +89,15 @@ const MainWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  max-width: 780px;
+  max-width: 720px;
   margin-top: 40px;
   margin: 0 auto;
-  padding: 20px;
-  box-shadow: var(--shadow);
-  background: var(--accent-400);
-  border-radius: 0.3rem;
+  h3 {
+    color: var(--background);
+  }
+  p {
+    color: var(--accent-300);
+  }
 `
 
 const TutorialRelatedText = styled.div`
@@ -122,6 +137,7 @@ export const query = graphql`
     relatedPosts: allMdx(
       filter: { frontmatter: { tags: { in: $tags }, slug: { ne: $slug } } }
       sort: { fields: frontmatter___tutorialID, order: ASC }
+      limit: 3
     ) {
       edges {
         node {
