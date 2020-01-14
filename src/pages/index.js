@@ -23,8 +23,7 @@ const Index = ({ data }) => {
       />
 
       <HeroLanding>
-        <h2>Software Engineer and Technical Writer</h2>
-        <br />
+        <h1>Software Engineer & Technical Writer</h1>
         <p>
           I enjoy building thoughtful software and helping individuals become
           better programmers.

@@ -18,6 +18,8 @@
   /* Shadows */
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-success: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
 * {
@@ -74,7 +76,7 @@ hr {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 

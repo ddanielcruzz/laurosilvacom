@@ -34,8 +34,8 @@ const About = () => (
       <h2>Teaching</h2>
       <ul>
         <li>
-          <a href="https://setih.com">Setih</a> - where I publish practical,
-          concise, programming screencasts
+          <a href="/svelte">Svelte Crash Course</a> - Learn Svelte with
+          practical, concise video lessons.
         </li>
       </ul>
       <h2>Speaking</h2>

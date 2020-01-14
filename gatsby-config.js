@@ -18,6 +18,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `IBM Plex Mono`,
+            variants: [`400`, `600`],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-catch-links`,
       options: {
         // Links are relative to this directory

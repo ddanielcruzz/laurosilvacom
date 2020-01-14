@@ -17,13 +17,17 @@ const WrapperGroup = styled.div`
   margin: auto;
   max-width: 720px;
   padding: 50px 0px 0;
+  h1 {
+    line-height: 1;
+    margin: 0 0 10px 0;
+  }
   h2 {
     line-height: 1;
     margin: 10px 0;
   }
 
   h2 {
-    color: var(--black);
+    color: var(--background);
   }
   p {
     color: var(--accent-200);
