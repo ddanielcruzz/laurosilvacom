@@ -69,6 +69,6 @@ const FooterCopyRight = styled.div`
 
 const CopyRight = styled.div`
   font-size: 14px;
-  color: var(--accent-300);
+  color: var(--accent-200);
   margin-top: 20px;
 `

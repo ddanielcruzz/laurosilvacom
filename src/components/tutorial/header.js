@@ -6,7 +6,7 @@ const Header = props => (
   <HeaderMainWrapper>
     <HeaderMain>
       <Icon>
-        <Image fluid={props.icon} />
+        <Image fadeIn="false" loading="eager" fluid={props.icon} />
       </Icon>
       <HeaderWrapper>
         <Title>{props.title}</Title>
@@ -57,7 +57,7 @@ const Title = styled.h2`
 const Tag = styled.p`
   margin: 0;
   font-size: 1rem;
-  color: var(--accent-300);
+  color: var(--accent-200);
   font-weight: 500;
   span {
     padding-right: 10px;
@@ -65,6 +65,6 @@ const Tag = styled.p`
 `
 const HeaderWrapper = styled.div`
   h2 {
-    color: var(--background);
+    color: var(--black);
   }
 `

@@ -20,11 +20,11 @@ const WrapperGroup = styled.div`
   padding: 50px 0px 0;
 
   h1 {
-    color: var(--background);
+    color: var(--black);
     margin: 0;
   }
   h2 {
-    color: var(--background);
+    color: var(--black);
     margin: 0;
   }
 `

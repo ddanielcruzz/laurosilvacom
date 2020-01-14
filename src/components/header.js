@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
-import logolight from '../images/logolight.svg'
+import logolight from '../images/logo.svg'
 
 class Header extends React.Component {
   render() {
@@ -35,7 +35,7 @@ const LogoTitle = styled.h2`
   color: black;
   font-size: 24px;
   font-weight: 800;
-  color: var(--background);
+  color: var(--black);
   @media (max-width: 680px) {
     display: none;
   }
@@ -47,7 +47,7 @@ const Image = styled.img`
 `
 
 const HeaderWrapper = styled.div`
-  background: var(--foreground);
+  background: var(--white);
 `
 const HeaderGroup = styled.div`
   margin: auto;
@@ -78,6 +78,6 @@ const LinksWrapper = styled.div`
   align-items: center;
   a {
     margin-left: 40px;
-    color: var(--accent-300);
+    color: var(--accent-200);
   }
 `

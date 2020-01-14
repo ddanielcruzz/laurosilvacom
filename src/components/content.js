@@ -23,7 +23,7 @@ const Tutorial = styled.div`
   h5,
   h6,
   strong {
-    color: var(--background);
+    color: var(--black);
   }
   ul {
     list-style-type: disc;
@@ -33,6 +33,6 @@ const Tutorial = styled.div`
   p,
   ul,
   li {
-    color: var(--accent-300);
+    color: var(--accent-200);
   }
 `

@@ -29,7 +29,7 @@ const CardWrapper = styled.div`
   padding: 20px;
   grid-gap: 10px;
   box-shadow: var(--shadow);
-  background: var(--accent-400);
+  background: var(--white);
   transition: transform 160ms;
   :hover {
     transform: scale(1.03);
@@ -52,7 +52,7 @@ const TutorialTitle = styled.h1`
   font-size: 22px;
   margin: 0;
   line-height: 1.01em;
-  color: var(--background);
+  color: var(--black);
   @media (max-width: 780px) {
     font-size: 20px;
   }

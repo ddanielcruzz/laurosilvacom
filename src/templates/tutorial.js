@@ -93,17 +93,17 @@ const ContentWrapper = styled.div`
   margin-top: 40px;
   margin: 0 auto;
   h3 {
-    color: var(--background);
+    color: var(--black);
   }
   p {
-    color: var(--accent-300);
+    color: var(--accent-200);
   }
 `
 
 const TutorialRelatedText = styled.div`
-  color: var(--background);
+  color: var(--black);
   a {
-    color: var(--background);
+    color: var(--black);
   }
 `
 

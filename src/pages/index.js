@@ -69,7 +69,7 @@ const TitlePadding = styled.div`
 const TitleWrapper = styled.div`
   max-width: 720px;
   margin: auto;
-  color: var(--background);
+  color: var(--black);
 `
 export const pageQuery = graphql`
   query IndexPage {

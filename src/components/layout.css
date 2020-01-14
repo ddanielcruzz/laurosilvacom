@@ -1,10 +1,10 @@
 :root {
   /* Main Colors */
-  --foreground: #111518;
-  --background: #fff;
+  --white: #ffffff;
+  --black: rgb(0, 0, 0);
 
   /* Selection Color */
-  --selection: #0070f3;
+  --selection: var(--black);
 
   /* Success colors */
   --success-light: #3291ff;
@@ -12,15 +12,12 @@
   --success-dark: #0366d6;
 
   /* Primary colors */
-  --accent-300: #adadad;
-  --accent-400: #1c2022;
+  --accent-200: #666;
+  --accent-100: #eaeaea;
 
   /* Shadows */
-  --shadow: 0 0 10px #0b0d0f;
-
-  /* Family Font set */
-  --font-sans: "IBM Plex Sans", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-success: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
 }
 
 * {
@@ -31,7 +28,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
-  background-color: var(--foreground);
+  background-color: var(--white);
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
@@ -70,20 +67,18 @@ img {
 }
 
 hr {
-  background-color: var(--accent-400);
+  background-color: var(--accent-100);
   height: 4px;
   border: 0;
   margin: 4rem 0;
 }
 
 h1 {
-  line-height: 1.5;
   font-size: 3rem;
   font-weight: 700;
 }
 
 h2 {
-  line-height: 1.5;
   font-size: 2.25rem;
   font-weight: 700;
 }
@@ -165,11 +160,11 @@ blockquote {
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
-  background: var(--accent-400);
+  background: var(--success);
 }
 
 blockquote p {
-  color: var(--background) !important;
+  color: var(--white) !important;
 }
 
 blockquote a:last-of-type {
@@ -185,7 +180,7 @@ blockquote p:last-of-type {
 }
 
 blockquote code {
-  background: var(--accent-400);
+  background: var(--accent-100);
 }
 
 @keyframes HeroAnimation {
@@ -201,11 +196,11 @@ blockquote code {
 
 ::selection {
   background: var(--selection); /* WebKit/Blink Browsers */
-  color: var(--background);
+  color: var(--white);
 }
 ::-moz-selection {
   background: var(--selection); /* Gecko Browsers */
-  color: var(--background);
+  color: var(--white);
 }
 
 code[class*="language-"]::selection,
@@ -214,7 +209,7 @@ code[class*="language-"] span::selection {
 }
 
 .gatsby-highlight-code-line {
-  background: var(--accent-400);
+  background: var(--black);
   display: block;
   margin-right: 0em;
   margin-left: -2.6em;
@@ -232,9 +227,9 @@ code[class*="language-"] span::selection {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background: var(--accent-400);
+  background: var(--black);
   border-radius: 0.2rem;
-  margin: 2.5em 0;
+  margin: 1.5em 0;
   padding: 20px;
   overflow: auto;
 }
@@ -247,7 +242,7 @@ pre[class*="language-"] {
 
 code[class*="language-"] {
   background: black;
-  color: var(--background);
+  color: var(--white);
   box-shadow: none;
 }
 
@@ -277,7 +272,7 @@ code[class*="language-"] {
 }
 
 .command-line-prompt > span:before {
-  color: var(--background);
+  color: var(--black);
   content: " ";
   display: block;
   padding-right: 0.8em;
@@ -323,7 +318,7 @@ table {
 }
 
 tr {
-  background: var(--background);
+  background: var(--black);
 }
 
 th {
@@ -355,7 +350,7 @@ td {
   border-top-right-radius: 6px;
   margin-bottom: -3.4rem;
   font-family: var(--font-mono);
-  border: 1px solid var(--foreground);
+  border: 1px solid var(--white);
 }
 
 /* Dark mode styles */
@@ -365,9 +360,9 @@ td {
   cursor: pointer;
 }
 .light {
-  background: var(--background);
+  background: var(--black);
 }
 
 .dark {
-  background: var(--foreground);
+  background: var(--white);
 }

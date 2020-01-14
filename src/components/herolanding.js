@@ -23,9 +23,9 @@ const WrapperGroup = styled.div`
   }
 
   h2 {
-    color: var(--background);
+    color: var(--black);
   }
   p {
-    color: var(--accent-300);
+    color: var(--accent-200);
   }
 `

@@ -19,7 +19,7 @@ const Tutorial = styled.div`
   p,
   ul,
   li {
-    color: var(--accent-300);
+    color: var(--accent-200);
   }
 
   h1,
@@ -29,13 +29,6 @@ const Tutorial = styled.div`
   h5,
   h6,
   strong {
-    color: var(--background);
-  }
-
-  blockquote {
-    background: var(--accent-400);
-  }
-  blockquote p {
-    color: var(--background);
+    color: var(--black);
   }
 `
