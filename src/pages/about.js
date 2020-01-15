@@ -80,6 +80,12 @@ const About = () => (
           </a>{' '}
           - My personal theme for Gatsby (the source of this website)
         </li>
+        <li>
+          <a href="https://github.com/laurosilvacom/svelte-cheatsheet">
+            Svelte Cheatsheet
+          </a>{' '}
+          - Cheatsheet for developers getting started with Svelte
+        </li>
 
         <li>
           <a href="https://github.com/typescript-cheatsheets/react-typescript-cheatsheet-es">
