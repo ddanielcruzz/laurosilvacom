@@ -7,15 +7,12 @@ import Layout from '../components/layout'
 
 import TutorialHeader from '../components/tutorial/header'
 import TutorialContent from '../components/tutorial/content'
-import TutorialRelated from '../components/tutorial/related'
-import Card from '../components/card'
-import Grid from '../components/grid'
 import SEO from '../components/seo'
 import Button from '../components/button'
 
 const _ = require('lodash')
 
-const TutorialTemplate = ({ data: { mdx: tutorial, relatedPosts } }) => (
+const TutorialTemplate = ({ data: { mdx: tutorial } }) => (
   <Layout>
     <SEO
       title={tutorial.frontmatter.title}
@@ -50,34 +47,6 @@ const TutorialTemplate = ({ data: { mdx: tutorial, relatedPosts } }) => (
         />
       </ContentWrapper>
     </MainWrapper>
-
-    <TutorialRelated
-      tag={tutorial.frontmatter.tags.map((tag, i) => (
-        <TutorialRelatedText>
-          <hr />
-          <Link to={`/tags/${_.kebabCase(tag)}`} key={i}>
-            {tag} Related Tutorials
-          </Link>
-        </TutorialRelatedText>
-      ))}
-    />
-    <Grid>
-      {relatedPosts.edges.map(node => (
-        <Link
-          key={node.node.id}
-          to={`/tutorials/${node.node.frontmatter.slug}`}
-        >
-          <Card
-            tutorialNumber={node.node.frontmatter.tutorialID}
-            tutorialDate={node.node.frontmatter.tutorialDate}
-            tutorialIcon={node.node.frontmatter.icon.sharp.fluid}
-            tutorialTags={node.node.frontmatter.tags}
-            tutorialTitle={node.node.frontmatter.title}
-            tutorialImage={node.node.frontmatter.image.sharp.fluid.src}
-          />
-        </Link>
-      ))}
-    </Grid>
   </Layout>
 )
 
@@ -100,15 +69,8 @@ const ContentWrapper = styled.div`
   }
 `
 
-const TutorialRelatedText = styled.div`
-  color: var(--black);
-  a {
-    color: var(--black);
-  }
-`
-
 export const query = graphql`
-  query data($slug: String!, $tags: [String]) {
+  query data($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
       excerpt(pruneLength: 160)
       frontmatter {
@@ -132,39 +94,6 @@ export const query = graphql`
         }
       }
       body
-    }
-
-    relatedPosts: allMdx(
-      filter: { frontmatter: { tags: { in: $tags }, slug: { ne: $slug } } }
-      sort: { fields: frontmatter___tutorialID, order: ASC }
-      limit: 3
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            slug
-            tags
-            tutorialID
-            tutorialDate
-            image {
-              sharp: childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-            icon {
-              sharp: childImageSharp {
-                fluid(maxWidth: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 `

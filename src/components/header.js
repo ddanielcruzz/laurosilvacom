@@ -17,6 +17,7 @@ class Header extends React.Component {
             </LogoWrapper>
           </Link>
           <LinksWrapper>
+            <Link to="/lessons">Screencasts</Link>
             <Link to="/tutorials">Tutorials</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/about">About</Link>
@@ -77,7 +78,19 @@ const LinksWrapper = styled.div`
   font-size: 1rem;
   align-items: center;
   a {
-    margin-left: 40px;
+    margin-left: 30px;
     color: var(--accent-200);
+  }
+  @media (max-width: 680px) {
+    a {
+      margin-left: 20px;
+      color: var(--accent-200);
+    }
+  }
+  @media (max-width: 420px) {
+    a {
+      margin-left: 10px;
+      color: var(--accent-200);
+    }
   }
 `

@@ -41,7 +41,11 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
-    allMdx(limit: 2000, filter: { frontmatter: { tags: { in: [$tag] } } }) {
+    allMdx(
+      limit: 2000
+      sort: { fields: frontmatter___tutorialDate, order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
       totalCount
       edges {
         node {

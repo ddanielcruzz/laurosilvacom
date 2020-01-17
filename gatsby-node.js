@@ -4,15 +4,36 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMdx {
+      lessons: allMdx(filter: { fileAbsolutePath: { regex: "//lessons//" } }) {
         nodes {
           frontmatter {
             slug
-            tags
           }
         }
       }
-      tagsGroup: allMdx(limit: 2000) {
+
+      coursesGroup: allMdx(
+        limit: 2000
+        filter: { fileAbsolutePath: { regex: "//lessons//" } }
+      ) {
+        group(field: frontmatter___course) {
+          fieldValue
+        }
+      }
+
+      tutorials: allMdx(
+        filter: { fileAbsolutePath: { regex: "/tutorials//" } }
+      ) {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
+
+      tagsGroup: allMdx(
+        filter: { fileAbsolutePath: { regex: "//tutorials//" } }
+      ) {
         group(field: frontmatter___tags) {
           fieldValue
         }
@@ -21,24 +42,46 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `)
 
   if (result.errors) {
-    reporter.panic('failed to create tutorials', result.errors)
+    reporter.panic('failed to create pages', result.errors)
   }
+  // renders pages for lessons
+  const lessons = result.data.lessons.nodes
+  lessons.forEach(lesson => {
+    actions.createPage({
+      path: `/lessons/${lesson.frontmatter.slug}/`,
+      component: require.resolve('./src/templates/lesson.js'),
+      context: {
+        slug: lesson.frontmatter.slug,
+      },
+    })
+  })
 
-  const tutorials = result.data.allMdx.nodes
+  // renders pages for courses, based from course tags
+  const courses = result.data.coursesGroup.group
+  courses.forEach(course => {
+    createPage({
+      path: `/courses/${_.kebabCase(course.fieldValue)}/`,
+      component: require.resolve('./src/templates/courses.js'),
+      context: {
+        course: course.fieldValue,
+      },
+    })
+  })
 
+  // renders pages for tutorials
+  const tutorials = result.data.tutorials.nodes
   tutorials.forEach(tutorial => {
     actions.createPage({
       path: `/tutorials/${tutorial.frontmatter.slug}/`,
       component: require.resolve('./src/templates/tutorial.js'),
       context: {
         slug: tutorial.frontmatter.slug,
-        tags: tutorial.frontmatter.tags,
       },
     })
   })
 
+  // renders pages for courses, based from tutorials tags
   const tags = result.data.tagsGroup.group
-
   tags.forEach(tag => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,

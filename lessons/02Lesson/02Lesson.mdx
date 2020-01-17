@@ -1,0 +1,28 @@
+---
+title: Learning in Public - The Road Map xxxxx
+slug: learning-in-public-xxxxxxxx
+image: ./images/cover.png
+icon: ./images/learning.png
+course: ["svelte"]
+lessonID: 2
+lessonDate: 2019-12-09
+---
+
+Sometimes you don't want to merge two branches, but simply your desire is to apply the same changes in a commit on top to another branch. This situation is very common when working on bugs: you fix a bug in a branch, and then you want to apply the same fix on top of another branch.
+
+Git has a convenient way to do it; this is the git cherry-pick command.
+
+Let's play with it a little bit.
+
+Assume you want to pick the blackberry from the berries branch, and then apply it into the master branch; this is the way:
+
+```bash
+[1] ~/grocery (master)
+$ git cherry-pick ef6c382
+error: could not apply ef6c382... Add a blackberry
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+```
+
+For the argument, you usually specify the hash of the commit you want to pick; in this case, as that commit is referenced even by the berries branch label, doing a git cherry-pick berries would have been the same.

@@ -7,30 +7,27 @@ import Card from '../components/card'
 import Grid from '../components/grid'
 import HeroContent from '../components/herocontent'
 
-const Tutorials = ({ data }) => {
-  const { edges: tutorials } = data.allMdx
+const Lessons = ({ data }) => {
+  const { edges: lessons } = data.allMdx
 
   return (
     <Layout>
       <SEO
-        title="Tutorials"
+        title="Lessons"
         keywords={[`blog`, `writing`, `tutorials`, `javascript`, `react`]}
       />
 
       <HeroContent>
-        <h2>All Tutorials</h2>
+        <h2>All Screencasts</h2>
       </HeroContent>
 
       <Grid>
-        {tutorials.map(({ node: tutorial }) => (
-          <Link
-            key={tutorial.id}
-            to={`/tutorials/${tutorial.frontmatter.slug}`}
-          >
+        {lessons.map(({ node: lesson }) => (
+          <Link key={lesson.id} to={`/lessons/${lesson.frontmatter.slug}`}>
             <Card
-              tutorialIcon={tutorial.frontmatter.icon.sharp.fluid}
-              tutorialTags={tutorial.frontmatter.tags}
-              tutorialTitle={tutorial.frontmatter.title}
+              tutorialIcon={lesson.frontmatter.icon.sharp.fluid}
+              tutorialTags={lesson.frontmatter.tags}
+              tutorialTitle={lesson.frontmatter.title}
             />
           </Link>
         ))}
@@ -40,10 +37,10 @@ const Tutorials = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query WritingPage {
+  query AllLessonsPage {
     allMdx(
-      sort: { fields: frontmatter___tutorialDate, order: DESC }
-      filter: { fileAbsolutePath: { regex: "//tutorials//" } }
+      sort: { fields: frontmatter___lessonDate, order: DESC }
+      filter: { fileAbsolutePath: { regex: "//lessons//" } }
     ) {
       edges {
         node {
@@ -53,8 +50,8 @@ export const pageQuery = graphql`
             title
             slug
             tags
-            tutorialID
-            tutorialDate
+            lessonID
+            lessonDate
             image {
               sharp: childImageSharp {
                 fluid {
@@ -76,4 +73,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Tutorials
+export default Lessons

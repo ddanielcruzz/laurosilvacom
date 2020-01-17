@@ -109,6 +109,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `lessons`,
+        path: `${__dirname}/lessons/`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
