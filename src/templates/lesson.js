@@ -7,6 +7,8 @@ import Layout from '../components/layout'
 import TutorialHeader from '../components/tutorial/header'
 import TutorialContent from '../components/tutorial/content'
 
+const _ = require('lodash')
+
 const LessonsTemplate = ({ data }) => {
   const { mdx } = data
   const { title } = mdx.frontmatter
