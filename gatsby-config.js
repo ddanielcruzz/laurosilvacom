@@ -93,9 +93,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-simple-analytics',
       options: {
-        trackingId: 'UA-153984172-1',
+        // Optional custom domain
+        domain: 'pageviews.laurosilva.com',
       },
     },
     {

@@ -61,8 +61,8 @@ const Index = ({ data }) => {
           </Link>
         ))}
       </Grid>
-
-      <TitlePadding>
+      {/*
+         <TitlePadding>
         <TitleWrapper>
           <h2>
             Latest Screencasts <Link to="/lessons">View All</Link>
@@ -79,7 +79,8 @@ const Index = ({ data }) => {
             />
           </Link>
         ))}
-      </Grid>
+      </Grid>  
+        */}
     </Layout>
   )
 }
