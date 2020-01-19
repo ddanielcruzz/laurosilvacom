@@ -15,10 +15,7 @@
   --accent-200: #666;
   --accent-100: #eaeaea;
 
-  /* Shadows */
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-success: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
-
+  /* Mono Font */
   --font-mono: "IBM Plex Mono", monospace;
 }
 

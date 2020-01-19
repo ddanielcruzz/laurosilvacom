@@ -28,7 +28,6 @@ const Wrapper = styled.div`
   letter-spacing: 0.4px;
   display: inline-block;
   border: 1px solid var(--success);
-  box-shadow: var(--shadow-success);
   transition: transform 160ms;
   :hover {
     background: none;
