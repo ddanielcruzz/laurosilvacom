@@ -13,7 +13,6 @@ import Image from '../components/image'
 
 const Index = ({ data }) => {
   const { edges: tutorials } = data.allMdx
-  const { edges: lessons } = data.lessons
 
   return (
     <Layout>
@@ -61,26 +60,6 @@ const Index = ({ data }) => {
           </Link>
         ))}
       </Grid>
-      {/*
-         <TitlePadding>
-        <TitleWrapper>
-          <h2>
-            Latest Screencasts <Link to="/lessons">View All</Link>
-          </h2>
-        </TitleWrapper>
-      </TitlePadding>
-      <Grid>
-        {lessons.map(({ node: lesson }) => (
-          <Link key={lesson.id} to={`/lessons/${lesson.frontmatter.slug}`}>
-            <Card
-              tutorialIcon={lesson.frontmatter.icon.sharp.fluid}
-              tutorialTags={lesson.frontmatter.tags}
-              tutorialTitle={lesson.frontmatter.title}
-            />
-          </Link>
-        ))}
-      </Grid>  
-        */}
     </Layout>
   )
 }
@@ -154,39 +133,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    lessons: allMdx(
-      sort: { fields: frontmatter___lessonDate, order: DESC }
-      filter: { fileAbsolutePath: { regex: "//lessons//" } }
-      limit: 3
-    ) {
-      edges {
-        node {
-          id
-          excerpt
-          frontmatter {
-            title
-            slug
-            tags
-            lessonID
-            lessonDate
-            image {
-              sharp: childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-            icon {
-              sharp: childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+
     placeholderImage2: file(relativePath: { eq: "lauro.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {

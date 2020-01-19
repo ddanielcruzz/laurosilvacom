@@ -17,10 +17,6 @@ class Header extends React.Component {
             </LogoWrapper>
           </Link>
           <LinksWrapper>
-            {/*
-           <Link to="/lessons">Screencasts</Link>
-          */}
-
             <Link to="/tutorials">Tutorials</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/about">About</Link>

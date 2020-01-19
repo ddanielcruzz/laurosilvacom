@@ -1,32 +1,22 @@
 /* eslint-disable react/display-name */
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 
-import TutorialHeader from '../components/tutorial/header'
 import TutorialContent from '../components/tutorial/content'
+import HeroContent from '../components/herocontent'
 
-const _ = require('lodash')
-
-const LessonsTemplate = ({ data }) => {
+const PagesTemplate = ({ data }) => {
   const { mdx } = data
   const { title } = mdx.frontmatter
-  const { course } = mdx.frontmatter
   const { icon } = mdx.frontmatter
 
   return (
     <Layout>
-      <TutorialHeader
-        title={title}
-        icon={icon.sharp.fluid}
-        tag={course.map((course, i) => (
-          <Link to={`/courses/${_.kebabCase(course)}`} key={i}>
-            {course}
-          </Link>
-        ))}
-      />
-
+      <HeroContent>
+        <h2>{title}</h2>
+      </HeroContent>
       <MainWrapper>
         <ContentWrapper>
           <TutorialContent tutorial={mdx.body} />
@@ -36,7 +26,7 @@ const LessonsTemplate = ({ data }) => {
   )
 }
 
-export default LessonsTemplate
+export default PagesTemplate
 
 const MainWrapper = styled.div`
   margin: auto;
@@ -61,8 +51,7 @@ export const query = graphql`
       frontmatter {
         title
         slug
-        course
-        icon {
+        image {
           sharp: childImageSharp {
             fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid_withWebp

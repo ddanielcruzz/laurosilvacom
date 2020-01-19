@@ -4,20 +4,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      lessons: allMdx(filter: { fileAbsolutePath: { regex: "//lessons//" } }) {
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "//pages//" } }) {
         nodes {
           frontmatter {
             slug
           }
-        }
-      }
-
-      coursesGroup: allMdx(
-        limit: 2000
-        filter: { fileAbsolutePath: { regex: "//lessons//" } }
-      ) {
-        group(field: frontmatter___course) {
-          fieldValue
         }
       }
 
@@ -45,25 +36,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panic('failed to create pages', result.errors)
   }
   // renders pages for lessons
-  const lessons = result.data.lessons.nodes
-  lessons.forEach(lesson => {
+  const pages = result.data.pages.nodes
+  pages.forEach(page => {
     actions.createPage({
-      path: `/lessons/${lesson.frontmatter.slug}/`,
-      component: require.resolve('./src/templates/lesson.js'),
+      path: `/${page.frontmatter.slug}/`,
+      component: require.resolve('./src/templates/pages.js'),
       context: {
-        slug: lesson.frontmatter.slug,
-      },
-    })
-  })
-
-  // renders pages for courses, based from course tags
-  const courses = result.data.coursesGroup.group
-  courses.forEach(course => {
-    createPage({
-      path: `/courses/${_.kebabCase(course.fieldValue)}/`,
-      component: require.resolve('./src/templates/courses.js'),
-      context: {
-        course: course.fieldValue,
+        slug: page.frontmatter.slug,
       },
     })
   })

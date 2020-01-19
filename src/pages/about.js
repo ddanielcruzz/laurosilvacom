@@ -31,13 +31,6 @@ const About = () => (
           <a href="https://dev.to/laurosilvacom">The Practical DEV</a>
         </li>
       </ul>
-      <h2>Teaching</h2>
-      <ul>
-        <li>
-          <a href="/svelte">Svelte Crash Course</a> - Learn Svelte with
-          practical, concise video lessons.
-        </li>
-      </ul>
       <h2>Speaking</h2>
       <ul>
         <li>
