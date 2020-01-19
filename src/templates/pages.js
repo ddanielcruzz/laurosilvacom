@@ -6,25 +6,26 @@ import Layout from '../components/layout'
 
 import TutorialContent from '../components/tutorial/content'
 import HeroContent from '../components/herocontent'
+import SEO from '../components/seo'
 
-const PagesTemplate = ({ data }) => {
-  const { mdx } = data
-  const { title } = mdx.frontmatter
-  const { icon } = mdx.frontmatter
-
-  return (
-    <Layout>
-      <HeroContent>
-        <h2>{title}</h2>
-      </HeroContent>
-      <MainWrapper>
-        <ContentWrapper>
-          <TutorialContent tutorial={mdx.body} />
-        </ContentWrapper>
-      </MainWrapper>
-    </Layout>
-  )
-}
+const PagesTemplate = ({ data: { mdx: page } }) => (
+  <Layout>
+    <SEO
+      title={page.frontmatter.title}
+      description={page.excerpt}
+      image={page.frontmatter.image.sharp.fluid}
+      keywords={[`Lauro Silva`, `about`]}
+    />
+    <HeroContent>
+      <h2>{page.frontmatter.title}</h2>
+    </HeroContent>
+    <MainWrapper>
+      <ContentWrapper>
+        <TutorialContent tutorial={page.body} />
+      </ContentWrapper>
+    </MainWrapper>
+  </Layout>
+)
 
 export default PagesTemplate
 
@@ -48,6 +49,7 @@ const ContentWrapper = styled.div`
 export const query = graphql`
   query($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
+      excerpt(pruneLength: 160)
       frontmatter {
         title
         slug
