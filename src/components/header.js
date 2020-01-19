@@ -19,7 +19,7 @@ class Header extends React.Component {
           <LinksWrapper>
             <Link to="/tutorials">Tutorials</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/about">About</Link>
+            <Link to="/me">About</Link>
           </LinksWrapper>
         </HeaderGroup>
       </HeaderWrapper>

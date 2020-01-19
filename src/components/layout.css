@@ -117,8 +117,6 @@ p {
 }
 
 ul {
-  list-style-type: none;
-  margin-left: 16pt;
   font-family: var(--font-sans);
   font-size: 1rem;
 }
